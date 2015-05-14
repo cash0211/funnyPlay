@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>area</key>
+		<string>玄武区</string>
+		<key>areaPlays</key>
+		<array>
+			<dict>
+				<key>imageName</key>
+				<string>ms.jpg</string>
+				<key>itemName</key>
+				<string>X先生密室</string>
+				<key>desc</key>
+				<string>密室逃脱，带给你不一样的体验！！！</string>
+				<key>loc</key>
+				<string>常府街/长白街  密室</string>
+				<key>distance</key>
+				<string>210m</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>nb.jpg</string>
+				<key>itemName</key>
+				<string>南京博物院</string>
+				<key>desc</key>
+				<string>全国第三，快来逛逛把！内容很多，足够逛超久！</string>
+				<key>loc</key>
+				<string>紫金山/孝陵卫</string>
+				<key>distance</key>
+				<string>600m</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>h8zq.jpg</string>
+				<key>itemName</key>
+				<string>康泓黑八撞球</string>
+				<key>desc</key>
+				<string>展现身手的时刻来了！</string>
+				<key>loc</key>
+				<string>瑞金路沿线  台球</string>
+				<key>distance</key>
+				<string>900m</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>area</key>
+		<string>鼓楼区</string>
+		<key>areaPlays</key>
+		<array>
+			<dict>
+				<key>imageName</key>
+				<string>kbyy.jpg</string>
+				<key>itemName</key>
+				<string>Pulupulu主题体验馆-恐怖医院</string>
+				<key>desc</key>
+				<string>恐怖再度来袭，只有最恐怖！</string>
+				<key>loc</key>
+				<string>新街口地区  主题馆</string>
+				<key>distance</key>
+				<string>3.2km</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>jnsryy.jpg</string>
+				<key>itemName</key>
+				<string>加纳私人影院</string>
+				<key>desc</key>
+				<string>带给你超乎影院般的视觉体验！</string>
+				<key>loc</key>
+				<string>玄武区  私人影院</string>
+				<key>distance</key>
+				<string>2.5km</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>lpdmstt.jpg</string>
+				<key>itemName</key>
+				<string>拉普达密室逃脱</string>
+				<key>desc</key>
+				<string>神秘从此开始！</string>
+				<key>loc</key>
+				<string>瑞金路沿线  密室</string>
+				<key>distance</key>
+				<string>1.6km</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>njdzbwg.jpg</string>
+				<key>itemName</key>
+				<string>南京地质博物馆</string>
+				<key>desc</key>
+				<string>涨姿势啦！</string>
+				<key>loc</key>
+				<string>珠江路沿线  博物馆</string>
+				<key>distance</key>
+				<string>1.4km</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>area</key>
+		<string>秦淮区</string>
+		<key>areaPlays</key>
+		<array>
+			<dict>
+				<key>imageName</key>
+				<string>zykjqps.jpg</string>
+				<key>itemName</key>
+				<string>自由空间棋牌室</string>
+				<key>desc</key>
+				<string>快乐赌博！</string>
+				<key>loc</key>
+				<string>瑞金路沿线  棋牌室</string>
+				<key>distance</key>
+				<string>1.3km</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>lbzrcs.jpg</string>
+				<key>itemName</key>
+				<string>猎豹真人CS</string>
+				<key>desc</key>
+				<string>打枪打枪</string>
+				<key>loc</key>
+				<string>苜蓿园  真人CS</string>
+				<key>distance</key>
+				<string>1.0km</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>njxsjlb.jpg</string>
+				<key>itemName</key>
+				<string>南京相声俱乐部</string>
+				<key>desc</key>
+				<string>客官，听一曲儿吧！</string>
+				<key>loc</key>
+				<string>瑞金路沿线  文娱节目</string>
+				<key>distance</key>
+				<string>1.5km</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AA6987B1-6AAA-4E26-BC81-B51162448E8D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>funnyplay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7125795FD0065D31BD865A562D30BDF7EF69447F</key>
+		<string>https://github.com/cash0211/funnyPlay.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>funnyplay.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7125795FD0065D31BD865A562D30BDF7EF69447F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cash0211/funnyPlay.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7125795FD0065D31BD865A562D30BDF7EF69447F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7125795FD0065D31BD865A562D30BDF7EF69447F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>funnyplay</string>
+		</dict>
+	</array>
+</dict>
+</plist>

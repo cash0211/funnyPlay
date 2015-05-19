@@ -11,6 +11,8 @@
 #import "LocationCell.h"
 #import "Location.h"
 #import "Tool.h"
+#import <BaiduMapAPI/BMKMapView.h>
+#import "MapViewBaseViewController.h"
 
 @interface AreaPlayViewController () {
     
@@ -23,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     //初始化主视图
 //    self.tabBarItem.title = @"";
@@ -64,9 +67,21 @@
      */
 }
 
+//高德地图
+- (void) clickIsHereForGd:(id)sender {
+    
+    
+}
+
+//百度地图
 - (void) clickIsHere:(id)sender {
     
     //地图 --- ”都在这里“
+    MapViewBaseViewController *_mapViewCon = [[MapViewBaseViewController alloc] init];
+    UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
+    customLeftBarButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = customLeftBarButtonItem;
+    [self.navigationController pushViewController:_mapViewCon animated:YES];
 }
 
 #pragma mark tableView DataSource

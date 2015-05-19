@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <SMS_SDK/SMS_SDK.h>
+#import <BaiduMapAPI/BMKMapManager.h>
 
 @class LocationBaseViewController;
 @class NearbyBaseViewController;
 @class PlayCardBaseViewController;
 @class PersonInfoBaseViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
+    
+    BMKMapManager* _mapManager;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -25,7 +29,17 @@
 @property (nonatomic, strong) PlayCardBaseViewController *playCardBase;
 @property (nonatomic, strong) PersonInfoBaseViewController *personInfoBase;
 
-
-
 @end
+
+
+
+
+
+
+
+
+
+
+
+
 

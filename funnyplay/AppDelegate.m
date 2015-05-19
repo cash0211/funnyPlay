@@ -21,6 +21,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //添加百度地图
+    
+    _mapManager = [[BMKMapManager alloc] init];
+    
+    BOOL ret = [_mapManager start:@"jk4KaC75i3hBre6ila3K7YaM" generalDelegate:nil]; //如果要关注网络及授权验证事件，设定gDelegate
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+
+    
     //本地
     self.locBase = [[LocationBaseViewController alloc] initWithNibName:@"LocationBase" bundle:nil];
     UINavigationController *locNav = [[UINavigationController alloc] initWithRootViewController:self.locBase];

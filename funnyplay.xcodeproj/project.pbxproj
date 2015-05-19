@@ -44,6 +44,15 @@
 		C913D9E01AB806DE0090DE41 /* location.plist in Resources */ = {isa = PBXBuildFile; fileRef = C913D9DF1AB806DE0090DE41 /* location.plist */; };
 		C913D9E91AB834840090DE41 /* LocationDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = C913D9E81AB834840090DE41 /* LocationDetail.xib */; };
 		C913D9EC1AB8353E0090DE41 /* LocationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C913D9EB1AB8353E0090DE41 /* LocationDetail.m */; };
+		C92FBF891B0A0BA30031AED9 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92FBF881B0A0BA30031AED9 /* BaiduMapAPI.framework */; };
+		C92FBF8B1B0A0BEA0031AED9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92FBF8A1B0A0BEA0031AED9 /* CoreLocation.framework */; };
+		C92FBF8D1B0A0C030031AED9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92FBF8C1B0A0C030031AED9 /* OpenGLES.framework */; };
+		C92FBF8F1B0A0C1C0031AED9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92FBF8E1B0A0C1C0031AED9 /* SystemConfiguration.framework */; };
+		C92FBF911B0A0C2A0031AED9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92FBF901B0A0C2A0031AED9 /* CoreGraphics.framework */; };
+		C92FBF931B0A0C360031AED9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92FBF921B0A0C360031AED9 /* Security.framework */; };
+		C92FBF951B0A0CF10031AED9 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C92FBF941B0A0CF10031AED9 /* mapapi.bundle */; };
+		C92FBF9A1B0A167D0031AED9 /* MapViewBaseViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C92FBF981B0A167D0031AED9 /* MapViewBaseViewController.mm */; };
+		C92FBF9B1B0A167D0031AED9 /* MapViewBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92FBF991B0A167D0031AED9 /* MapViewBaseViewController.xib */; };
 		C97195AF1ADCFA8100C3E410 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C97195AE1ADCFA8100C3E410 /* appicon.png */; };
 		C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97195B21ADD116100C3E410 /* LoginViewController.m */; };
 		C97195B51ADD116100C3E410 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97195B31ADD116100C3E410 /* LoginViewController.xib */; };
@@ -158,6 +167,16 @@
 		C913D9E81AB834840090DE41 /* LocationDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationDetail.xib; sourceTree = "<group>"; };
 		C913D9EA1AB8353E0090DE41 /* LocationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetail.h; sourceTree = "<group>"; };
 		C913D9EB1AB8353E0090DE41 /* LocationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetail.m; sourceTree = "<group>"; };
+		C92FBF881B0A0BA30031AED9 /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = "../../../Downloads/Release-iphonesimulator/BaiduMapAPI.framework"; sourceTree = "<group>"; };
+		C92FBF8A1B0A0BEA0031AED9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C92FBF8C1B0A0C030031AED9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C92FBF8E1B0A0C1C0031AED9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C92FBF901B0A0C2A0031AED9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C92FBF921B0A0C360031AED9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C92FBF941B0A0CF10031AED9 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = ../mapapi.bundle; sourceTree = "<group>"; };
+		C92FBF971B0A167D0031AED9 /* MapViewBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewBaseViewController.h; sourceTree = "<group>"; };
+		C92FBF981B0A167D0031AED9 /* MapViewBaseViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapViewBaseViewController.mm; sourceTree = "<group>"; };
+		C92FBF991B0A167D0031AED9 /* MapViewBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewBaseViewController.xib; sourceTree = "<group>"; };
 		C97195AE1ADCFA8100C3E410 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		C97195B11ADD116100C3E410 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C97195B21ADD116100C3E410 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -242,6 +261,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92FBF931B0A0C360031AED9 /* Security.framework in Frameworks */,
+				C92FBF911B0A0C2A0031AED9 /* CoreGraphics.framework in Frameworks */,
+				C92FBF8F1B0A0C1C0031AED9 /* SystemConfiguration.framework in Frameworks */,
+				C92FBF8D1B0A0C030031AED9 /* OpenGLES.framework in Frameworks */,
+				C92FBF8B1B0A0BEA0031AED9 /* CoreLocation.framework in Frameworks */,
+				C92FBF891B0A0BA30031AED9 /* BaiduMapAPI.framework in Frameworks */,
 				C9AA7E541ACA346E00190F54 /* AddressBookUI.framework in Frameworks */,
 				C9AA7E521ACA346500190F54 /* AddressBook.framework in Frameworks */,
 				C9AA7E501ACA345700190F54 /* MessageUI.framework in Frameworks */,
@@ -269,6 +294,7 @@
 				C913D9861AB662020090DE41 /* funnyplayTests */,
 				C913D96B1AB662020090DE41 /* Products */,
 				C9B538241AC0F7A500005E16 /* framework */,
+				C92FBF961B0A0D080031AED9 /* BaiduMap-framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,6 +389,9 @@
 				C9AA7E301AC7E22900190F54 /* AreaPlay.m */,
 				C9AA7E331AC7E80D00190F54 /* AreaPlay.xib */,
 				C9AA7E161AC7B8C300190F54 /* areaPlay.plist */,
+				C92FBF971B0A167D0031AED9 /* MapViewBaseViewController.h */,
+				C92FBF981B0A167D0031AED9 /* MapViewBaseViewController.mm */,
+				C92FBF991B0A167D0031AED9 /* MapViewBaseViewController.xib */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -403,6 +432,21 @@
 				C913D9BE1AB669940090DE41 /* 赞.png */,
 			);
 			path = easyicon_net_20141016090244201;
+			sourceTree = "<group>";
+		};
+		C92FBF961B0A0D080031AED9 /* BaiduMap-framework */ = {
+			isa = PBXGroup;
+			children = (
+				C92FBF941B0A0CF10031AED9 /* mapapi.bundle */,
+				C92FBF921B0A0C360031AED9 /* Security.framework */,
+				C92FBF901B0A0C2A0031AED9 /* CoreGraphics.framework */,
+				C92FBF8E1B0A0C1C0031AED9 /* SystemConfiguration.framework */,
+				C92FBF8C1B0A0C030031AED9 /* OpenGLES.framework */,
+				C92FBF8A1B0A0BEA0031AED9 /* CoreLocation.framework */,
+				C92FBF881B0A0BA30031AED9 /* BaiduMapAPI.framework */,
+			);
+			name = "BaiduMap-framework";
+			path = funnyplay;
 			sourceTree = "<group>";
 		};
 		C97195B01ADD111900C3E410 /* Login */ = {
@@ -651,6 +695,7 @@
 				C913D9CA1AB669940090DE41 /* 右.png in Resources */,
 				C9AA7E171AC7B8C300190F54 /* areaPlay.plist in Resources */,
 				C913D9D01AB669940090DE41 /* 柜子.png in Resources */,
+				C92FBF951B0A0CF10031AED9 /* mapapi.bundle in Resources */,
 				C9B537FF1ABFA30600005E16 /* PersonInfoView.xib in Resources */,
 				C913D97B1AB662020090DE41 /* Images.xcassets in Resources */,
 				C913D9CE1AB669940090DE41 /* 搜索.png in Resources */,
@@ -658,6 +703,7 @@
 				C97195C11AE3FB4600C3E410 /* smssdk.bundle in Resources */,
 				C913D9C51AB669940090DE41 /* personinfo.png in Resources */,
 				C9B537EC1ABF99B500005E16 /* NearbyBase.xib in Resources */,
+				C92FBF9B1B0A167D0031AED9 /* MapViewBaseViewController.xib in Resources */,
 				C913D9CD1AB669940090DE41 /* 推荐.png in Resources */,
 				C913D9A91AB667770090DE41 /* LocationBase.xib in Resources */,
 				C913D9E91AB834840090DE41 /* LocationDetail.xib in Resources */,
@@ -687,6 +733,7 @@
 				C913D9761AB662020090DE41 /* ViewController.m in Sources */,
 				C9B538021ABFA86100005E16 /* Nearby.m in Sources */,
 				C9B537EF1ABF9B8000005E16 /* NearbyViewController.m in Sources */,
+				C92FBF9A1B0A167D0031AED9 /* MapViewBaseViewController.mm in Sources */,
 				C913D9731AB662020090DE41 /* AppDelegate.m in Sources */,
 				C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */,
 				C9B5380A1ABFB25800005E16 /* NearbyDetail.m in Sources */,
@@ -842,9 +889,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/funnyplay/SMS_SDK",
+					"/Users/qianshao/Downloads/Release-iphonesimulator",
 				);
 				INFOPLIST_FILE = funnyplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -856,9 +905,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/funnyplay/SMS_SDK",
+					"/Users/qianshao/Downloads/Release-iphonesimulator",
 				);
 				INFOPLIST_FILE = funnyplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -875,6 +926,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_VERSION = "";
 				INFOPLIST_FILE = funnyplayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -890,6 +942,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_VERSION = "";
 				INFOPLIST_FILE = funnyplayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

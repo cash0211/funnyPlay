@@ -44,7 +44,7 @@
                 <outlet property="personImageView" destination="nVf-r0-Xs4" id="Zef-ta-YiX"/>
                 <outlet property="userName" destination="FmO-9i-TIi" id="hC3-aC-5Ak"/>
             </connections>
-            <point key="canvasLocation" x="153" y="292"/>
+            <point key="canvasLocation" x="196" y="131"/>
         </tableViewCell>
     </objects>
     <resources>

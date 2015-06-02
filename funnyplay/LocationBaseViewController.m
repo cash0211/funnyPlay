@@ -49,6 +49,25 @@
 //    UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithCustomView:btn];
 //    self.navigationItem.rightBarButtonItem = btnAreaPlay;
     
+    //"附近"
+    UIBarButtonItem *btnNearbyTitle = [[UIBarButtonItem alloc] initWithTitle:@"附近" style:UIBarButtonItemStyleDone target:self action:@selector(clickNearby:)];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [btn addTarget:self action:@selector(clickNearby:) forControlEvents:UIControlEventTouchUpInside];
+    if([[[UIDevice currentDevice] systemVersion]floatValue] >= 7.0)
+    {
+        [btn setImage:[UIImage imageNamed:@"nearby"] forState:UIControlStateNormal];
+//        btn.imageEdgeInsets = UIEdgeInsetsMake(0,10, 0, -10);
+    }
+    
+    else
+        [btn setImage:[UIImage imageNamed:@"nearby"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *btnNearby = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:btnNearbyTitle, btnNearby, nil];
+
+    
+    
     //"区域玩" --- 直接 BarButtonItem
     UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithTitle:@"区域玩" style:UIBarButtonItemStyleDone target:self action:@selector(clickAreaPlay:)];
     self.navigationItem.rightBarButtonItem = btnAreaPlay;
@@ -72,6 +91,11 @@
     
     //这里只能是self的nav！！！
     [Tool pushAreaPlay:sender andNavController:self.navigationController];
+}
+
+- (void)clickNearby:(id)sender {
+    
+    
 }
 
 

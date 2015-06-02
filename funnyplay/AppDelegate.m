@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "LocationBaseViewController.h"
+#import "RecommendBaseViewController.h"
 #import "NearbyBaseViewController.h"
 #import "PlayCardBaseViewController.h"
 #import "PersonInfoBaseViewController.h"
+#import "FlowgroundBaseViewController.h"
 
 @interface AppDelegate ()
 
@@ -36,8 +38,15 @@
     UINavigationController *locNav = [[UINavigationController alloc] initWithRootViewController:self.locBase];
     
     //附近
-    self.nearBase = [[NearbyBaseViewController alloc] initWithNibName:@"NearbyBase" bundle:nil];
-    UINavigationController *nearbyNav = [[UINavigationController alloc] initWithRootViewController:self.nearBase];
+//    self.nearBase = [[NearbyBaseViewController alloc] initWithNibName:@"NearbyBase" bundle:nil];
+//    UINavigationController *nearbyNav = [[UINavigationController alloc] initWithRootViewController:self.nearBase];
+    //推荐
+    self.recoBase = [[RecommendBaseViewController alloc] initWithNibName:@"RecommendBase" bundle:nil];
+    UINavigationController *recoNav = [[UINavigationController alloc] initWithRootViewController:self.recoBase];
+    
+    //流动墙
+    self.flowgroundBase = [[FlowgroundBaseViewController alloc] initWithNibName:@"FlowgroundBase" bundle:nil];
+    UINavigationController *flowgroundNav = [[UINavigationController alloc] initWithRootViewController:self.flowgroundBase];
     
     //玩略
     self.playCardBase = [[PlayCardBaseViewController alloc] initWithNibName:@"PlayCardBase" bundle:nil];
@@ -51,7 +60,7 @@
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.delegate = self;
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:locNav, nearbyNav, playCardNav, personInfoNav,nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:locNav, recoNav, flowgroundNav, playCardNav, personInfoNav,nil];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.tabBarController;

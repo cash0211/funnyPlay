@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>001.png</string>
+		<key>name</key>
+		<string>只恨太匆匆</string>
+		<key>vip</key>
+		<string>1</string>
+		<key>time</key>
+		<string>今天 6:09</string>
+		<key>source</key>
+		<string>iPhone客户端</string>
+		<key>content</key>
+		<string>为什么你们选车牌，非得跟自己过不去呢？</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>002.png</string>
+		<key>name</key>
+		<string>大白菜一树</string>
+		<key>vip</key>
+		<string>1</string>
+		<key>time</key>
+		<string>今天 10:09</string>
+		<key>source</key>
+		<string>iPhone客户端</string>
+		<key>content</key>
+		<string>下午一客户来维修电脑，当时哥打开电脑一开，就石化了</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>003.png</string>
+		<key>name</key>
+		<string>只恨时光太瘦</string>
+		<key>vip</key>
+		<string>0</string>
+		<key>time</key>
+		<string>昨天 6:09</string>
+		<key>source</key>
+		<string>Android客户端</string>
+		<key>content</key>
+		<string>二逼青年伤不起啊，有木有啊啊啊啊</string>
+		<key>image</key>
+		<string>3.png</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>004.png</string>
+		<key>name</key>
+		<string>宿樱子雪</string>
+		<key>vip</key>
+		<string>1</string>
+		<key>time</key>
+		<string>今天 6:09</string>
+		<key>source</key>
+		<string>iPhone客户端</string>
+		<key>content</key>
+		<string>这也忒狠了</string>
+		<key>image</key>
+		<string>4.png</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>005.png</string>
+		<key>name</key>
+		<string>祝秋夕夏</string>
+		<key>vip</key>
+		<string>1</string>
+		<key>time</key>
+		<string>明天 6:09</string>
+		<key>source</key>
+		<string>iPhone客户端</string>
+		<key>content</key>
+		<string>哥们为什么选八号呢</string>
+		<key>image</key>
+		<string>5.png</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>006.png</string>
+		<key>name</key>
+		<string>原来在这里</string>
+		<key>vip</key>
+		<string>0</string>
+		<key>time</key>
+		<string>今天 20:10</string>
+		<key>source</key>
+		<string>星星的你</string>
+		<key>content</key>
+		<string>这年头的SB不少</string>
+		<key>image</key>
+		<string>6.png</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>007.png</string>
+		<key>name</key>
+		<string>只恨太匆匆</string>
+		<key>vip</key>
+		<string>1</string>
+		<key>time</key>
+		<string>前天 6:09</string>
+		<key>source</key>
+		<string>月亮的你</string>
+		<key>content</key>
+		<string>够惨不？</string>
+		<key>image</key>
+		<string>7.png</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>008.png</string>
+		<key>name</key>
+		<string>大白菜</string>
+		<key>vip</key>
+		<string>1</string>
+		<key>time</key>
+		<string>前天 6:09</string>
+		<key>source</key>
+		<string>火星的你</string>
+		<key>content</key>
+		<string>亲，你能改下你的网名么？哈哈</string>
+		<key>image</key>
+		<string>8.png</string>
+	</dict>
+</array>
+</plist>

@@ -1,20 +1,19 @@
 //
-//  PlayCardBaseViewController.m
+//  RecommendBaseViewController.m
 //  funnyplay
 //
-//  Created by cash on 15-3-23.
+//  Created by cash on 15-5-22.
 //  Copyright (c) 2015年 ___CASH___. All rights reserved.
 //
 
-#import "PlayCardBaseViewController.h"
-#import "PlayCardViewController.h"
+#import "RecommendBaseViewController.h"
+#import "RecommendViewController.h"
 
-@interface PlayCardBaseViewController ()
+@interface RecommendBaseViewController ()
 
 @end
 
-@implementation PlayCardBaseViewController
-
+@implementation RecommendBaseViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -27,29 +26,29 @@
 }
 
 - (void)myInit {
-    
     //初始化主视图
-    self.tabBarItem.title = @"玩略";
-    self.tabBarItem.image = [UIImage imageNamed:@"playcard"];
+    self.tabBarItem.title = @"推荐";
+    self.tabBarItem.image = [UIImage imageNamed:@"reco2"];
     
-    self.navigationItem.title = @"玩略";
+    self.navigationItem.title = @"推荐";
     
     //表格子视图
-    self.playCardViewCon = [[PlayCardViewController alloc] init];
-    [self addChildViewController:self.playCardViewCon];
-    [self.view addSubview:self.playCardViewCon.view];
-    self.playCardViewCon.view.frame = self.view.bounds;
-    self.playCardViewCon.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.recommendViewCon = [[RecommendViewController alloc] init];
+    [self addChildViewController:self.recommendViewCon];
+    [self.view addSubview:self.recommendViewCon.view];
+    self.recommendViewCon.view.frame = self.view.bounds;
+    self.recommendViewCon.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    // Dispose of any resources that can be recreated.
 }
 
 /*

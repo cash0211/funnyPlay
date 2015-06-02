@@ -29,6 +29,8 @@
         statusBarHeight = 20;
     }
     
+//    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
+    
     //手机号码
     UITextField* phoneNumField = [[UITextField alloc] init];
     phoneNumField.frame = CGRectMake(10, 60+statusBarHeight, (self.view.frame.size.width - 20), 40+statusBarHeight/4);
@@ -108,6 +110,7 @@
 {
     [self.phoneNumTextField resignFirstResponder];
     [self.pwdTextField resignFirstResponder];
+//    self.navigationController.hidesBarsWhenKeyboardAppears = NO;
 }
 
 - (void)didReceiveMemoryWarning {

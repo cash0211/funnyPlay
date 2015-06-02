@@ -30,7 +30,7 @@
     
     //初始化主视图
     self.tabBarItem.title = @"附近";
-    self.tabBarItem.image = [UIImage imageNamed:@"location"];
+    self.tabBarItem.image = [UIImage imageNamed:@"nearby"];
     
     self.navigationItem.title = @"附近";
     

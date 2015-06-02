@@ -28,10 +28,10 @@
 - (void)myInit {
     
     //初始化主视图
-    self.tabBarItem.title = @"个人";
-    self.tabBarItem.image = [UIImage imageNamed:@"location"];
+    self.tabBarItem.title = @"我的";
+    self.tabBarItem.image = [UIImage imageNamed:@"my"];
     
-    self.navigationItem.title = @"个人";
+    self.navigationItem.title = @"我的";
     
     //表格子视图
     self.personInfoViewCon = [[PersonInfoViewController alloc] init];

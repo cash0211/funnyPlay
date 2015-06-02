@@ -71,9 +71,14 @@
     //"区域玩" --- 直接 BarButtonItem
     UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithTitle:@"区域玩" style:UIBarButtonItemStyleDone target:self action:@selector(clickAreaPlay:)];
     self.navigationItem.rightBarButtonItem = btnAreaPlay;
+    
+    //适配iOS7uinavigationbar遮挡tableView的问题
+    if([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0)
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];

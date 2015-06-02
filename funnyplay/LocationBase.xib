@@ -17,7 +17,7 @@
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="275" y="160"/>
+            <point key="canvasLocation" x="275" y="190"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

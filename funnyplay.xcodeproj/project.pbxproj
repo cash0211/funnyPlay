@@ -126,6 +126,16 @@
 		C9ADD67C1B13223A00977B41 /* 007.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6741B13223A00977B41 /* 007.png */; };
 		C9ADD67D1B13223A00977B41 /* 008.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6751B13223A00977B41 /* 008.png */; };
 		C9ADD67F1B15BD5100977B41 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD67E1B15BD5100977B41 /* data.plist */; };
+		C9ADD6851B1DA4CE00977B41 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ADD6841B1DA4CE00977B41 /* EGORefreshTableHeaderView.m */; };
+		C9ADD6951B1DAF3800977B41 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD68D1B1DAF3800977B41 /* grayArrow.png */; };
+		C9ADD6961B1DAF3800977B41 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD68E1B1DAF3800977B41 /* grayArrow@2x.png */; };
+		C9ADD6971B1DAF3800977B41 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD68F1B1DAF3800977B41 /* blackArrow.png */; };
+		C9ADD6981B1DAF3800977B41 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6901B1DAF3800977B41 /* blackArrow@2x.png */; };
+		C9ADD6991B1DAF3800977B41 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6911B1DAF3800977B41 /* blueArrow.png */; };
+		C9ADD69A1B1DAF3800977B41 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6921B1DAF3800977B41 /* blueArrow@2x.png */; };
+		C9ADD69B1B1DAF3800977B41 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6931B1DAF3800977B41 /* whiteArrow.png */; };
+		C9ADD69C1B1DAF3800977B41 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6941B1DAF3800977B41 /* whiteArrow@2x.png */; };
+		C9ADD69F1B1DDB3700977B41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6A11B1DDB3700977B41 /* Localizable.strings */; };
 		C9B537DE1ABBFFC600005E16 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537DD1ABBFFC600005E16 /* Tool.m */; };
 		C9B537E21ABDB36400005E16 /* NearbyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E11ABDB36400005E16 /* NearbyBaseViewController.m */; };
 		C9B537E61ABF96E200005E16 /* PlayCardBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E51ABF96E200005E16 /* PlayCardBaseViewController.m */; };
@@ -317,6 +327,19 @@
 		C9ADD6741B13223A00977B41 /* 007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 007.png; sourceTree = "<group>"; };
 		C9ADD6751B13223A00977B41 /* 008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 008.png; sourceTree = "<group>"; };
 		C9ADD67E1B15BD5100977B41 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		C9ADD6831B1DA4CE00977B41 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		C9ADD6841B1DA4CE00977B41 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		C9ADD68D1B1DAF3800977B41 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		C9ADD68E1B1DAF3800977B41 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		C9ADD68F1B1DAF3800977B41 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		C9ADD6901B1DAF3800977B41 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		C9ADD6911B1DAF3800977B41 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		C9ADD6921B1DAF3800977B41 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		C9ADD6931B1DAF3800977B41 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		C9ADD6941B1DAF3800977B41 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		C9ADD6A01B1DDB3700977B41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C9ADD6A21B1DDB3D00977B41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C9ADD6A31B1DDE8900977B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C9B537DC1ABBFFC600005E16 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		C9B537DD1ABBFFC600005E16 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		C9B537E01ABDB36400005E16 /* NearbyBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBaseViewController.h; sourceTree = "<group>"; };
@@ -442,6 +465,7 @@
 				C97195B01ADD111900C3E410 /* Login */,
 				C9B538211AC0EF3800005E16 /* keep */,
 				C913D9931AB662630090DE41 /* Model */,
+				C9ADD6821B1DA48B00977B41 /* Supporting  */,
 				C913D96D1AB662020090DE41 /* Supporting Files */,
 			);
 			path = funnyplay;
@@ -452,6 +476,7 @@
 			children = (
 				C913D96E1AB662020090DE41 /* Info.plist */,
 				C913D96F1AB662020090DE41 /* main.m */,
+				C9ADD6A11B1DDB3700977B41 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -514,6 +539,7 @@
 		C913D9AA1AB669940090DE41 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C9ADD68C1B1DAF2300977B41 /* EGORefreshImage */,
 				C9ADD65D1B1321A800977B41 /* FlowgroundTestImage */,
 				C92FBFCA1B0C7DF70031AED9 /* tabbarImage */,
 				C913D9AB1AB669940090DE41 /* easyicon_net_20141016090244201 */,
@@ -682,6 +708,30 @@
 				C9ADD6651B1321C700977B41 /* 8.png */,
 			);
 			name = FlowgroundTestImage;
+			sourceTree = "<group>";
+		};
+		C9ADD6821B1DA48B00977B41 /* Supporting  */ = {
+			isa = PBXGroup;
+			children = (
+				C9ADD6831B1DA4CE00977B41 /* EGORefreshTableHeaderView.h */,
+				C9ADD6841B1DA4CE00977B41 /* EGORefreshTableHeaderView.m */,
+			);
+			name = "Supporting ";
+			sourceTree = "<group>";
+		};
+		C9ADD68C1B1DAF2300977B41 /* EGORefreshImage */ = {
+			isa = PBXGroup;
+			children = (
+				C9ADD68D1B1DAF3800977B41 /* grayArrow.png */,
+				C9ADD68E1B1DAF3800977B41 /* grayArrow@2x.png */,
+				C9ADD68F1B1DAF3800977B41 /* blackArrow.png */,
+				C9ADD6901B1DAF3800977B41 /* blackArrow@2x.png */,
+				C9ADD6911B1DAF3800977B41 /* blueArrow.png */,
+				C9ADD6921B1DAF3800977B41 /* blueArrow@2x.png */,
+				C9ADD6931B1DAF3800977B41 /* whiteArrow.png */,
+				C9ADD6941B1DAF3800977B41 /* whiteArrow@2x.png */,
+			);
+			name = EGORefreshImage;
 			sourceTree = "<group>";
 		};
 		C9B537DB1ABBFF9B00005E16 /* Temp */ = {
@@ -902,6 +952,7 @@
 				C92FBFD61B0C7E150031AED9 /* image-2@2x.png in Resources */,
 				C92FBFD71B0C7E150031AED9 /* image-3.png in Resources */,
 				C9ADD6781B13223A00977B41 /* 003.png in Resources */,
+				C9ADD6951B1DAF3800977B41 /* grayArrow.png in Resources */,
 				C913D9C81AB669940090DE41 /* 分享2.png in Resources */,
 				C9ADD6661B1321C700977B41 /* 1.png in Resources */,
 				C913D9E01AB806DE0090DE41 /* location.plist in Resources */,
@@ -913,8 +964,10 @@
 				C9ADD67B1B13223A00977B41 /* 006.png in Resources */,
 				C9ADD6761B13223A00977B41 /* 001.png in Resources */,
 				C9B537F81ABFA0DC00005E16 /* PlayCardView.xib in Resources */,
+				C9ADD6981B1DAF3800977B41 /* blackArrow@2x.png in Resources */,
 				C92FBFD41B0C7E150031AED9 /* image-1@2x.png in Resources */,
 				C9D3E0D91AE4FD2000F01E32 /* ForgetPwdViewController.xib in Resources */,
+				C9ADD69B1B1DAF3800977B41 /* whiteArrow.png in Resources */,
 				C9ADD61C1B0DA97B00977B41 /* share_2.png in Resources */,
 				C9ADD66C1B1321C700977B41 /* 7.png in Resources */,
 				C9B537F11ABF9BBD00005E16 /* NearbyView.xib in Resources */,
@@ -933,20 +986,25 @@
 				C913D9A71AB6674B0090DE41 /* LocationView.xib in Resources */,
 				C9AA7E341AC7E80D00190F54 /* AreaPlay.xib in Resources */,
 				C9ADD6341B0DB76300977B41 /* FlowgroundBase.xib in Resources */,
+				C9ADD6991B1DAF3800977B41 /* blueArrow.png in Resources */,
 				C913D9C11AB669940090DE41 /* 上.png in Resources */,
 				C9AA7E381AC83BF200190F54 /* playCard.plist in Resources */,
 				C9D3E0DE1AE5045E00F01E32 /* ResetPwdViewController.xib in Resources */,
 				C9D3E0D41AE4EECF00F01E32 /* RegViewController.xib in Resources */,
 				C913D9DB1AB7B7E30090DE41 /* LocationCell.xib in Resources */,
+				C9ADD6971B1DAF3800977B41 /* blackArrow.png in Resources */,
 				C9ADD67F1B15BD5100977B41 /* data.plist in Resources */,
 				C9ADD6111B0DA97B00977B41 /* flowzone@2x.png in Resources */,
+				C9ADD69F1B1DDB3700977B41 /* Localizable.strings in Resources */,
 				C913D9CA1AB669940090DE41 /* 右.png in Resources */,
 				C9AA7E171AC7B8C300190F54 /* areaPlay.plist in Resources */,
 				C913D9D01AB669940090DE41 /* 柜子.png in Resources */,
+				C9ADD69A1B1DAF3800977B41 /* blueArrow@2x.png in Resources */,
 				C92FBF951B0A0CF10031AED9 /* mapapi.bundle in Resources */,
 				C9ADD67A1B13223A00977B41 /* 005.png in Resources */,
 				C9ADD61D1B0DA97B00977B41 /* share_2@2x.png in Resources */,
 				C9B537FF1ABFA30600005E16 /* PersonInfoView.xib in Resources */,
+				C9ADD6961B1DAF3800977B41 /* grayArrow@2x.png in Resources */,
 				C913D97B1AB662020090DE41 /* Images.xcassets in Resources */,
 				C913D9CE1AB669940090DE41 /* 搜索.png in Resources */,
 				C913D9C21AB669940090DE41 /* 上右.png in Resources */,
@@ -955,6 +1013,7 @@
 				C9ADD6131B0DA97B00977B41 /* location@2x.png in Resources */,
 				C9B537EC1ABF99B500005E16 /* NearbyBase.xib in Resources */,
 				C92FBFD31B0C7E150031AED9 /* image-1.png in Resources */,
+				C9ADD69C1B1DAF3800977B41 /* whiteArrow@2x.png in Resources */,
 				C92FBF9B1B0A167D0031AED9 /* MapViewBaseViewController.xib in Resources */,
 				C913D9CD1AB669940090DE41 /* 推荐.png in Resources */,
 				C913D9A91AB667770090DE41 /* LocationBase.xib in Resources */,
@@ -988,6 +1047,7 @@
 				C9B538021ABFA86100005E16 /* Nearby.m in Sources */,
 				C9B537EF1ABF9B8000005E16 /* NearbyViewController.m in Sources */,
 				C92FBF9A1B0A167D0031AED9 /* MapViewBaseViewController.mm in Sources */,
+				C9ADD6851B1DA4CE00977B41 /* EGORefreshTableHeaderView.m in Sources */,
 				C913D9731AB662020090DE41 /* AppDelegate.m in Sources */,
 				C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */,
 				C9B5380A1ABFB25800005E16 /* NearbyDetail.m in Sources */,
@@ -1060,6 +1120,16 @@
 				C9AA7E481ACA341F00190F54 /* zh-Hans */,
 			);
 			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		C9ADD6A11B1DDB3700977B41 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9ADD6A01B1DDB3700977B41 /* zh-Hans */,
+				C9ADD6A21B1DDB3D00977B41 /* en */,
+				C9ADD6A31B1DDE8900977B41 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

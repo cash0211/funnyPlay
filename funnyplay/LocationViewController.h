@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface LocationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface LocationViewController : ViewController<UITableViewDataSource, UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *locationTable;

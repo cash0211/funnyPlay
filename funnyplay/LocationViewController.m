@@ -23,6 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (_refreshHeaderView == nil) {
+        
+        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, -self.locationTable.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+        view.delegate = self;
+        [self.locationTable addSubview:view];
+        _refreshHeaderView = view;
+    }
+    
+    //  update the last update date
+    [_refreshHeaderView refreshLastUpdatedDate];
+
 
 //    self.view.backgroundColor = [UIColor grayColor];
     
@@ -34,7 +46,7 @@
         
         [_allItems addObject:loc];
     }
-    
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +103,25 @@
     }
     */
     
+    
+}
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+    
+    //  should be calling your tableviews data source model to reload
+    //  put here just for demo
+    _reloading = YES;
+    
+}
+
+- (void)doneLoadingTableViewData{
+    
+    //  model should call this when its done loading
+    _reloading = NO;
+    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.locationTable];
     
 }
 

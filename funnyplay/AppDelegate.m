@@ -24,14 +24,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //添加百度地图
-    
     _mapManager = [[BMKMapManager alloc] init];
     
     BOOL ret = [_mapManager start:@"jk4KaC75i3hBre6ila3K7YaM" generalDelegate:nil]; //如果要关注网络及授权验证事件，设定gDelegate
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-
+    
+    //设置 状态栏_网络指示器
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     //本地
     self.locBase = [[LocationBaseViewController alloc] initWithNibName:@"LocationBase" bundle:nil];
@@ -68,7 +69,7 @@
     [self.window makeKeyAndVisible];
     
     [SMS_SDK registerApp:@"6744f573b3c1" withSecret:@"7bee88e4f7e0e982078aaef10264e6ed"];
-    
+
     return YES;
 }
 

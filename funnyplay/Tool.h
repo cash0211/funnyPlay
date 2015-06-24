@@ -12,6 +12,8 @@
 @class Location;
 @class Nearby;
 
+@class MBProgressHUD;
+
 @interface Tool : NSObject
 
 
@@ -24,5 +26,8 @@
 + (void)pushRegUser:(id)sender andNavController:(UINavigationController *)navController;
 + (void)pushforgetPwd:(id)sender andNavController:(UINavigationController *)navController;
 + (void)pushResetPwd:(id)sender andNavController:(UINavigationController *)navController;
+
+
++ (MBProgressHUD *)createHUD:(NSString *)text;
 
 @end

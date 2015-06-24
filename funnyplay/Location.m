@@ -28,4 +28,52 @@
     return [[self alloc] initWithDict:dict];
 }
 
++ (NSURLSessionDataTask *)globalTimelineLocationsWithBlock:(void (^)(NSArray *, NSError *))block {
+    
+    return nil;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

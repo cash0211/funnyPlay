@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5669098E540C70F68816A82 /* libPods-funnyplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0546D8D6C0BA0D4F384820DE /* libPods-funnyplay.a */; };
 		C913D9701AB662020090DE41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C913D96F1AB662020090DE41 /* main.m */; };
 		C913D9731AB662020090DE41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C913D9721AB662020090DE41 /* AppDelegate.m */; };
 		C913D9761AB662020090DE41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C913D9751AB662020090DE41 /* ViewController.m */; };
@@ -182,6 +183,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0546D8D6C0BA0D4F384820DE /* libPods-funnyplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-funnyplay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A3E1A5007CA8471283502F /* Pods-funnyplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyplay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-funnyplay/Pods-funnyplay.debug.xcconfig"; sourceTree = "<group>"; };
 		C913D96A1AB662020090DE41 /* funnyplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funnyplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C913D96E1AB662020090DE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C913D96F1AB662020090DE41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -390,6 +393,7 @@
 		C9D3E0DA1AE5045E00F01E32 /* ResetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPwdViewController.h; sourceTree = "<group>"; };
 		C9D3E0DB1AE5045E00F01E32 /* ResetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPwdViewController.m; sourceTree = "<group>"; };
 		C9D3E0DC1AE5045E00F01E32 /* ResetPwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPwdViewController.xib; sourceTree = "<group>"; };
+		CAA6D55DB8205B52C8E8D380 /* Pods-funnyplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyplay.release.xcconfig"; path = "Pods/Target Support Files/Pods-funnyplay/Pods-funnyplay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +414,7 @@
 				C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */,
 				C9B538231AC0F77700005E16 /* QuartzCore.framework in Frameworks */,
 				C9AA7E4A1ACA341F00190F54 /* SMS_SDK.framework in Frameworks */,
+				C5669098E540C70F68816A82 /* libPods-funnyplay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +428,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64DEE1D6DD9ACDBAC8E068B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47A3E1A5007CA8471283502F /* Pods-funnyplay.debug.xcconfig */,
+				CAA6D55DB8205B52C8E8D380 /* Pods-funnyplay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		833509999555F751769DB835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0546D8D6C0BA0D4F384820DE /* libPods-funnyplay.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C913D9611AB662020090DE41 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +453,8 @@
 				C913D96B1AB662020090DE41 /* Products */,
 				C9B538241AC0F7A500005E16 /* framework */,
 				C92FBF961B0A0D080031AED9 /* BaiduMap-framework */,
+				64DEE1D6DD9ACDBAC8E068B3 /* Pods */,
+				833509999555F751769DB835 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -836,9 +860,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C913D98D1AB662020090DE41 /* Build configuration list for PBXNativeTarget "funnyplay" */;
 			buildPhases = (
+				B372982AE73746E38B79D731 /* Check Pods Manifest.lock */,
 				C913D9661AB662020090DE41 /* Sources */,
 				C913D9671AB662020090DE41 /* Frameworks */,
 				C913D9681AB662020090DE41 /* Resources */,
+				DC5B9B2AD53ED59A6AC9C24B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1030,6 +1056,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B372982AE73746E38B79D731 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC5B9B2AD53ED59A6AC9C24B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-funnyplay/Pods-funnyplay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C913D9661AB662020090DE41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1213,6 +1272,7 @@
 		};
 		C913D98E1AB662020090DE41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47A3E1A5007CA8471283502F /* Pods-funnyplay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1222,13 +1282,13 @@
 				);
 				INFOPLIST_FILE = funnyplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		C913D98F1AB662020090DE41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAA6D55DB8205B52C8E8D380 /* Pods-funnyplay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1238,7 +1298,6 @@
 				);
 				INFOPLIST_FILE = funnyplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

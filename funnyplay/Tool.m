@@ -15,6 +15,8 @@
 #import "ForgetPwdViewController.h"
 #import "ResetPwdViewController.h"
 
+#import <MBProgressHUD.h>
+
 @implementation Tool
 
 + (void)noticeLogin:(UIView *)view andDelegate:(id)delegate andTitle:(NSString *)title {
@@ -85,6 +87,22 @@
     ResetPwdViewController *resetCon = [[ResetPwdViewController alloc] init];
     
     [navController pushViewController:resetCon animated:YES];
+}
+
+
+//HUD
++ (MBProgressHUD *)createHUD:(NSString *)text 
+{
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
+    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
+    HUD.detailsLabelText = text;
+    [window addSubview:HUD];
+    [HUD show:YES];
+    
+    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
+    
+    return HUD;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SMS_SDK/SMS_SDK.h>
 #import <BaiduMapAPI/BMKMapManager.h>
+#import <AFNetworkActivityIndicatorManager.h>
 
 @class LocationBaseViewController;
 @class RecommendBaseViewController;

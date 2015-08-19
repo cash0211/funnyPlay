@@ -57,7 +57,6 @@
 		C92FBFD81B0C7E150031AED9 /* image-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92FBFD01B0C7E150031AED9 /* image-3@2x.png */; };
 		C92FBFD91B0C7E150031AED9 /* image-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C92FBFD11B0C7E150031AED9 /* image-4.png */; };
 		C92FBFDA1B0C7E150031AED9 /* image-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92FBFD21B0C7E150031AED9 /* image-4@2x.png */; };
-		C97195AF1ADCFA8100C3E410 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C97195AE1ADCFA8100C3E410 /* appicon.png */; };
 		C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97195B21ADD116100C3E410 /* LoginViewController.m */; };
 		C97195B51ADD116100C3E410 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97195B31ADD116100C3E410 /* LoginViewController.xib */; };
 		C97195C11AE3FB4600C3E410 /* smssdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C97195C01AE3FB4600C3E410 /* smssdk.bundle */; };
@@ -137,6 +136,8 @@
 		C9ADD69B1B1DAF3800977B41 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6931B1DAF3800977B41 /* whiteArrow.png */; };
 		C9ADD69C1B1DAF3800977B41 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6941B1DAF3800977B41 /* whiteArrow@2x.png */; };
 		C9ADD69F1B1DDB3700977B41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6A11B1DDB3700977B41 /* Localizable.strings */; };
+		C9B01BB11B84B685007EE473 /* AFFPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B01BB01B84B685007EE473 /* AFFPClient.m */; };
+		C9B01BB31B84B76C007EE473 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B01BB21B84B76C007EE473 /* appicon.png */; };
 		C9B537DE1ABBFFC600005E16 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537DD1ABBFFC600005E16 /* Tool.m */; };
 		C9B537E21ABDB36400005E16 /* NearbyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E11ABDB36400005E16 /* NearbyBaseViewController.m */; };
 		C9B537E61ABF96E200005E16 /* PlayCardBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E51ABF96E200005E16 /* PlayCardBaseViewController.m */; };
@@ -246,7 +247,6 @@
 		C92FBFD01B0C7E150031AED9 /* image-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-3@2x.png"; sourceTree = "<group>"; };
 		C92FBFD11B0C7E150031AED9 /* image-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-4.png"; sourceTree = "<group>"; };
 		C92FBFD21B0C7E150031AED9 /* image-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-4@2x.png"; sourceTree = "<group>"; };
-		C97195AE1ADCFA8100C3E410 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		C97195B11ADD116100C3E410 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C97195B21ADD116100C3E410 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C97195B31ADD116100C3E410 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -343,6 +343,9 @@
 		C9ADD6A01B1DDB3700977B41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C9ADD6A21B1DDB3D00977B41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C9ADD6A31B1DDE8900977B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C9B01BAF1B84B685007EE473 /* AFFPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFPClient.h; sourceTree = "<group>"; };
+		C9B01BB01B84B685007EE473 /* AFFPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFPClient.m; sourceTree = "<group>"; };
+		C9B01BB21B84B76C007EE473 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		C9B537DC1ABBFFC600005E16 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		C9B537DD1ABBFFC600005E16 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		C9B537E01ABDB36400005E16 /* NearbyBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBaseViewController.h; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				C913D9AA1AB669940090DE41 /* Image */,
 				C913D9711AB662020090DE41 /* AppDelegate.h */,
 				C913D9721AB662020090DE41 /* AppDelegate.m */,
+				C9B01BAF1B84B685007EE473 /* AFFPClient.h */,
+				C9B01BB01B84B685007EE473 /* AFFPClient.m */,
 				C913D9741AB662020090DE41 /* ViewController.h */,
 				C913D9751AB662020090DE41 /* ViewController.m */,
 				C913D9771AB662020090DE41 /* Main.storyboard */,
@@ -576,7 +581,7 @@
 		C913D9AB1AB669940090DE41 /* easyicon_net_20141016090244201 */ = {
 			isa = PBXGroup;
 			children = (
-				C97195AE1ADCFA8100C3E410 /* appicon.png */,
+				C9B01BB21B84B76C007EE473 /* appicon.png */,
 				C9B5381F1AC04D7700005E16 /* usericon.png */,
 				C913D9AD1AB669940090DE41 /* 上.png */,
 				C913D9AE1AB669940090DE41 /* 上右.png */,
@@ -992,6 +997,7 @@
 				C9B537F81ABFA0DC00005E16 /* PlayCardView.xib in Resources */,
 				C9ADD6981B1DAF3800977B41 /* blackArrow@2x.png in Resources */,
 				C92FBFD41B0C7E150031AED9 /* image-1@2x.png in Resources */,
+				C9B01BB31B84B76C007EE473 /* appicon.png in Resources */,
 				C9D3E0D91AE4FD2000F01E32 /* ForgetPwdViewController.xib in Resources */,
 				C9ADD69B1B1DAF3800977B41 /* whiteArrow.png in Resources */,
 				C9ADD61C1B0DA97B00977B41 /* share_2.png in Resources */,
@@ -1001,7 +1007,6 @@
 				C9ADD6271B0DB4C400977B41 /* playcard2.png in Resources */,
 				C9B538201AC04D7700005E16 /* usericon.png in Resources */,
 				C9ADD6401B0F0F3100977B41 /* RecommendBase.xib in Resources */,
-				C97195AF1ADCFA8100C3E410 /* appicon.png in Resources */,
 				C9B5381B1AC00D9500005E16 /* MyOperationCell.xib in Resources */,
 				C9ADD6511B0F15C000977B41 /* Reco2@2x.png in Resources */,
 				C9B537F31ABF9F2900005E16 /* PlayCardBase.xib in Resources */,
@@ -1106,6 +1111,7 @@
 				C9B538021ABFA86100005E16 /* Nearby.m in Sources */,
 				C9B537EF1ABF9B8000005E16 /* NearbyViewController.m in Sources */,
 				C92FBF9A1B0A167D0031AED9 /* MapViewBaseViewController.mm in Sources */,
+				C9B01BB11B84B685007EE473 /* AFFPClient.m in Sources */,
 				C9ADD6851B1DA4CE00977B41 /* EGORefreshTableHeaderView.m in Sources */,
 				C913D9731AB662020090DE41 /* AppDelegate.m in Sources */,
 				C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */,

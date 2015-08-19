@@ -9,6 +9,9 @@
 #import "LocationCell.h"
 #import "Location.h"
 
+
+#import <UIImageView+AFNetworking.h>
+
 @implementation LocationCell
 
 
@@ -22,6 +25,9 @@
     _location = location;
     
     self.imageView.image = [UIImage imageNamed:location.imageName];
+    //异步下载loc图片
+//    [self.imageView setImageWithURL:location.avatarImageURL placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
+    
     self.itemName.text = location.itemName;
     self.itemDesc.text = location.desc;
     self.itemLoc.text = location.loc;

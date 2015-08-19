@@ -7,6 +7,7 @@
 //
 
 #import "Location.h"
+#import "AFFPClient.h"
 
 @implementation Location
 
@@ -28,9 +29,25 @@
     return [[self alloc] initWithDict:dict];
 }
 
-+ (NSURLSessionDataTask *)globalTimelineLocationsWithBlock:(void (^)(NSArray *, NSError *))block {
++ (NSURLSessionDataTask *)globalTimelineLocationsWithBlock:(void (^)(NSArray *locations, NSError *error))block {
     
-    return nil;
+    return [[AFFPClient sharedClient] GET:@"stream/0/posts/stream/global" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        
+        NSArray *locationsFromResponse = [JSON valueForKeyPath:@"data"];
+        NSMutableArray *mutablelocations = [NSMutableArray arrayWithCapacity:[locationsFromResponse count]];
+        for (NSDictionary *attributes in locationsFromResponse) {
+            Location *loc = [[Location alloc] initWithDict:attributes];
+            [mutablelocations addObject:loc];
+        }
+        
+        if (block) {
+            block([NSArray arrayWithArray:mutablelocations], nil);
+        }
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) {
+            block([NSArray array], error);
+        }
+    }];
 }
 
 @end

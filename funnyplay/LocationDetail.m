@@ -8,6 +8,8 @@
 
 #import "LocationDetail.h"
 #import "Tool.h"
+#import "AFFPClient.h"
+
 #import <MBProgressHUD.h>
 
 @interface LocationDetail ()
@@ -36,6 +38,12 @@
 - (void)getLocationDetail {
     
     [_HUD hide:YES afterDelay:1];
+    
+    [[AFFPClient sharedClient] GET:@"" parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+    }failure:^(NSURLSessionDataTask *task, NSError *error) {
+    
+    }];
 }
 
 #pragma mark tableView DataSource

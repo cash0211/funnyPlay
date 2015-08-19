@@ -11,6 +11,9 @@
 #import "Location.h"
 #import "LocationDetail.h"
 #import "Tool.h"
+#import "Location.h"
+
+#import "AFFPClient.h"
 
 @interface LocationViewController () {
     
@@ -20,6 +23,22 @@
 @end
 
 @implementation LocationViewController
+
+
+//网络请求方法
+- (void)reload:(__unused id)sender {
+    
+    //初始化，返回装满locations
+    NSURLSessionTask *task = [Location globalTimelineLocationsWithBlock:^(NSArray *locations, NSError *error) {
+        if (!error) {
+            _allItems = [NSMutableArray arrayWithArray:locations];
+            [self.locationTable reloadData];
+        }
+    }];
+    
+//    [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];  //错误出现，显示alertView
+//    [self.refreshControl setRefreshingWithStateOfTask:task];    //不懂
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +65,19 @@
         
         [_allItems addObject:loc];
     }
+    
+    [self getLocationItems];
  
+}
+
+- (void)getLocationItems {
+    
+    [[AFFPClient sharedClient] GET:@"test" parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject)
+    {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

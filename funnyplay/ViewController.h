@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
 
-@interface ViewController : UIViewController <EGORefreshTableHeaderDelegate> {
+@interface ViewController : UITableViewController <EGORefreshTableHeaderDelegate> {
     
     EGORefreshTableHeaderView *_refreshHeaderView;
     

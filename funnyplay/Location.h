@@ -19,6 +19,4 @@
 - (id)initWithDict:(NSDictionary *)dict;
 + (id)locationWithDict:(NSDictionary *)dict;
 
-+ (NSURLSessionDataTask *)globalTimelineLocationsWithBlock:(void (^)(NSArray *locations, NSError *error))block;
-
 @end

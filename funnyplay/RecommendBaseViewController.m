@@ -26,11 +26,8 @@
 }
 
 - (void)myInit {
-    //初始化主视图
-    self.tabBarItem.title = @"推荐";
-    self.tabBarItem.image = [UIImage imageNamed:@"reco2"];
     
-    self.navigationItem.title = @"推荐";
+    self.title = @"推荐";
     
     //表格子视图
     self.recommendViewCon = [[RecommendViewController alloc] init];

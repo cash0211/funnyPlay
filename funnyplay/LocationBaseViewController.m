@@ -28,11 +28,8 @@
 }
 
 - (void)myInit {
-    //初始化主视图
-    self.tabBarItem.title = @"南京";
-    self.tabBarItem.image = [UIImage imageNamed:@"location"];
     
-    self.navigationItem.title = @"南京";
+    self.title = @"南京";
     
     //表格子视图
     self.locationViewCon = [[LocationViewController alloc] init];
@@ -71,13 +68,6 @@
     //"区域玩" --- 直接 BarButtonItem
     UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithTitle:@"区域玩" style:UIBarButtonItemStyleDone target:self action:@selector(clickAreaPlay:)];
     self.navigationItem.rightBarButtonItem = btnAreaPlay;
-    
-    //适配iOS7uinavigationbar遮挡tableView的问题
-    if([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0)
-    {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
 }
 
 - (void)viewDidLoad {

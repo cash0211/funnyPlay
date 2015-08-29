@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
+#import "FPRootViewController.h"
 
-@interface LocationViewController : ViewController<UITableViewDataSource, UITableViewDelegate>
-
+@interface LocationViewController : FPRootViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *locationTable;
 

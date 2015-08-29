@@ -26,11 +26,8 @@
 }
 
 - (void)myInit {
-    //初始化主视图
-    self.tabBarItem.title = @"流动墙";
-    self.tabBarItem.image = [UIImage imageNamed:@"flowzone"];
     
-    self.navigationItem.title = @"流动墙";
+    self.title = @"流动墙";
     
     //表格子视图
     self.flowgroundViewCon = [[FlowgroundViewController alloc] init];

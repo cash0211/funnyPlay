@@ -28,11 +28,7 @@
 
 - (void)myInit {
     
-    //初始化主视图
-    self.tabBarItem.title = @"玩略";
-    self.tabBarItem.image = [UIImage imageNamed:@"playcard"];
-    
-    self.navigationItem.title = @"玩略";
+    self.title = @"玩略";
     
     //表格子视图
     self.playCardViewCon = [[PlayCardViewController alloc] init];

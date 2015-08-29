@@ -13,71 +13,46 @@
 #import "Tool.h"
 #import "Location.h"
 
-#import "AFFPClient.h"
 
 @interface LocationViewController () {
     
-    NSMutableArray *_allItems;
 }
 
 @end
 
 @implementation LocationViewController
 
-
-//网络请求方法
-- (void)reload:(__unused id)sender {
+- (id)init {
     
-    //初始化，返回装满locations
-    NSURLSessionTask *task = [Location globalTimelineLocationsWithBlock:^(NSArray *locations, NSError *error) {
-        if (!error) {
-            _allItems = [NSMutableArray arrayWithArray:locations];
-            [self.locationTable reloadData];
-        }
-    }];
+    if (self = [super init]) {
+        __weak LocationViewController *weakSelf = self;
+        self.generateURL = ^NSString * (NSUInteger page) {
+                
+            NSString *str1 = [NSString stringWithFormat:@"%@%@?pageIndex=%lu&%@", FPAPI_PREFIX, FPAPI_LOCATION_LIST, (unsigned long)page, FPAPI_SUFFIX];
+            
+            NSLog(@"%@", str1);
+            
+            return str1;
+        };
+        
+//        self.objClass = [OSCNews class];
+    }
     
-//    [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];  //错误出现，显示alertView
-//    [self.refreshControl setRefreshingWithStateOfTask:task];    //不懂
+    return self;
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    if (_refreshHeaderView == nil) {
-        
-        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, -self.locationTable.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
-        view.delegate = self;
-        [self.locationTable addSubview:view];
-        _refreshHeaderView = view;
-    }
-    
-    //  update the last update date
-    [_refreshHeaderView refreshLastUpdatedDate];
-
-
-//    self.view.backgroundColor = [UIColor grayColor];
-    
-    _allItems = [[NSMutableArray alloc] init];
     NSArray *arrayData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"location.plist" ofType:nil]];
     
     for (NSDictionary* dict in arrayData) {
         Location *loc = [Location locationWithDict:dict];
         
-        [_allItems addObject:loc];
+        [self.objects addObject:loc];
     }
     
-    [self getLocationItems];
- 
-}
-
-- (void)getLocationItems {
-    
-    [[AFFPClient sharedClient] GET:@"test" parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject)
-    {
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,21 +62,6 @@
 
 #pragma mark - tableView DataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return [_allItems count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 120;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         
         LocationCell *cell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:[LocationCell cellId]];
@@ -109,7 +69,7 @@
             cell = [LocationCell locationCell];
         }
         
-        cell.location = _allItems[indexPath.row];
+        cell.location = self.objects[indexPath.row];
         
         return cell;
 }
@@ -118,7 +78,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Location *loc = _allItems[indexPath.row];
+    Location *loc = self.objects[indexPath.row];
     if (loc) {
         //self.parentViewController.title = loc.itemName;
 //        self.parentViewController.tabBarItem.title = @"评论";
@@ -136,40 +96,6 @@
     
     
 }
-
-#pragma mark -
-#pragma mark Data Source Loading / Reloading Methods
-
-- (void)reloadTableViewDataSource{
-    
-    //  should be calling your tableviews data source model to reload
-    //  put here just for demo
-    _reloading = YES;
-    
-}
-
-- (void)doneLoadingTableViewData{
-    
-    //  model should call this when its done loading
-    _reloading = NO;
-    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.locationTable];
-    
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-
-
 
 
 

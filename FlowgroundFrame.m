@@ -23,7 +23,8 @@
     //名字
     CGFloat nameX = CGRectGetMaxX(_iconViewF) + kCellBorder;
     CGFloat nameY = iconY;
-    CGSize nameSize = [_flowground.name sizeWithFont:kNameFont];
+//    CGSize nameSize = [_flowground.name sizeWithFont:kNameFont];
+    CGSize nameSize = [_flowground.name sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:15]}];
     _nameLabelF = CGRectMake(nameX, nameY, nameSize.width, nameSize.height);
     
     //vip
@@ -34,7 +35,8 @@
     //时间
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(_nameLabelF) + kCellBorder;
-    CGSize timeSize = [_flowground.time sizeWithFont:kTimeFont];
+//    CGSize timeSize = [_flowground.time sizeWithFont:kTimeFont];
+    CGSize timeSize = [_flowground.time sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:15]}];
     _timeLabelF = CGRectMake(timeX, timeY, timeSize.width, timeSize.height);
     
     
@@ -42,10 +44,9 @@
     CGFloat contentX = kCellBorder;
     CGFloat max = MAX(CGRectGetMaxY(_iconViewF), CGRectGetMaxY(_timeLabelF)) + kCellBorder;
     CGFloat contentY = max;
-    
     CGSize contentSize = [_flowground.content sizeWithFont:kContentFont constrainedToSize:CGSizeMake(320 - 2 * kCellBorder, MAXFLOAT)];
+//    CGRect contentRect = [_flowground.content boundingRectWithSize:CGSizeMake(320 - 2 * kCellBorder, MAXFLOAT) options:NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:15]} context:nil];
     _contentLabelF = CGRectMake(contentX, contentY, contentSize.width, contentSize.height);
-    
     //图片
     if (_flowground.image) {
         CGFloat imageX = kCellBorder;
@@ -62,7 +63,8 @@
     CGFloat sourceX = kCellBorder;
     CGFloat sourceY = _height;
     NSString *sourceString = [NSString stringWithFormat:@"来自%@", _flowground.source];
-    CGSize sourceSize = [sourceString sizeWithFont:kSourceFont];
+//    CGSize sourceSize = [sourceString sizeWithFont:kSourceFont];
+    CGSize sourceSize = [sourceString sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:15]}];
     _sourceLabelF = CGRectMake(sourceX, sourceY, sourceSize.width, sourceSize.height);
     
     //分享

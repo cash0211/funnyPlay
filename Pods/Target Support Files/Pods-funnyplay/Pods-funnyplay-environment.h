@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
+// FDFullscreenPopGesture
+#define COCOAPODS_POD_AVAILABLE_FDFullscreenPopGesture
+#define COCOAPODS_VERSION_MAJOR_FDFullscreenPopGesture 1
+#define COCOAPODS_VERSION_MINOR_FDFullscreenPopGesture 1
+#define COCOAPODS_VERSION_PATCH_FDFullscreenPopGesture 0
+
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0

@@ -45,6 +45,8 @@
         
         // 2.名字
         _nameLabel = [[UILabel alloc] init];
+        _nameLabel.numberOfLines = 0;
+        _nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _nameLabel.font = kNameFont;
         [self.contentView addSubview:_nameLabel];
         
@@ -55,14 +57,17 @@
         
         // 3.时间
         _timeLabel = [[UILabel alloc] init];
+        _timeLabel.numberOfLines = 0;
+        _timeLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _timeLabel.font = kTimeFont;
         [self.contentView addSubview:_timeLabel];
         
         
         // 4.内容
         _contentLabel = [[UILabel alloc] init];
-        _contentLabel.font = kContentFont;
+        _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _contentLabel.numberOfLines = 0;
+        _contentLabel.font = kContentFont;
         [self.contentView addSubview:_contentLabel];
         
         // 5.图片
@@ -71,6 +76,8 @@
         
         // 6.来源
         _sourceLabel = [[UILabel alloc] init];
+        _sourceLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _sourceLabel.numberOfLines = 0;
         _sourceLabel.font = kSourceFont;
         [self.contentView addSubview:_sourceLabel];
 

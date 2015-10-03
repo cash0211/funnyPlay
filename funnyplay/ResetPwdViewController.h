@@ -14,6 +14,4 @@
 @property (nonatomic, strong) UITextField *pwdTextField2;
 @property (nonatomic, strong) UIButton *submitBtn;
 
-- (IBAction)backgrondTouch:(id)sender;
-
 @end

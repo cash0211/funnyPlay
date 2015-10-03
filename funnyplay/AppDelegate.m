@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "UIColor+Util.h"
+#import "Tool.h"
 #import "FPTabBarController.h"
 
 #import <SMS_SDK/SMS_SDK.h>

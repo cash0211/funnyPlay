@@ -10,7 +10,6 @@
 
 #import "LocationBaseViewController.h"
 #import "RecommendBaseViewController.h"
-//#import "NearbyBaseViewController.h"
 #import "PlayCardBaseViewController.h"
 #import "PersonInfoBaseViewController.h"
 #import "FlowgroundBaseViewController.h"

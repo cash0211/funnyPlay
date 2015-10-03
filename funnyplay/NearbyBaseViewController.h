@@ -13,6 +13,5 @@
 @interface NearbyBaseViewController : UIViewController
 
 @property (nonatomic, strong) NearbyViewController *nearbyViewCon;
-@property (nonatomic, retain) NSMutableArray *nearbyItems;
 
 @end

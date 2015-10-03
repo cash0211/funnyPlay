@@ -10,9 +10,6 @@
 
 @interface LoginViewController : UIViewController
 
-
-- (IBAction)backgrondTouch:(id)sender;
-
 @property (nonatomic, strong) UITextField *phoneNumTextField;
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) UIButton *loginBtn;

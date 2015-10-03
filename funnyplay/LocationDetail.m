@@ -39,11 +39,13 @@
     
     [_HUD hide:YES afterDelay:1];
     
+    /*
     [[AFFPClient sharedClient] GET:@"" parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject) {
         
     }failure:^(NSURLSessionDataTask *task, NSError *error) {
     
     }];
+     */
 }
 
 #pragma mark tableView DataSource

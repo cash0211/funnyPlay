@@ -25,7 +25,7 @@
 - (id)init {
     
     if (self = [super init]) {
-        __weak LocationViewController *weakSelf = self;
+//        __weak LocationViewController *weakSelf = self;
         self.generateURL = ^NSString * (NSUInteger page) {
                 
             NSString *str1 = [NSString stringWithFormat:@"%@%@?pageIndex=%lu&%@", FPAPI_PREFIX, FPAPI_LOCATION_LIST, (unsigned long)page, FPAPI_SUFFIX];

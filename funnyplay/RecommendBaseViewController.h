@@ -13,6 +13,5 @@
 @interface RecommendBaseViewController : UIViewController
 
 @property (nonatomic, strong) RecommendViewController *recommendViewCon;
-@property (nonatomic, retain) NSMutableArray *recommendItems;
 
 @end

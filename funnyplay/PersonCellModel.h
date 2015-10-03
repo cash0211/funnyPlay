@@ -15,8 +15,8 @@
 @property (nonatomic, assign) BOOL isVip;
 @property (nonatomic, copy) NSString *descString;
 
-- (id)defaultInit;
-- (id)initWithDict:(NSDictionary *)dict;
-+ (id)personCellWithDict:(NSDictionary *)dict;
+- (instancetype)defaultInit;
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)personCellWithDict:(NSDictionary *)dict;
 
 @end

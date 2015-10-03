@@ -11,7 +11,7 @@
 
 @implementation AreaPlay
 
-- (id)initWithDict:(NSDictionary *)dict {
+- (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
         _area = dict[@"area"];
@@ -30,7 +30,7 @@
     return self;
 }
 
-+ (id)areaPlayWithDict:(NSDictionary *)dict {
++ (instancetype)areaPlayWithDict:(NSDictionary *)dict {
     
    return [[self alloc] initWithDict:dict];
 }

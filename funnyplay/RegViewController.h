@@ -16,7 +16,5 @@
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) UIButton *regBtn;
 
-
-- (IBAction)backgrondTouch:(id)sender;
-
 @end
+

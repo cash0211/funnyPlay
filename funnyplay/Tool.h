@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MBProgressHUD.h>
+
+#import "UIColor+Util.h"
+#import "UIView+Util.h"
+#import "NSTextAttachment+Util.h"
+#import "UIImageView+Util.h"
+
+static NSString * const kKeyYears = @"years";
+static NSString * const kKeyMonths = @"months";
+static NSString * const kKeyDays = @"days";
+static NSString * const kKeyHours = @"hours";
+static NSString * const kKeyMinutes = @"minutes";
 
 @class Location;
 @class Nearby;
@@ -28,6 +40,37 @@
 + (void)pushResetPwd:(id)sender andNavController:(UINavigationController *)navController;
 
 
++ (BOOL)isURL:(NSString *)string;
+
+
 + (MBProgressHUD *)createHUD:(NSString *)text;
 
++ (NSString *)intervalSinceNow:(NSString *)dateStr;
++ (NSString *)pubTime:(NSString *)dateStr;
++ (NSDictionary *)timeIntervalArrayFromString:(NSString *)dateStr;
+
++ (NSDictionary *)emojiDict;
++ (NSAttributedString *)emojiStringFromRawString:(NSString *)rawString;
+
++ (NSAttributedString *)getAppclient:(int)clientType;
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

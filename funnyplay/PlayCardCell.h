@@ -16,10 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UITextView *itemDesc;
 
-
 @property (nonatomic, strong) PlayCard *playCard;
 
-+ (id)playCardCell;
++ (instancetype)playCardCell;
 + (NSString *)cellId;
 
 @end

@@ -12,11 +12,11 @@
 
 @interface MyOperationCell : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UILabel *itemLabel;
-@property (nonatomic, strong) MyOperationModel *myOperationModel;
 
-+(id)myOperationCell;
-+(NSString *)cellId;
+@property (strong, nonatomic) MyOperationModel *myOperationModel;
+
++ (instancetype)myOperationCell;
++ (NSString *)cellId;
 
 @end

@@ -10,7 +10,6 @@
 
 @interface PersonInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UITableView *personInfoTable;
 
 @property (nonatomic, retain) NSArray *settings;

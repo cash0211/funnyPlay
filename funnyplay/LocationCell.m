@@ -9,13 +9,11 @@
 #import "LocationCell.h"
 #import "Location.h"
 
-
 #import <UIImageView+AFNetworking.h>
 
 @implementation LocationCell
 
-
-+ (id)locationCell {
++ (instancetype)locationCell {
     
     return [[NSBundle mainBundle] loadNibNamed:@"LocationCell" owner:nil options:nil][0];
 }

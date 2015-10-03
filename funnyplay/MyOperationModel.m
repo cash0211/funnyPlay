@@ -10,8 +10,7 @@
 
 @implementation MyOperationModel
 
-
-- (id)initWithString:(NSString *)btnName {
+- (instancetype)initWithString:(NSString *)btnName {
     
     if (self = [super init]) {
         

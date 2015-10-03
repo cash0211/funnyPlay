@@ -11,7 +11,7 @@
 
 @implementation Location
 
-- (id)initWithDict:(NSDictionary *)dict {
+- (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
         _imageName = dict[@"imageName"];
@@ -24,7 +24,7 @@
     return self;
 }
 
-+ (id)locationWithDict:(NSDictionary *)dict {
++ (instancetype)locationWithDict:(NSDictionary *)dict {
     
     return [[self alloc] initWithDict:dict];
 }

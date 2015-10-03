@@ -11,11 +11,11 @@
 @interface PlayCardData : NSObject
 
 @property (nonatomic, copy) NSString *header;
-@property (nonatomic, strong) NSArray *contents;
+@property (nonatomic, copy) NSArray *contents;
 
 @property (nonatomic, strong) NSMutableArray *playCards;
 
-- (id)initWithDict:(NSDictionary *)dict;
-+ (id)playCardDataWithDict:(NSDictionary *)dict;
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)playCardDataWithDict:(NSDictionary *)dict;
 
 @end

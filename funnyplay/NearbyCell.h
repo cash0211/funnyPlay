@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemLoc;
 @property (weak, nonatomic) IBOutlet UILabel *itemDistance;
 
-@property (nonatomic, strong) Nearby *nearby;
+@property (strong, nonatomic) Nearby *nearby;
 
-+ (id)nearbyCell;
++ (instancetype)nearbyCell;
 + (NSString *)cellId;
 
 @end

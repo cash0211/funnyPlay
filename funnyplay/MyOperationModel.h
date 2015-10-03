@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy) NSString *btnName;
 
-- (id)initWithString:(NSString *)btnName;
+- (instancetype)initWithString:(NSString *)btnName;
 
 @end

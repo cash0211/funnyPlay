@@ -14,9 +14,9 @@
 @property (nonatomic, copy) NSString *itemName;
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) NSString *loc;
-@property (nonatomic, assign) float distance;
+@property (nonatomic, assign) CGFloat distance;
 
-- (id)initWithDict:(NSDictionary *)dict;
-+ (id)nearbyWithDict:(NSDictionary *)dict;
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)nearbyWithDict:(NSDictionary *)dict;
 
 @end

@@ -10,7 +10,6 @@
 
 @interface NearbyViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UITableView *nearbyTable;
 
 @end

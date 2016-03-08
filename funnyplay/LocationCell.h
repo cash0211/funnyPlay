@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemLoc;
 @property (weak, nonatomic) IBOutlet UILabel *itemDistance;
 
-@property (nonatomic, strong) Location *location;
+@property (strong, nonatomic) Location *location;
 
-+ (id)locationCell;
++ (instancetype)locationCell;
 + (NSString *)cellId;
 
 @end

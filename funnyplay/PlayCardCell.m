@@ -11,7 +11,7 @@
 
 @implementation PlayCardCell
 
-+ (id) playCardCell {
++ (instancetype)playCardCell {
     return [[NSBundle mainBundle] loadNibNamed:@"PlayCard" owner:nil options:nil][0];
 }
 

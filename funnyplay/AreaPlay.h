@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) NSMutableArray *locations;
 
-- (id)initWithDict:(NSDictionary *)dict;
-+ (id)areaPlayWithDict:(NSDictionary *)dict;
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)areaPlayWithDict:(NSDictionary *)dict;
 
 @end

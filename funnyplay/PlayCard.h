@@ -14,8 +14,7 @@
 @property (nonatomic, copy) NSString *itemName;
 @property (nonatomic, copy) NSString *desc;
 
-- (id)initWithDict:(NSDictionary *)dict;
-+ (id)playCardWithDict:(NSDictionary *)dict;
-
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)playCardWithDict:(NSDictionary *)dict;
 
 @end

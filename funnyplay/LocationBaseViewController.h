@@ -12,8 +12,6 @@
 
 @interface LocationBaseViewController : UIViewController
 
-
 @property (nonatomic, strong) LocationViewController *locationViewCon;
-@property (nonatomic, retain) NSMutableArray *locationItems;
 
 @end

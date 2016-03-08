@@ -10,14 +10,14 @@
 
 @implementation PersonCellModel
 
-- (id)defaultInit {
+- (instancetype)defaultInit {
     
-    _imageName = @"appicon.png";
+    _imageName = @"icon.png";
     
     return self;
 }
 
-- (id)initWithDict:(NSDictionary *)dict {
+- (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
         _imageName = dict[@"imageName"];
@@ -29,7 +29,7 @@
     return self;
 }
 
-+ (id)personCellWithDict:(NSDictionary *)dict {
++ (instancetype)personCellWithDict:(NSDictionary *)dict {
     
     return [[self alloc] initWithDict:dict];
 }

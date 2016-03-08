@@ -11,7 +11,7 @@
 
 @implementation PersonCell
 
-+ (id)personCell {
++ (instancetype)personCell {
     
     return [[NSBundle mainBundle] loadNibNamed:@"PersonCell" owner:nil options:nil][0];
 }
@@ -30,7 +30,6 @@
     
     return @"PersonCell";
 }
-
 
 - (void)awakeFromNib {
     // Initialization code

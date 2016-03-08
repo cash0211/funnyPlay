@@ -12,13 +12,11 @@
 
 @implementation PlayCardData
 
-- (id)initWithDict:(NSDictionary *)dict {
+- (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
-        
         _header = dict[@"header"];
         _contents = dict[@"contents"];
-        
         _playCards = [[NSMutableArray alloc] init];
         
         if ([_header isEqual:@"本地人玩"]) {
@@ -46,6 +44,5 @@
     
     return [[self alloc] initWithDict:dict];
 }
-
 
 @end

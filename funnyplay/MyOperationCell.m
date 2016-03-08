@@ -11,7 +11,7 @@
 
 @implementation MyOperationCell
 
-+ (id)myOperationCell {
++ (instancetype)myOperationCell {
     
     return [[NSBundle mainBundle] loadNibNamed:@"MyOperationCell" owner:nil options:nil][0];
 }

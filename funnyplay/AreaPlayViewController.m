@@ -11,8 +11,9 @@
 #import "LocationCell.h"
 #import "Location.h"
 #import "Tool.h"
-#import <BaiduMapAPI/BMKMapView.h>
 #import "MapViewBaseViewController.h"
+
+#import <BaiduMapAPI/BMKMapView.h>
 
 @interface AreaPlayViewController () {
     
@@ -26,11 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    //初始化主视图
-//    self.tabBarItem.title = @"";
-//    self.tabBarItem.image = [UIImage imageNamed:@"location"];
-//    
     self.navigationItem.title = @"角落一个不落";
     
     _allItems = [[NSMutableArray alloc] init];
@@ -39,8 +35,6 @@
     for (NSDictionary *dict in arrayData) {
         //areaPlay
         AreaPlay *areaPlay = [AreaPlay areaPlayWithDict:dict];
-        
-        
         [_allItems addObject:areaPlay];
     }
     
@@ -150,22 +144,10 @@
     
 }
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

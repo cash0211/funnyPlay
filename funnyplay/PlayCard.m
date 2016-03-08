@@ -10,7 +10,7 @@
 
 @implementation PlayCard
 
-- (id)initWithDict:(NSDictionary *)dict {
+- (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
         _imageName = dict[@"imageName"];
@@ -21,7 +21,7 @@
     return self;
 }
 
-+ (id)playCardWithDict:(NSDictionary *)dict {
++ (instancetype)playCardWithDict:(NSDictionary *)dict {
     
     return [[self alloc] initWithDict:dict];
 }

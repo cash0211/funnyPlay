@@ -18,10 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *descString;
 @property (weak, nonatomic) IBOutlet UILabel *defaultString;
 
-@property (nonatomic, strong) PersonCellModel *personCellModel;
+@property (strong, nonatomic) PersonCellModel *personCellModel;
 
-
-+(id)personCell;
-+(NSString *)cellId;
++ (instancetype)personCell;
++ (NSString *)cellId;
 
 @end

@@ -11,9 +11,7 @@
 
 @implementation NearbyCell
 
-
-
-+ (id)nearbyCell {
++ (instancetype)nearbyCell {
     
     return [[NSBundle mainBundle] loadNibNamed:@"NearbyCell" owner:nil options:nil][0];
 }
@@ -30,13 +28,9 @@
     
 }
 
-
 + (NSString *)cellId {
     return @"NearbyCell";
 }
-
-
-
 
 - (void)awakeFromNib {
     // Initialization code

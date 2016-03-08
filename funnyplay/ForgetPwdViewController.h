@@ -15,6 +15,4 @@
 @property (nonatomic, strong) UITextField *verCodeTextField;
 @property (nonatomic, strong) UIButton *submitBtn;
 
-- (IBAction)backgrondTouch:(id)sender;
-
 @end

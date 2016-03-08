@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "LocationBaseViewController.h"
-#import "NearbyBaseViewController.h"
-#import "PlayCardBaseViewController.h"
-#import "PersonInfoBaseViewController.h"
+#import "Tool.h"
+#import "FPTabBarController.h"
 
-@interface AppDelegate ()
+#import <SMS_SDK/SMS_SDK.h>
+#import <BaiduMapAPI/BMKMapManager.h>
+#import <AFNetworkActivityIndicatorManager.h>
+
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -20,46 +22,70 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     //添加百度地图
-    
     _mapManager = [[BMKMapManager alloc] init];
     
     BOOL ret = [_mapManager start:@"jk4KaC75i3hBre6ila3K7YaM" generalDelegate:nil]; //如果要关注网络及授权验证事件，设定gDelegate
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-
     
-    //本地
-    self.locBase = [[LocationBaseViewController alloc] initWithNibName:@"LocationBase" bundle:nil];
-    UINavigationController *locNav = [[UINavigationController alloc] initWithRootViewController:self.locBase];
-    
-    //附近
-    self.nearBase = [[NearbyBaseViewController alloc] initWithNibName:@"NearbyBase" bundle:nil];
-    UINavigationController *nearbyNav = [[UINavigationController alloc] initWithRootViewController:self.nearBase];
-    
-    //玩略
-    self.playCardBase = [[PlayCardBaseViewController alloc] initWithNibName:@"PlayCardBase" bundle:nil];
-    UINavigationController *playCardNav = [[UINavigationController alloc] initWithRootViewController:self.playCardBase];
-    
-    //个人信息
-    self.personInfoBase = [[PersonInfoBaseViewController alloc] initWithNibName:@"PersonInfoBase" bundle:nil];
-    UINavigationController *personInfoNav = [[UINavigationController alloc] initWithRootViewController:self.personInfoBase];
+    //设置 状态栏_网络指示器
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     
-    
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.delegate = self;
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:locNav, nearbyNav, playCardNav, personInfoNav,nil];
+    FPTabBarController *fpTabBarC = [FPTabBarController new];
+    fpTabBarC.delegate = self;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.tabBarController;
-    
+    self.window.rootViewController = fpTabBarC;
     [self.window makeKeyAndVisible];
     
-    [SMS_SDK registerApp:@"6744f573b3c1" withSecret:@"7bee88e4f7e0e982078aaef10264e6ed"];
     
+    /************ 控件外观设置 **************/
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //这个就是bar的颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHex:0x15A230]];
+    //这个是title的颜色
+    NSDictionary *navbarTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    //这个是左右按钮的颜色
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithHex:0x15A230]];  //按钮
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithHex:0xE1E1E1]]; //bar
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:0x15A230]} forState:UIControlStateSelected];
+    
+    /*
+    [UISearchBar appearance].tintColor = [UIColor colorWithHex:0x15A230];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setCornerRadius:14.0];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setAlpha:0.6];
+    
+    
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor colorWithHex:0xDCDCDC];
+    pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
+    
+    [[UITextField appearance] setTintColor:[UIColor nameColor]];
+    [[UITextView appearance]  setTintColor:[UIColor nameColor]];
+    
+    
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
+    
+    [menuController setMenuVisible:YES animated:YES];
+    [menuController setMenuItems:@[
+                                   [[UIMenuItem alloc] initWithTitle:@"复制" action:NSSelectorFromString(@"copyText:")],
+                                   [[UIMenuItem alloc] initWithTitle:@"删除" action:NSSelectorFromString(@"deleteObject:")]
+                                   ]];
+    
+    */
+    
+    //短信
+    [SMS_SDK registerApp:@"6744f573b3c1" withSecret:@"7bee88e4f7e0e982078aaef10264e6ed"];
+
     return YES;
 }
 

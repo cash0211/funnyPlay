@@ -15,7 +15,6 @@
 
 @implementation PlayCardBaseViewController
 
-
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,11 +27,7 @@
 
 - (void)myInit {
     
-    //初始化主视图
-    self.tabBarItem.title = @"玩略";
-    self.tabBarItem.image = [UIImage imageNamed:@"location"];
-    
-    self.navigationItem.title = @"玩略";
+    self.title = @"玩略";
     
     //表格子视图
     self.playCardViewCon = [[PlayCardViewController alloc] init];
@@ -51,15 +46,5 @@
     [super didReceiveMemoryWarning];
 
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

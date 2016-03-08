@@ -11,28 +11,46 @@
 #import "Location.h"
 #import "LocationDetail.h"
 #import "Tool.h"
+#import "Location.h"
+
 
 @interface LocationViewController () {
     
-    NSMutableArray *_allItems;
 }
 
 @end
 
 @implementation LocationViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-//    self.view.backgroundColor = [UIColor grayColor];
+- (id)init {
     
-    _allItems = [[NSMutableArray alloc] init];
+    if (self = [super init]) {
+//        __weak LocationViewController *weakSelf = self;
+        self.generateURL = ^NSString * (NSUInteger page) {
+                
+            NSString *str1 = [NSString stringWithFormat:@"%@%@?pageIndex=%lu&%@", FPAPI_PREFIX, FPAPI_LOCATION_LIST, (unsigned long)page, FPAPI_SUFFIX];
+            
+            NSLog(@"%@", str1);
+            
+            return str1;
+        };
+        
+//        self.objClass = [OSCNews class];
+    }
+    
+    return self;
+}
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
     NSArray *arrayData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"location.plist" ofType:nil]];
     
     for (NSDictionary* dict in arrayData) {
         Location *loc = [Location locationWithDict:dict];
         
-        [_allItems addObject:loc];
+        [self.objects addObject:loc];
     }
     
 }
@@ -42,22 +60,7 @@
 
 }
 
-#pragma mark tableView DataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return [_allItems count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 120;
-}
+#pragma mark - tableView DataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         
@@ -66,7 +69,7 @@
             cell = [LocationCell locationCell];
         }
         
-        cell.location = _allItems[indexPath.row];
+        cell.location = self.objects[indexPath.row];
         
         return cell;
 }
@@ -75,7 +78,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Location *loc = _allItems[indexPath.row];
+    Location *loc = self.objects[indexPath.row];
     if (loc) {
         //self.parentViewController.title = loc.itemName;
 //        self.parentViewController.tabBarItem.title = @"评论";
@@ -93,21 +96,6 @@
     
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-
-
 
 
 

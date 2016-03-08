@@ -7,16 +7,20 @@
 //
 
 #import "RegViewController.h"
-#import <SMS_SDK/SMS_SDK.h>
+#import "Tool.h"
 
-@interface RegViewController () {
+#import <SMS_SDK/SMS_SDK.h>
+#import <ReactiveCocoa.h>
+
+@interface RegViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate> {
     
-//    NSMutableArray* _areaArray;
     NSString* _defaultCode;
     NSString* _defaultCountryName;
     
     NSDictionary *_dict;
 }
+
+@property (nonatomic, strong) MBProgressHUD *hud;
 
 @end
 
@@ -30,79 +34,125 @@
     _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"86", @"zone",
                                                       @"^1(3|5|7|8|4)\\d{9}", @"rule",
                                                       nil];
+    [self initSubviews];
+    [self setLayout];
     
-    CGFloat statusBarHeight = 0;
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
-    {
-        statusBarHeight = 20;
-    }
+    RACSignal *regActiveSignal = [RACSignal combineLatest:@[_phoneNumTextField.rac_textSignal, _verCodeTextField.rac_textSignal,_pwdTextField.rac_textSignal]
+        reduce:^(NSString *phoneNum, NSString *verCode,NSString *password) {
+                return @(phoneNum.length > 0 && verCode.length > 0 &&password.length > 0);
+                                                      }];
     
-    //手机号
-    UITextField* phoneNumField = [[UITextField alloc] init];
-    phoneNumField.frame = CGRectMake(10, 60+statusBarHeight, (self.view.frame.size.width - 160), 40+statusBarHeight/4);
-    phoneNumField.borderStyle = UITextBorderStyleRoundedRect;
-    phoneNumField.placeholder = [NSString stringWithFormat:@"～手机号～"];
-    phoneNumField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    phoneNumField.keyboardType = UIKeyboardTypePhonePad;
-    phoneNumField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:phoneNumField];
+    RAC(self.regBtn, enabled) = regActiveSignal;
     
-    //获取验证码
-    UIButton* getVerCodeBtn=[UIButton buttonWithType:UIButtonTypeCustom]; //这里用custom不会闪烁
-    getVerCodeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [getVerCodeBtn setTitle:NSLocalizedString(@"获取验证码", nil) forState:UIControlStateNormal];
+    //登陆按钮的透明度
+    RAC(_regBtn, alpha) = [regActiveSignal map:^(NSNumber *b) {
+        return b.boolValue ? @1: @0.4;
+    }];
 
-    NSString *icon = [NSString stringWithFormat:@"smssdk.bundle/loginbtn.png"];
-    [getVerCodeBtn setBackgroundImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
-    getVerCodeBtn.frame=CGRectMake(phoneNumField.frame.origin.x + phoneNumField.frame.size.width + 10, phoneNumField.frame.origin.y, 130, phoneNumField.frame.size.height);
-    [getVerCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [getVerCodeBtn addTarget:self action:@selector(getVerCode) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getVerCodeBtn];
-    
-    //验证码
-    UITextField* verCodeField = [[UITextField alloc] init];
-    verCodeField.frame = CGRectMake(phoneNumField.frame.origin.x, phoneNumField.frame.origin.y + phoneNumField.frame.size.height + 5, (self.view.frame.size.width - 20), phoneNumField.frame.size.height);
-    verCodeField.borderStyle = UITextBorderStyleRoundedRect;
-    verCodeField.placeholder = [NSString stringWithFormat:@"～验证码～"];
-    verCodeField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    verCodeField.keyboardType = UIKeyboardTypePhonePad;
-    verCodeField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:verCodeField];
-    
-    //密码
-    UITextField* passwordField = [[UITextField alloc] init];
-    passwordField.frame = CGRectMake(phoneNumField.frame.origin.x, verCodeField.frame.origin.y + verCodeField.frame.size.height + 5, verCodeField.frame.size.width, verCodeField.frame.size.height);
-    passwordField.borderStyle = UITextBorderStyleRoundedRect;
-    passwordField.placeholder = [NSString stringWithFormat:@"～登录密码～"];
-    passwordField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    passwordField.secureTextEntry = YES;
-    [self.view addSubview:passwordField];
-    
-    //注册按钮
-    UIButton* regBtn=[UIButton buttonWithType:UIButtonTypeSystem];
-    [regBtn setTitle:NSLocalizedString(@"注册", nil) forState:UIControlStateNormal];
-    NSString *icon2 = [NSString stringWithFormat:@"smssdk.bundle/loginbtn.png"];
-    [regBtn setBackgroundImage:[UIImage imageNamed:icon2] forState:UIControlStateNormal];
-    regBtn.frame=CGRectMake(phoneNumField.frame.origin.x, passwordField.frame.origin.y + passwordField.frame.size.height + 10, passwordField.frame.size.width, passwordField.frame.size.height - 5);
-    [regBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [regBtn addTarget:self action:@selector(regUser) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:regBtn];
-    
-    _phoneNumTextField = phoneNumField;
-    _getVerCodeBtn = getVerCodeBtn;
-    _verCodeTextField = verCodeField;
-    _pwdTextField = passwordField;
-    _regBtn = regBtn;
-    
-    
     //设置本地区号
     [self setTheLocalAreaCode];
 }
 
-- (void)getVerCode {
+- (void)initSubviews {
     
-    [self.verCodeTextField becomeFirstResponder];
+    //手机号
+    _phoneNumTextField = [UITextField new];
+    _phoneNumTextField.placeholder = @"～手机号～";
+    _phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    _phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    _phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
+    _phoneNumTextField.delegate = self;
+    _phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:_phoneNumTextField];
+    
+    //获取验证码
+    _getVerCodeBtn =[UIButton buttonWithType:UIButtonTypeCustom];
+    _getVerCodeBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    _getVerCodeBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [_getVerCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [_getVerCodeBtn setCornerRadius:10];
+    [_getVerCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_getVerCodeBtn addTarget:self action:@selector(getVerCode) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_getVerCodeBtn];
+    
+    //验证码
+    _verCodeTextField = [UITextField new];
+    _verCodeTextField.placeholder = @"～验证码～";
+    _verCodeTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    _verCodeTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    _verCodeTextField.keyboardType = UIKeyboardTypePhonePad;
+    _verCodeTextField.delegate = self;
+    _verCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _verCodeTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:_verCodeTextField];
+    
+    //密码
+    _pwdTextField = [UITextField new];
+    _pwdTextField.placeholder = @"～登录密码～";
+    _pwdTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    _pwdTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    _pwdTextField.secureTextEntry = YES;
+    _pwdTextField.delegate = self;
+    _pwdTextField.returnKeyType = UIReturnKeyDone;
+    _pwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _pwdTextField.enablesReturnKeyAutomatically = YES;
+    _pwdTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:_pwdTextField];
+    
+    //注册按钮
+    _regBtn =[UIButton buttonWithType:UIButtonTypeSystem];
+    _regBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    _regBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [_regBtn setTitle:@"注册" forState:UIControlStateNormal];
+    [_regBtn setCornerRadius:20];
+    [_regBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_regBtn addTarget:self action:@selector(regUser) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_regBtn];
+    
+    [_pwdTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    //添加手势，点击屏幕其他区域关闭键盘的操作
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
+    gesture.numberOfTapsRequired = 1;
+    gesture.delegate = self;
+    [self.view addGestureRecognizer:gesture];
+}
+
+//当 账号和密码输入框 都没有键盘的时候, 不接收GR点击
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (![_phoneNumTextField isFirstResponder] && ![_pwdTextField isFirstResponder] && ![_verCodeTextField isFirstResponder]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)setLayout {
+    
+    for (UIView *view in [self.view subviews]) { view.translatesAutoresizingMaskIntoConstraints = NO;}
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(_phoneNumTextField, _getVerCodeBtn,_verCodeTextField,_pwdTextField, _regBtn);
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_phoneNumTextField(140)]-10-[_getVerCodeBtn]-10-|"
+                                                                      options:0 metrics:nil views:views]];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_getVerCodeBtn(40)]"     options:0 metrics:nil views:views]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_phoneNumTextField attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:_getVerCodeBtn attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[_phoneNumTextField(40)]"
+                                                                      options:0 metrics:nil views:views]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_verCodeTextField]-10-|" options:0 metrics:nil views:views]];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-125-[_verCodeTextField(40)]-5-[_pwdTextField(40)]-10-[_regBtn(40)]"
+                                                                      options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
+                                                                      metrics:nil views:views]];
+
+}
+
+- (void)getVerCode {
     
     NSString* str = [_defaultCode stringByReplacingOccurrencesOfString:@"+" withString:@""];
     
@@ -115,6 +165,9 @@
                                             cancelButtonTitle:NSLocalizedString(@"确定", nil)
                                             otherButtonTitles:nil, nil];
         [alert show];
+        
+        
+        
         return;
     }
     
@@ -131,13 +184,16 @@
                                             otherButtonTitles:nil, nil];
         [alert show];
         return;
+    } else {
+        
+        [self.verCodeTextField becomeFirstResponder];
     }
     
     [SMS_SDK getVerificationCodeBySMSWithPhone:self.phoneNumTextField.text
                                           zone:str
                                         result:^(SMS_SDKError *error)
      {
-         //bug --- 因为反应慢，按多次会显示多次 --- 闪烁！！！
+         
          __block int timeout=60; //倒计时时间
          dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
          dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
@@ -216,7 +272,6 @@
     
 }
 
-
 -(void)setTheLocalAreaCode
 {
     //    NSLocale *locale = [NSLocale currentLocale];
@@ -225,26 +280,31 @@
     _defaultCountryName=@"CN";
 }
 
-- (IBAction)backgrondTouch:(id)sender
+#pragma mark - 键盘操作
+
+- (void)hidenKeyboard
 {
-    [self.phoneNumTextField resignFirstResponder];
-    [self.pwdTextField resignFirstResponder];
-    [self.verCodeTextField resignFirstResponder];
+    [_phoneNumTextField resignFirstResponder];
+    [_verCodeTextField resignFirstResponder];
+    [_pwdTextField resignFirstResponder];
+}
+
+//键盘上Next && Done会调用
+- (void)returnOnKeyboard:(UITextField *)sender
+{
+    
+    if (sender == _pwdTextField) {
+        
+        [self hidenKeyboard];
+        if (_regBtn.enabled) {
+            [self regUser];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

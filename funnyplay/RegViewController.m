@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"注册";
+    self.view.backgroundColor = [UIColor whiteColor];
     
     _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"86", @"zone",
                                                       @"^1(3|5|7|8|4)\\d{9}", @"rule",

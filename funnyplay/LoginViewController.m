@@ -24,6 +24,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"登录";
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self initSubviews];
     [self setLayout];
@@ -45,7 +46,6 @@
     RAC(_loginBtn, alpha) = [signUpActiveSignal map:^(NSNumber *b) {
         return b.boolValue ? @1: @0.4;
     }];
-    
 }
 
 - (void)initSubviews {

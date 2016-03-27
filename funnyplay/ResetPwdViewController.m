@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"重置密码";
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self initSubviews];
     [self setLayout];

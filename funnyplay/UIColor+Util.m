@@ -38,5 +38,22 @@
     return [UIColor colorWithHex:0x087221];
 }
 
++ (UIColor *)blueTintColor {
+    return [UIColor colorWithRed:71/255.0 green:165/255.0 blue:254/255.0 alpha:1];
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

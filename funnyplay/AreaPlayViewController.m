@@ -11,9 +11,6 @@
 #import "LocationCell.h"
 #import "Location.h"
 #import "Tool.h"
-#import "MapViewBaseViewController.h"
-
-#import <BaiduMapAPI/BMKMapView.h>
 
 @interface AreaPlayViewController () {
     
@@ -70,12 +67,14 @@
 //百度地图
 - (void) clickIsHere:(id)sender {
     
+    /*
     //地图 --- ”都在这里“
     MapViewBaseViewController *_mapViewCon = [[MapViewBaseViewController alloc] init];
     UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
     customLeftBarButtonItem.title = @"返回";
     self.navigationItem.backBarButtonItem = customLeftBarButtonItem;
     [self.navigationController pushViewController:_mapViewCon animated:YES];
+     */
 }
 
 #pragma mark tableView DataSource

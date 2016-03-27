@@ -11,7 +11,6 @@
 #import "FPTabBarController.h"
 
 #import <SMS_SDK/SMS_SDK.h>
-#import <BaiduMapAPI/BMKMapManager.h>
 #import <AFNetworkActivityIndicatorManager.h>
 
 @interface AppDelegate () <UITabBarControllerDelegate>
@@ -22,14 +21,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    //添加百度地图
-    _mapManager = [[BMKMapManager alloc] init];
-    
-    BOOL ret = [_mapManager start:@"jk4KaC75i3hBre6ila3K7YaM" generalDelegate:nil]; //如果要关注网络及授权验证事件，设定gDelegate
-    if (!ret) {
-        NSLog(@"manager start failed!");
-    }
     
     //设置 状态栏_网络指示器
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
@@ -47,7 +38,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     //这个就是bar的颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHex:0x15A230]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blueTintColor]];
     //这个是title的颜色
     NSDictionary *navbarTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
@@ -55,9 +46,9 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     
-    [[UITabBar appearance] setTintColor:[UIColor colorWithHex:0x15A230]];  //按钮
+    [[UITabBar appearance] setTintColor:[UIColor blueTintColor]];  //按钮
     [[UITabBar appearance] setBarTintColor:[UIColor colorWithHex:0xE1E1E1]]; //bar
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:0x15A230]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blueTintColor]} forState:UIControlStateSelected];
     
     /*
     [UISearchBar appearance].tintColor = [UIColor colorWithHex:0x15A230];

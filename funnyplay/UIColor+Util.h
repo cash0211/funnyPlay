@@ -15,5 +15,6 @@
 
 + (UIColor *)themeColor;
 + (UIColor *)nameColor;
++ (UIColor *)blueTintColor;
 
 @end

@@ -72,7 +72,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"%d, %d", indexPath.section, indexPath.row);
+    NSLog(@"%ld, %ld", (long)indexPath.section, (long)indexPath.row);
 }
 
 

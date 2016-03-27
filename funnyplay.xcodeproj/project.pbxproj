@@ -57,10 +57,15 @@
 		C93B50C61BB53AE800B24FBD /* ShakingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93B50C51BB53AE800B24FBD /* ShakingViewController.m */; };
 		C93B50C81BBA25D900B24FBD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93B50C71BBA25D900B24FBD /* CoreMotion.framework */; };
 		C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97195B21ADD116100C3E410 /* LoginViewController.m */; };
-		C97195C11AE3FB4600C3E410 /* smssdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C97195C01AE3FB4600C3E410 /* smssdk.bundle */; };
-		C9A064CE1B89AB6A00992BA8 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A064CD1B89AB6A00992BA8 /* UIColor+Util.m */; };
+		C979E31A1CA7F87700D1B8DD /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3131CA7F87700D1B8DD /* Tool.m */; };
+		C979E31B1CA7F87700D1B8DD /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3151CA7F87700D1B8DD /* Config.m */; };
+		C979E31C1CA7F87700D1B8DD /* AFFPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3171CA7F87700D1B8DD /* AFFPClient.m */; };
+		C979E31D1CA7F87700D1B8DD /* FetchMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3191CA7F87700D1B8DD /* FetchMoreCell.m */; };
+		C979E3271CA7F88E00D1B8DD /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3201CA7F88E00D1B8DD /* UIImageView+Util.m */; };
+		C979E3281CA7F88E00D1B8DD /* NSTextAttachment+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3221CA7F88E00D1B8DD /* NSTextAttachment+Util.m */; };
+		C979E3291CA7F88E00D1B8DD /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3241CA7F88E00D1B8DD /* UIView+Util.m */; };
+		C979E32A1CA7F88E00D1B8DD /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3261CA7F88E00D1B8DD /* UIColor+Util.m */; };
 		C9A064D11B89B86D00992BA8 /* FPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A064D01B89B86D00992BA8 /* FPTabBarController.m */; };
-		C9AA5E941B95D8BD0095DFDE /* NSTextAttachment+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E931B95D8BD0095DFDE /* NSTextAttachment+Util.m */; };
 		C9AA5E961B95D9550095DFDE /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E951B95D9550095DFDE /* emoji.plist */; };
 		C9AA5F131B95D9830095DFDE /* +1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E981B95D9830095DFDE /* +1@2x.png */; };
 		C9AA5F141B95D9830095DFDE /* -1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E991B95D9830095DFDE /* -1@2x.png */; };
@@ -186,7 +191,6 @@
 		C9AA5F8C1B95D9830095DFDE /* 104@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5F111B95D9830095DFDE /* 104@2x.png */; };
 		C9AA5F8D1B95D9830095DFDE /* 105@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5F121B95D9830095DFDE /* 105@2x.png */; };
 		C9AA5F8F1B95D9DD0095DFDE /* emojiToText.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5F8E1B95D9DD0095DFDE /* emojiToText.plist */; };
-		C9AA5F921B96DC090095DFDE /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5F911B96DC090095DFDE /* UIImageView+Util.m */; };
 		C9AA7E171AC7B8C300190F54 /* areaPlay.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9AA7E161AC7B8C300190F54 /* areaPlay.plist */; };
 		C9AA7E311AC7E22900190F54 /* AreaPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E2E1AC7E22900190F54 /* AreaPlayViewController.m */; };
 		C9AA7E321AC7E22900190F54 /* AreaPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E301AC7E22900190F54 /* AreaPlay.m */; };
@@ -196,14 +200,11 @@
 		C9AA7E3E1AC8DF4100190F54 /* PlayCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E3D1AC8DF4100190F54 /* PlayCardCell.m */; };
 		C9AA7E401AC8DF5700190F54 /* PlayCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AA7E3F1AC8DF5700190F54 /* PlayCard.xib */; };
 		C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E421AC8F8A300190F54 /* PlayCardData.m */; };
-		C9AA7E491ACA341F00190F54 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9AA7E451ACA341F00190F54 /* SMS_SDKLocalizable.strings */; };
-		C9AA7E4A1ACA341F00190F54 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E471ACA341F00190F54 /* SMS_SDK.framework */; };
 		C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4B1ACA344500190F54 /* libicucore.dylib */; };
 		C9AA7E4E1ACA344F00190F54 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4D1ACA344F00190F54 /* libz.dylib */; };
 		C9AA7E501ACA345700190F54 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4F1ACA345700190F54 /* MessageUI.framework */; };
 		C9AA7E521ACA346500190F54 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E511ACA346500190F54 /* AddressBook.framework */; };
 		C9AA7E541ACA346E00190F54 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */; };
-		C9AA82F01BA69F1B0044DEE3 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA82EF1BA69F1B0044DEE3 /* Config.m */; };
 		C9AA82FA1BA6B7860044DEE3 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9AA82F11BA6B7860044DEE3 /* data.plist */; };
 		C9AA82FB1BA6B7860044DEE3 /* FlowgroundBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AA82F21BA6B7860044DEE3 /* FlowgroundBase.xib */; };
 		C9AA82FC1BA6B7860044DEE3 /* FlowgroundBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA82F41BA6B7860044DEE3 /* FlowgroundBaseViewController.m */; };
@@ -258,9 +259,7 @@
 		C9ADD67C1B13223A00977B41 /* 07.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6741B13223A00977B41 /* 07.png */; };
 		C9ADD67D1B13223A00977B41 /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6751B13223A00977B41 /* 08.png */; };
 		C9ADD69F1B1DDB3700977B41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6A11B1DDB3700977B41 /* Localizable.strings */; };
-		C9B01BB11B84B685007EE473 /* AFFPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B01BB01B84B685007EE473 /* AFFPClient.m */; };
 		C9B01BB31B84B76C007EE473 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B01BB21B84B76C007EE473 /* icon.png */; };
-		C9B537DE1ABBFFC600005E16 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537DD1ABBFFC600005E16 /* Tool.m */; };
 		C9B537E21ABDB36400005E16 /* NearbyBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E11ABDB36400005E16 /* NearbyBaseViewController.m */; };
 		C9B537E61ABF96E200005E16 /* PlayCardBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E51ABF96E200005E16 /* PlayCardBaseViewController.m */; };
 		C9B537EA1ABF97C100005E16 /* PersonInfoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B537E91ABF97C100005E16 /* PersonInfoBaseViewController.m */; };
@@ -285,10 +284,7 @@
 		C9B538191AC00D7A00005E16 /* MyOperationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B538181AC00D7A00005E16 /* MyOperationCell.m */; };
 		C9B5381B1AC00D9500005E16 /* MyOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B5381A1AC00D9500005E16 /* MyOperationCell.xib */; };
 		C9B5381E1AC03E4D00005E16 /* MyOperationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B5381D1AC03E4D00005E16 /* MyOperationModel.m */; };
-		C9B538201AC04D7700005E16 /* usericon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5381F1AC04D7700005E16 /* usericon.png */; };
 		C9B538231AC0F77700005E16 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B538221AC0F77700005E16 /* QuartzCore.framework */; };
-		C9B6BC121B905C7C00CA2E4C /* FetchMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B6BC111B905C7C00CA2E4C /* FetchMoreCell.m */; };
-		C9B6BC181B91894500CA2E4C /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B6BC171B91894500CA2E4C /* UIView+Util.m */; };
 		C9D3E0D21AE4EEAE00F01E32 /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0D11AE4EEAE00F01E32 /* RegViewController.m */; };
 		C9D3E0D81AE4FD2000F01E32 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0D61AE4FD2000F01E32 /* ForgetPwdViewController.m */; };
 		C9D3E0DD1AE5045E00F01E32 /* ResetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0DB1AE5045E00F01E32 /* ResetPwdViewController.m */; };
@@ -301,6 +297,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C913D9691AB662020090DE41;
 			remoteInfo = funnyplay;
+		};
+		C979E3311CA7F97C00D1B8DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3F34AC019AED773004CA430;
+			remoteInfo = SMS_SDKDemo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -369,13 +372,27 @@
 		C93B50C71BBA25D900B24FBD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C97195B11ADD116100C3E410 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C97195B21ADD116100C3E410 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		C97195C01AE3FB4600C3E410 /* smssdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = smssdk.bundle; sourceTree = "<group>"; };
-		C9A064CC1B89AB6A00992BA8 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
-		C9A064CD1B89AB6A00992BA8 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		C979E3111CA7F87700D1B8DD /* FPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPAPI.h; sourceTree = "<group>"; };
+		C979E3121CA7F87700D1B8DD /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		C979E3131CA7F87700D1B8DD /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		C979E3141CA7F87700D1B8DD /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		C979E3151CA7F87700D1B8DD /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		C979E3161CA7F87700D1B8DD /* AFFPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFPClient.h; sourceTree = "<group>"; };
+		C979E3171CA7F87700D1B8DD /* AFFPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFPClient.m; sourceTree = "<group>"; };
+		C979E3181CA7F87700D1B8DD /* FetchMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchMoreCell.h; sourceTree = "<group>"; };
+		C979E3191CA7F87700D1B8DD /* FetchMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchMoreCell.m; sourceTree = "<group>"; };
+		C979E31F1CA7F88E00D1B8DD /* UIImageView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Util.h"; sourceTree = "<group>"; };
+		C979E3201CA7F88E00D1B8DD /* UIImageView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Util.m"; sourceTree = "<group>"; };
+		C979E3211CA7F88E00D1B8DD /* NSTextAttachment+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+Util.h"; sourceTree = "<group>"; };
+		C979E3221CA7F88E00D1B8DD /* NSTextAttachment+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+Util.m"; sourceTree = "<group>"; };
+		C979E3231CA7F88E00D1B8DD /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
+		C979E3241CA7F88E00D1B8DD /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
+		C979E3251CA7F88E00D1B8DD /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		C979E3261CA7F88E00D1B8DD /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMS_SDKDemo.xcodeproj; path = ../../Downloads/SMSSDK_2.0.2_Demo/SMS_SDKDemo.xcodeproj; sourceTree = "<group>"; };
+		C979E3331CA7F98A00D1B8DD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = ../../Downloads/SMSSDK_2.0.2_Demo/SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		C9A064CF1B89B86D00992BA8 /* FPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTabBarController.h; sourceTree = "<group>"; };
 		C9A064D01B89B86D00992BA8 /* FPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTabBarController.m; sourceTree = "<group>"; };
-		C9AA5E921B95D8BD0095DFDE /* NSTextAttachment+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+Util.h"; sourceTree = "<group>"; };
-		C9AA5E931B95D8BD0095DFDE /* NSTextAttachment+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+Util.m"; sourceTree = "<group>"; };
 		C9AA5E951B95D9550095DFDE /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		C9AA5E981B95D9830095DFDE /* +1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "+1@2x.png"; sourceTree = "<group>"; };
 		C9AA5E991B95D9830095DFDE /* -1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "-1@2x.png"; sourceTree = "<group>"; };
@@ -501,8 +518,6 @@
 		C9AA5F111B95D9830095DFDE /* 104@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "104@2x.png"; sourceTree = "<group>"; };
 		C9AA5F121B95D9830095DFDE /* 105@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "105@2x.png"; sourceTree = "<group>"; };
 		C9AA5F8E1B95D9DD0095DFDE /* emojiToText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojiToText.plist; sourceTree = "<group>"; };
-		C9AA5F901B96DC090095DFDE /* UIImageView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Util.h"; sourceTree = "<group>"; };
-		C9AA5F911B96DC090095DFDE /* UIImageView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Util.m"; sourceTree = "<group>"; };
 		C9AA7E161AC7B8C300190F54 /* areaPlay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = areaPlay.plist; sourceTree = "<group>"; };
 		C9AA7E2D1AC7E22900190F54 /* AreaPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaPlayViewController.h; sourceTree = "<group>"; };
 		C9AA7E2E1AC7E22900190F54 /* AreaPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaPlayViewController.m; sourceTree = "<group>"; };
@@ -517,16 +532,11 @@
 		C9AA7E3F1AC8DF5700190F54 /* PlayCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayCard.xib; sourceTree = "<group>"; };
 		C9AA7E411AC8F8A300190F54 /* PlayCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayCardData.h; sourceTree = "<group>"; };
 		C9AA7E421AC8F8A300190F54 /* PlayCardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayCardData.m; sourceTree = "<group>"; };
-		C9AA7E461ACA341F00190F54 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
-		C9AA7E471ACA341F00190F54 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
-		C9AA7E481ACA341F00190F54 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		C9AA7E4B1ACA344500190F54 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		C9AA7E4D1ACA344F00190F54 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C9AA7E4F1ACA345700190F54 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9AA7E511ACA346500190F54 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		C9AA82EE1BA69F1B0044DEE3 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		C9AA82EF1BA69F1B0044DEE3 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		C9AA82F11BA6B7860044DEE3 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = data.plist; path = funnyplay/data.plist; sourceTree = "<group>"; };
 		C9AA82F21BA6B7860044DEE3 /* FlowgroundBase.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FlowgroundBase.xib; path = funnyplay/FlowgroundBase.xib; sourceTree = "<group>"; };
 		C9AA82F31BA6B7860044DEE3 /* FlowgroundBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlowgroundBaseViewController.h; path = funnyplay/FlowgroundBaseViewController.h; sourceTree = "<group>"; };
@@ -592,11 +602,7 @@
 		C9ADD6A01B1DDB3700977B41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C9ADD6A21B1DDB3D00977B41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C9ADD6A31B1DDE8900977B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C9B01BAF1B84B685007EE473 /* AFFPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFPClient.h; sourceTree = "<group>"; };
-		C9B01BB01B84B685007EE473 /* AFFPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFPClient.m; sourceTree = "<group>"; };
 		C9B01BB21B84B76C007EE473 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		C9B537DC1ABBFFC600005E16 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
-		C9B537DD1ABBFFC600005E16 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		C9B537E01ABDB36400005E16 /* NearbyBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBaseViewController.h; sourceTree = "<group>"; };
 		C9B537E11ABDB36400005E16 /* NearbyBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyBaseViewController.m; sourceTree = "<group>"; };
 		C9B537E41ABF96E200005E16 /* PlayCardBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayCardBaseViewController.h; sourceTree = "<group>"; };
@@ -634,13 +640,7 @@
 		C9B5381A1AC00D9500005E16 /* MyOperationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOperationCell.xib; sourceTree = "<group>"; };
 		C9B5381C1AC03E4D00005E16 /* MyOperationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperationModel.h; sourceTree = "<group>"; };
 		C9B5381D1AC03E4D00005E16 /* MyOperationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperationModel.m; sourceTree = "<group>"; };
-		C9B5381F1AC04D7700005E16 /* usericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usericon.png; sourceTree = "<group>"; };
 		C9B538221AC0F77700005E16 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C9B6BC0F1B8FFBC700CA2E4C /* FPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPAPI.h; sourceTree = "<group>"; };
-		C9B6BC101B905C7C00CA2E4C /* FetchMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchMoreCell.h; sourceTree = "<group>"; };
-		C9B6BC111B905C7C00CA2E4C /* FetchMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchMoreCell.m; sourceTree = "<group>"; };
-		C9B6BC161B91894500CA2E4C /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
-		C9B6BC171B91894500CA2E4C /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
 		C9D3E0D01AE4EEAE00F01E32 /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		C9D3E0D11AE4EEAE00F01E32 /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		C9D3E0D51AE4FD2000F01E32 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
@@ -669,7 +669,6 @@
 				C9AA7E4E1ACA344F00190F54 /* libz.dylib in Frameworks */,
 				C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */,
 				C9B538231AC0F77700005E16 /* QuartzCore.framework in Frameworks */,
-				C9AA7E4A1ACA341F00190F54 /* SMS_SDK.framework in Frameworks */,
 				C5669098E540C70F68816A82 /* libPods-funnyplay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,6 +695,8 @@
 		833509999555F751769DB835 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C979E3331CA7F98A00D1B8DD /* SMS_SDK.framework */,
+				C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */,
 				C93B50C71BBA25D900B24FBD /* CoreMotion.framework */,
 				C93B508D1BB1387B00B24FBD /* AVFoundation.framework */,
 				C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */,
@@ -733,8 +734,7 @@
 		C913D96C1AB662020090DE41 /* funnyplay */ = {
 			isa = PBXGroup;
 			children = (
-				C9AA7E441ACA341F00190F54 /* SMS_SDK */,
-				C9B537DB1ABBFF9B00005E16 /* Helper */,
+				C979E3101CA7F86000D1B8DD /* Helper */,
 				C913D9AA1AB669940090DE41 /* Image */,
 				C913D9711AB662020090DE41 /* AppDelegate.h */,
 				C913D9721AB662020090DE41 /* AppDelegate.m */,
@@ -845,7 +845,6 @@
 			isa = PBXGroup;
 			children = (
 				C9B01BB21B84B76C007EE473 /* icon.png */,
-				C9B5381F1AC04D7700005E16 /* usericon.png */,
 				C913D9AD1AB669940090DE41 /* 上.png */,
 				C913D9AE1AB669940090DE41 /* 上右.png */,
 				C913D9AF1AB669940090DE41 /* 上左.png */,
@@ -951,19 +950,44 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		C9A064CB1B89AB4E00992BA8 /* Category */ = {
+		C979E3101CA7F86000D1B8DD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				C9AA5F901B96DC090095DFDE /* UIImageView+Util.h */,
-				C9AA5F911B96DC090095DFDE /* UIImageView+Util.m */,
-				C9AA5E921B95D8BD0095DFDE /* NSTextAttachment+Util.h */,
-				C9AA5E931B95D8BD0095DFDE /* NSTextAttachment+Util.m */,
-				C9B6BC161B91894500CA2E4C /* UIView+Util.h */,
-				C9B6BC171B91894500CA2E4C /* UIView+Util.m */,
-				C9A064CC1B89AB6A00992BA8 /* UIColor+Util.h */,
-				C9A064CD1B89AB6A00992BA8 /* UIColor+Util.m */,
+				C979E3111CA7F87700D1B8DD /* FPAPI.h */,
+				C979E3121CA7F87700D1B8DD /* Tool.h */,
+				C979E3131CA7F87700D1B8DD /* Tool.m */,
+				C979E3141CA7F87700D1B8DD /* Config.h */,
+				C979E3151CA7F87700D1B8DD /* Config.m */,
+				C979E3161CA7F87700D1B8DD /* AFFPClient.h */,
+				C979E3171CA7F87700D1B8DD /* AFFPClient.m */,
+				C979E3181CA7F87700D1B8DD /* FetchMoreCell.h */,
+				C979E3191CA7F87700D1B8DD /* FetchMoreCell.m */,
+				C979E31E1CA7F87A00D1B8DD /* Category */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		C979E31E1CA7F87A00D1B8DD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C979E31F1CA7F88E00D1B8DD /* UIImageView+Util.h */,
+				C979E3201CA7F88E00D1B8DD /* UIImageView+Util.m */,
+				C979E3211CA7F88E00D1B8DD /* NSTextAttachment+Util.h */,
+				C979E3221CA7F88E00D1B8DD /* NSTextAttachment+Util.m */,
+				C979E3231CA7F88E00D1B8DD /* UIView+Util.h */,
+				C979E3241CA7F88E00D1B8DD /* UIView+Util.m */,
+				C979E3251CA7F88E00D1B8DD /* UIColor+Util.h */,
+				C979E3261CA7F88E00D1B8DD /* UIColor+Util.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		C979E32E1CA7F97C00D1B8DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C979E3321CA7F97C00D1B8DD /* SMS_SDKDemo.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C9AA5E971B95D95F0095DFDE /* emoji */ = {
@@ -1096,16 +1120,6 @@
 			name = emoji;
 			sourceTree = "<group>";
 		};
-		C9AA7E441ACA341F00190F54 /* SMS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				C9AA7E451ACA341F00190F54 /* SMS_SDKLocalizable.strings */,
-				C97195C01AE3FB4600C3E410 /* smssdk.bundle */,
-				C9AA7E471ACA341F00190F54 /* SMS_SDK.framework */,
-			);
-			path = SMS_SDK;
-			sourceTree = "<group>";
-		};
 		C9ADD62F1B0DB6C600977B41 /* Flowground */ = {
 			isa = PBXGroup;
 			children = (
@@ -1157,23 +1171,6 @@
 				C9ADD6651B1321C700977B41 /* 8.png */,
 			);
 			name = FlowgroundTestImage;
-			sourceTree = "<group>";
-		};
-		C9B537DB1ABBFF9B00005E16 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				C9B6BC0F1B8FFBC700CA2E4C /* FPAPI.h */,
-				C9B537DC1ABBFFC600005E16 /* Tool.h */,
-				C9B537DD1ABBFFC600005E16 /* Tool.m */,
-				C9AA82EE1BA69F1B0044DEE3 /* Config.h */,
-				C9AA82EF1BA69F1B0044DEE3 /* Config.m */,
-				C9B01BAF1B84B685007EE473 /* AFFPClient.h */,
-				C9B01BB01B84B685007EE473 /* AFFPClient.m */,
-				C9B6BC101B905C7C00CA2E4C /* FetchMoreCell.h */,
-				C9B6BC111B905C7C00CA2E4C /* FetchMoreCell.m */,
-				C9A064CB1B89AB4E00992BA8 /* Category */,
-			);
-			name = Helper;
 			sourceTree = "<group>";
 		};
 		C9B537DF1ABDB31E00005E16 /* Nearby */ = {
@@ -1321,6 +1318,12 @@
 			mainGroup = C913D9611AB662020090DE41;
 			productRefGroup = C913D96B1AB662020090DE41 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C979E32E1CA7F97C00D1B8DD /* Products */;
+					ProjectRef = C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C913D9691AB662020090DE41 /* funnyplay */,
@@ -1328,6 +1331,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C979E3321CA7F97C00D1B8DD /* SMS_SDKDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SMS_SDKDemo.app;
+			remoteRef = C979E3311CA7F97C00D1B8DD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C913D9681AB662020090DE41 /* Resources */ = {
@@ -1370,7 +1383,6 @@
 				C9AA5F4F1B95D9830095DFDE /* 043@2x.png in Resources */,
 				C9ADD6231B0DB10B00977B41 /* nearby.png in Resources */,
 				C92FBFDA1B0C7E150031AED9 /* image-4@2x.png in Resources */,
-				C9AA7E491ACA341F00190F54 /* SMS_SDKLocalizable.strings in Resources */,
 				C9ADD61F1B0DAD7700977B41 /* location_2@2x.png in Resources */,
 				C9AA5F791B95D9830095DFDE /* 085@2x.png in Resources */,
 				C9AA82FE1BA6B7860044DEE3 /* FlowgroundView.xib in Resources */,
@@ -1474,7 +1486,6 @@
 				C9AA5F7B1B95D9830095DFDE /* 087@2x.png in Resources */,
 				C9ADD6271B0DB4C400977B41 /* playcard2.png in Resources */,
 				C9AA5F6C1B95D9830095DFDE /* 072@2x.png in Resources */,
-				C9B538201AC04D7700005E16 /* usericon.png in Resources */,
 				C9ADD6401B0F0F3100977B41 /* RecommendBase.xib in Resources */,
 				C9B5381B1AC00D9500005E16 /* MyOperationCell.xib in Resources */,
 				C9AA5F541B95D9830095DFDE /* 048@2x.png in Resources */,
@@ -1539,7 +1550,6 @@
 				C9AA5F861B95D9830095DFDE /* 098@2x.png in Resources */,
 				C913D9CE1AB669940090DE41 /* 搜索.png in Resources */,
 				C913D9C21AB669940090DE41 /* 上右.png in Resources */,
-				C97195C11AE3FB4600C3E410 /* smssdk.bundle in Resources */,
 				C9AA5F691B95D9830095DFDE /* 069@2x.png in Resources */,
 				C9AA5F451B95D9830095DFDE /* 033@2x.png in Resources */,
 				C9AA5F531B95D9830095DFDE /* 047@2x.png in Resources */,
@@ -1604,9 +1614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B6BC181B91894500CA2E4C /* UIView+Util.m in Sources */,
 				C913D9D91AB7B7580090DE41 /* LocationCell.m in Sources */,
-				C9AA5E941B95D8BD0095DFDE /* NSTextAttachment+Util.m in Sources */,
 				C9D3E0DD1AE5045E00F01E32 /* ResetPwdViewController.m in Sources */,
 				C9AA83081BA6B8290044DEE3 /* FlowgroundTableViewCell.m in Sources */,
 				C9AA7E3E1AC8DF4100190F54 /* PlayCardCell.m in Sources */,
@@ -1615,11 +1623,14 @@
 				C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */,
 				C9AA82FC1BA6B7860044DEE3 /* FlowgroundBaseViewController.m in Sources */,
 				C93B508C1BB1380B00B24FBD /* ScanningViewController.m in Sources */,
+				C979E31A1CA7F87700D1B8DD /* Tool.m in Sources */,
 				C9A064D11B89B86D00992BA8 /* FPTabBarController.m in Sources */,
 				C9B538021ABFA86100005E16 /* Nearby.m in Sources */,
 				C9B537EF1ABF9B8000005E16 /* NearbyViewController.m in Sources */,
-				C9B01BB11B84B685007EE473 /* AFFPClient.m in Sources */,
 				C913D9731AB662020090DE41 /* AppDelegate.m in Sources */,
+				C979E3271CA7F88E00D1B8DD /* UIImageView+Util.m in Sources */,
+				C979E31D1CA7F87700D1B8DD /* FetchMoreCell.m in Sources */,
+				C979E31B1CA7F87700D1B8DD /* Config.m in Sources */,
 				C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */,
 				C9B5380A1ABFB25800005E16 /* NearbyDetail.m in Sources */,
 				C9D3E0D21AE4EEAE00F01E32 /* RegViewController.m in Sources */,
@@ -1628,28 +1639,27 @@
 				C9ADD6441B0F0F8800977B41 /* RecommendViewController.m in Sources */,
 				C9B537E21ABDB36400005E16 /* NearbyBaseViewController.m in Sources */,
 				C93B50C61BB53AE800B24FBD /* ShakingViewController.m in Sources */,
+				C979E3281CA7F88E00D1B8DD /* NSTextAttachment+Util.m in Sources */,
 				C9B537FD1ABFA2EB00005E16 /* PersonInfoViewController.m in Sources */,
-				C9AA82F01BA69F1B0044DEE3 /* Config.m in Sources */,
 				C9B538121ABFFEBA00005E16 /* PersonCell.m in Sources */,
 				C9AA7E321AC7E22900190F54 /* AreaPlay.m in Sources */,
 				C9B537EA1ABF97C100005E16 /* PersonInfoBaseViewController.m in Sources */,
+				C979E31C1CA7F87700D1B8DD /* AFFPClient.m in Sources */,
 				C913D9A21AB666B50090DE41 /* LocationBaseViewController.m in Sources */,
 				C9AA830B1BA6B8810044DEE3 /* Flowground.m in Sources */,
 				C913D9701AB662020090DE41 /* main.m in Sources */,
-				C9B6BC121B905C7C00CA2E4C /* FetchMoreCell.m in Sources */,
-				C9AA5F921B96DC090095DFDE /* UIImageView+Util.m in Sources */,
 				C9D3E0D81AE4FD2000F01E32 /* ForgetPwdViewController.m in Sources */,
 				C9B537F61ABFA0B700005E16 /* PlayCardViewController.m in Sources */,
-				C9A064CE1B89AB6A00992BA8 /* UIColor+Util.m in Sources */,
 				C9AA7E311AC7E22900190F54 /* AreaPlayViewController.m in Sources */,
 				C9AA82FD1BA6B7860044DEE3 /* FlowgroundCell.m in Sources */,
 				C9AA83071BA6B8290044DEE3 /* FlowgroundFrame.m in Sources */,
 				C9AA82FF1BA6B7860044DEE3 /* FlowgroundViewController.m in Sources */,
-				C9B537DE1ABBFFC600005E16 /* Tool.m in Sources */,
 				C9B5381E1AC03E4D00005E16 /* MyOperationModel.m in Sources */,
 				C9B538051ABFA9CD00005E16 /* NearbyCell.m in Sources */,
+				C979E3291CA7F88E00D1B8DD /* UIView+Util.m in Sources */,
 				C9B5380F1ABFFCA600005E16 /* PersonCellModel.m in Sources */,
 				C9AA83021BA6B7BB0044DEE3 /* FPRootViewController.m in Sources */,
+				C979E32A1CA7F88E00D1B8DD /* UIColor+Util.m in Sources */,
 				C913D9D61AB6714D0090DE41 /* LocationViewController.m in Sources */,
 				C913D9EC1AB8353E0090DE41 /* LocationDetail.m in Sources */,
 				C9ADD63F1B0F0F3100977B41 /* RecommendBaseViewController.m in Sources */,
@@ -1689,15 +1699,6 @@
 				C913D97D1AB662020090DE41 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		C9AA7E451ACA341F00190F54 /* SMS_SDKLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9AA7E461ACA341F00190F54 /* en */,
-				C9AA7E481ACA341F00190F54 /* zh-Hans */,
-			);
-			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		C9ADD6A11B1DDB3700977B41 /* Localizable.strings */ = {
@@ -1795,10 +1796,8 @@
 			baseConfigurationReference = 47A3E1A5007CA8471283502F /* Pods-funnyplay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/funnyplay/SMS_SDK",
-				);
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "funnyplay/funnyplay-Prefix.pch";
 				INFOPLIST_FILE = funnyplay/Info.plist;
@@ -1813,10 +1812,8 @@
 			baseConfigurationReference = CAA6D55DB8205B52C8E8D380 /* Pods-funnyplay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/funnyplay/SMS_SDK",
-				);
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "funnyplay/funnyplay-Prefix.pch";
 				INFOPLIST_FILE = funnyplay/Info.plist;
@@ -1830,10 +1827,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1851,10 +1846,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = funnyplayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

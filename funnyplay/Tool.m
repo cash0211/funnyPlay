@@ -200,38 +200,38 @@
             
             if ([compsNow day] == [compsPast day]) {
                 
-                return [NSString stringWithFormat:@"今天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+                return [NSString stringWithFormat:@"今天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
                 
             } else if (days == 1) {
                 
-                return [NSString stringWithFormat:@"昨天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+                return [NSString stringWithFormat:@"昨天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
                 
             } else if (days == 2) {
                 
-                return [NSString stringWithFormat:@"前天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+                return [NSString stringWithFormat:@"前天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
                 
             } else {
                 
-                return [NSString stringWithFormat:@"%.2d-%.2d", [compsPast month], [compsPast day]];
+                return [NSString stringWithFormat:@"%.2ld-%.2ld", (long)[compsPast month], (long)[compsPast day]];
             }
             
         } else if (days == 1) {
             
-            return [NSString stringWithFormat:@"昨天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+            return [NSString stringWithFormat:@"昨天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
             
             
         } else if (days == 2) {
             
-            return [NSString stringWithFormat:@"前天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+            return [NSString stringWithFormat:@"前天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
             
         } else {
             
-            return [NSString stringWithFormat:@"%.2d-%.2d", [compsPast month], [compsPast day]];
+            return [NSString stringWithFormat:@"%.2ld-%.2ld", (long)[compsPast month], (long)[compsPast day]];
         }
         
     } else {
         
-        return [NSString stringWithFormat:@"%d-%.2d-%.2d", [compsPast year], [compsPast month], [compsPast day]];
+        return [NSString stringWithFormat:@"%ld-%.2ld-%.2ld", (long)[compsPast year], (long)[compsPast month], (long)[compsPast day]];
     }
     
     return nil;

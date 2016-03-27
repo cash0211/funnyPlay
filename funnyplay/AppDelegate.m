@@ -10,7 +10,6 @@
 #import "Tool.h"
 #import "FPTabBarController.h"
 
-#import <SMS_SDK/SMS_SDK.h>
 #import <AFNetworkActivityIndicatorManager.h>
 
 @interface AppDelegate () <UITabBarControllerDelegate>
@@ -75,7 +74,6 @@
     */
     
     //短信
-    [SMS_SDK registerApp:@"6744f573b3c1" withSecret:@"7bee88e4f7e0e982078aaef10264e6ed"];
 
     return YES;
 }

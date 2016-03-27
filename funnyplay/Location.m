@@ -7,7 +7,6 @@
 //
 
 #import "Location.h"
-#import "AFFPClient.h"
 
 @implementation Location
 

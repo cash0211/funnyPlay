@@ -14,7 +14,7 @@
 
 //area：玄武，鼓楼...
 //对应每个area的玩的地点
-@property (nonatomic, copy) NSString *area;
+@property (nonatomic, copy) NSString *locArea;
 @property (nonatomic, strong) NSArray *areaPlays;
 
 @property (nonatomic, strong) NSMutableArray *locations;

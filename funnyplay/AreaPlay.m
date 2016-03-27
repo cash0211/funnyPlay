@@ -14,7 +14,7 @@
 - (instancetype)initWithDict:(NSDictionary *)dict {
     
     if (self = [super init]) {
-        _area = dict[@"area"];
+        _locArea = dict[@"area"];
         _areaPlays = dict[@"areaPlays"];
         
         _locations = [[NSMutableArray alloc] init];

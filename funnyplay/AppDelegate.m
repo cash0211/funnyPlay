@@ -11,6 +11,11 @@
 #import "FPTabBarController.h"
 
 #import <AFNetworkActivityIndicatorManager.h>
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+
+// AMAP key
+#define AMAPAPIKEY @"84bbfab21f049e05e4b8f1637b0872b7"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -24,6 +29,9 @@
     //设置 状态栏_网络指示器
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
+    // 高德地图
+    [MAMapServices sharedServices].apiKey = AMAPAPIKEY;
+    [AMapSearchServices sharedServices].apiKey = AMAPAPIKEY;
     
     FPTabBarController *fpTabBarC = [FPTabBarController new];
     fpTabBarC.delegate = self;

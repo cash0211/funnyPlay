@@ -65,6 +65,15 @@
 		C979E3281CA7F88E00D1B8DD /* NSTextAttachment+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3221CA7F88E00D1B8DD /* NSTextAttachment+Util.m */; };
 		C979E3291CA7F88E00D1B8DD /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3241CA7F88E00D1B8DD /* UIView+Util.m */; };
 		C979E32A1CA7F88E00D1B8DD /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3261CA7F88E00D1B8DD /* UIColor+Util.m */; };
+		C979E33E1CA8078E00D1B8DD /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E33D1CA8078E00D1B8DD /* AMapSearchKit.framework */; };
+		C979E3401CA8079E00D1B8DD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E33F1CA8079E00D1B8DD /* MAMapKit.framework */; };
+		C979E3421CA808B600D1B8DD /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C979E3411CA808B600D1B8DD /* AMap.bundle */; };
+		C979E3441CA8091E00D1B8DD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E3431CA8091E00D1B8DD /* CoreTelephony.framework */; };
+		C979E3461CA8096800D1B8DD /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E3451CA8096700D1B8DD /* libstdc++.6.0.9.tbd */; };
+		C979E3481CA8098600D1B8DD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E3471CA8098600D1B8DD /* libc++.tbd */; };
+		C979E34A1CA809D900D1B8DD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E3491CA809D900D1B8DD /* libz.tbd */; };
+		C979E34C1CA80A2200D1B8DD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E34B1CA80A2200D1B8DD /* AudioToolbox.framework */; };
+		C979E34F1CA811B800D1B8DD /* AMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E34E1CA811B800D1B8DD /* AMapViewController.m */; };
 		C9A064D11B89B86D00992BA8 /* FPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A064D01B89B86D00992BA8 /* FPTabBarController.m */; };
 		C9AA5E961B95D9550095DFDE /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E951B95D9550095DFDE /* emoji.plist */; };
 		C9AA5F131B95D9830095DFDE /* +1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E981B95D9830095DFDE /* +1@2x.png */; };
@@ -201,7 +210,6 @@
 		C9AA7E401AC8DF5700190F54 /* PlayCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AA7E3F1AC8DF5700190F54 /* PlayCard.xib */; };
 		C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E421AC8F8A300190F54 /* PlayCardData.m */; };
 		C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4B1ACA344500190F54 /* libicucore.dylib */; };
-		C9AA7E4E1ACA344F00190F54 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4D1ACA344F00190F54 /* libz.dylib */; };
 		C9AA7E501ACA345700190F54 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4F1ACA345700190F54 /* MessageUI.framework */; };
 		C9AA7E521ACA346500190F54 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E511ACA346500190F54 /* AddressBook.framework */; };
 		C9AA7E541ACA346E00190F54 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */; };
@@ -298,13 +306,6 @@
 			remoteGlobalIDString = C913D9691AB662020090DE41;
 			remoteInfo = funnyplay;
 		};
-		C979E3311CA7F97C00D1B8DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F3F34AC019AED773004CA430;
-			remoteInfo = SMS_SDKDemo;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -389,8 +390,16 @@
 		C979E3241CA7F88E00D1B8DD /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
 		C979E3251CA7F88E00D1B8DD /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
 		C979E3261CA7F88E00D1B8DD /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
-		C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMS_SDKDemo.xcodeproj; path = ../../Downloads/SMSSDK_2.0.2_Demo/SMS_SDKDemo.xcodeproj; sourceTree = "<group>"; };
-		C979E3331CA7F98A00D1B8DD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = ../../Downloads/SMSSDK_2.0.2_Demo/SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
+		C979E33D1CA8078E00D1B8DD /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		C979E33F1CA8079E00D1B8DD /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		C979E3411CA808B600D1B8DD /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = ../AMap.bundle; sourceTree = "<group>"; };
+		C979E3431CA8091E00D1B8DD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		C979E3451CA8096700D1B8DD /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		C979E3471CA8098600D1B8DD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C979E3491CA809D900D1B8DD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C979E34B1CA80A2200D1B8DD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C979E34D1CA811B800D1B8DD /* AMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMapViewController.h; sourceTree = "<group>"; };
+		C979E34E1CA811B800D1B8DD /* AMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMapViewController.m; sourceTree = "<group>"; };
 		C9A064CF1B89B86D00992BA8 /* FPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTabBarController.h; sourceTree = "<group>"; };
 		C9A064D01B89B86D00992BA8 /* FPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTabBarController.m; sourceTree = "<group>"; };
 		C9AA5E951B95D9550095DFDE /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
@@ -656,8 +665,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C979E34C1CA80A2200D1B8DD /* AudioToolbox.framework in Frameworks */,
+				C979E34A1CA809D900D1B8DD /* libz.tbd in Frameworks */,
+				C979E3481CA8098600D1B8DD /* libc++.tbd in Frameworks */,
+				C979E3461CA8096800D1B8DD /* libstdc++.6.0.9.tbd in Frameworks */,
+				C979E3441CA8091E00D1B8DD /* CoreTelephony.framework in Frameworks */,
 				C93B50C81BBA25D900B24FBD /* CoreMotion.framework in Frameworks */,
 				C93B508E1BB1387B00B24FBD /* AVFoundation.framework in Frameworks */,
+				C979E3401CA8079E00D1B8DD /* MAMapKit.framework in Frameworks */,
 				C92FBF931B0A0C360031AED9 /* Security.framework in Frameworks */,
 				C92FBF911B0A0C2A0031AED9 /* CoreGraphics.framework in Frameworks */,
 				C92FBF8F1B0A0C1C0031AED9 /* SystemConfiguration.framework in Frameworks */,
@@ -666,7 +681,7 @@
 				C9AA7E541ACA346E00190F54 /* AddressBookUI.framework in Frameworks */,
 				C9AA7E521ACA346500190F54 /* AddressBook.framework in Frameworks */,
 				C9AA7E501ACA345700190F54 /* MessageUI.framework in Frameworks */,
-				C9AA7E4E1ACA344F00190F54 /* libz.dylib in Frameworks */,
+				C979E33E1CA8078E00D1B8DD /* AMapSearchKit.framework in Frameworks */,
 				C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */,
 				C9B538231AC0F77700005E16 /* QuartzCore.framework in Frameworks */,
 				C5669098E540C70F68816A82 /* libPods-funnyplay.a in Frameworks */,
@@ -695,8 +710,11 @@
 		833509999555F751769DB835 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C979E3331CA7F98A00D1B8DD /* SMS_SDK.framework */,
-				C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */,
+				C979E34B1CA80A2200D1B8DD /* AudioToolbox.framework */,
+				C979E3491CA809D900D1B8DD /* libz.tbd */,
+				C979E3471CA8098600D1B8DD /* libc++.tbd */,
+				C979E3451CA8096700D1B8DD /* libstdc++.6.0.9.tbd */,
+				C979E3431CA8091E00D1B8DD /* CoreTelephony.framework */,
 				C93B50C71BBA25D900B24FBD /* CoreMotion.framework */,
 				C93B508D1BB1387B00B24FBD /* AVFoundation.framework */,
 				C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */,
@@ -734,6 +752,7 @@
 		C913D96C1AB662020090DE41 /* funnyplay */ = {
 			isa = PBXGroup;
 			children = (
+				C979E3391CA8059000D1B8DD /* ThirdPart */,
 				C979E3101CA7F86000D1B8DD /* Helper */,
 				C913D9AA1AB669940090DE41 /* Image */,
 				C913D9711AB662020090DE41 /* AppDelegate.h */,
@@ -824,6 +843,8 @@
 				C9AA7E2E1AC7E22900190F54 /* AreaPlayViewController.m */,
 				C9AA7E331AC7E80D00190F54 /* AreaPlay.xib */,
 				C9AA7E161AC7B8C300190F54 /* areaPlay.plist */,
+				C979E34D1CA811B800D1B8DD /* AMapViewController.h */,
+				C979E34E1CA811B800D1B8DD /* AMapViewController.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -982,12 +1003,22 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
-		C979E32E1CA7F97C00D1B8DD /* Products */ = {
+		C979E3391CA8059000D1B8DD /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				C979E3321CA7F97C00D1B8DD /* SMS_SDKDemo.app */,
+				C979E33A1CA8074900D1B8DD /* AMap */,
 			);
-			name = Products;
+			name = ThirdPart;
+			sourceTree = "<group>";
+		};
+		C979E33A1CA8074900D1B8DD /* AMap */ = {
+			isa = PBXGroup;
+			children = (
+				C979E3411CA808B600D1B8DD /* AMap.bundle */,
+				C979E33F1CA8079E00D1B8DD /* MAMapKit.framework */,
+				C979E33D1CA8078E00D1B8DD /* AMapSearchKit.framework */,
+			);
+			name = AMap;
 			sourceTree = "<group>";
 		};
 		C9AA5E971B95D95F0095DFDE /* emoji */ = {
@@ -1318,12 +1349,6 @@
 			mainGroup = C913D9611AB662020090DE41;
 			productRefGroup = C913D96B1AB662020090DE41 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C979E32E1CA7F97C00D1B8DD /* Products */;
-					ProjectRef = C979E32D1CA7F97C00D1B8DD /* SMS_SDKDemo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C913D9691AB662020090DE41 /* funnyplay */,
@@ -1331,16 +1356,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C979E3321CA7F97C00D1B8DD /* SMS_SDKDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SMS_SDKDemo.app;
-			remoteRef = C979E3311CA7F97C00D1B8DD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C913D9681AB662020090DE41 /* Resources */ = {
@@ -1401,6 +1416,7 @@
 				C9AA5F681B95D9830095DFDE /* 068@2x.png in Resources */,
 				C9AA5F581B95D9830095DFDE /* 052@2x.png in Resources */,
 				C9AA5F481B95D9830095DFDE /* 036@2x.png in Resources */,
+				C979E3421CA808B600D1B8DD /* AMap.bundle in Resources */,
 				C9AA5F381B95D9830095DFDE /* 020@2x.png in Resources */,
 				C9AA5F1A1B95D9830095DFDE /* goberserk@2x.png in Resources */,
 				C9AA5F301B95D9830095DFDE /* 012@2x.png in Resources */,
@@ -1621,6 +1637,7 @@
 				C913D9DE1AB7C0AF0090DE41 /* Location.m in Sources */,
 				C9B537E61ABF96E200005E16 /* PlayCardBaseViewController.m in Sources */,
 				C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */,
+				C979E34F1CA811B800D1B8DD /* AMapViewController.m in Sources */,
 				C9AA82FC1BA6B7860044DEE3 /* FlowgroundBaseViewController.m in Sources */,
 				C93B508C1BB1380B00B24FBD /* ScanningViewController.m in Sources */,
 				C979E31A1CA7F87700D1B8DD /* Tool.m in Sources */,
@@ -1797,7 +1814,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/funnyplay",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "funnyplay/funnyplay-Prefix.pch";
 				INFOPLIST_FILE = funnyplay/Info.plist;
@@ -1813,7 +1833,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/funnyplay",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "funnyplay/funnyplay-Prefix.pch";
 				INFOPLIST_FILE = funnyplay/Info.plist;

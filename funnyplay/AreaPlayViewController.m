@@ -12,6 +12,8 @@
 #import "Location.h"
 #import "Tool.h"
 
+#import "AMapViewController.h"
+
 @interface AreaPlayViewController () {
     
     NSMutableArray *_allItems;
@@ -58,23 +60,11 @@
      */
 }
 
-//高德地图
-- (void) clickIsHereForGd:(id)sender {
-    
-    
-}
-
-//百度地图
+// 高德地图
 - (void) clickIsHere:(id)sender {
     
-    /*
-    //地图 --- ”都在这里“
-    MapViewBaseViewController *_mapViewCon = [[MapViewBaseViewController alloc] init];
-    UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
-    customLeftBarButtonItem.title = @"返回";
-    self.navigationItem.backBarButtonItem = customLeftBarButtonItem;
-    [self.navigationController pushViewController:_mapViewCon animated:YES];
-     */
+    AMapViewController *amapVC = [[AMapViewController alloc] init];
+    [self.navigationController pushViewController:amapVC animated:YES];
 }
 
 #pragma mark tableView DataSource
@@ -103,7 +93,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    return [_allItems[section] area];
+    return [_allItems[section] locArea];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

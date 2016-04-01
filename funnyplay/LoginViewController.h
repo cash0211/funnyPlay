@@ -10,10 +10,4 @@
 
 @interface LoginViewController : UIViewController
 
-@property (nonatomic, strong) UITextField *phoneNumTextField;
-@property (nonatomic, strong) UITextField *pwdTextField;
-@property (nonatomic, strong) UIButton *loginBtn;
-@property (nonatomic, strong) UIButton *phoneNumRegBtn;
-@property (nonatomic, strong) UIButton *forgetPwdBtn;
-
 @end

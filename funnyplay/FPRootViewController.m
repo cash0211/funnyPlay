@@ -7,15 +7,15 @@
 //
 
 #import "FPRootViewController.h"
-//#import "OSCBaseObject.h"
 #import "Tool.h"
+#import "FetchMoreCell.h"
 
-#import <MBProgressHUD.h>
+#import <AFNetworking.h>
 
 @interface FPRootViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
-@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 @end
 
@@ -72,7 +72,7 @@
     _label.font = [UIFont boldSystemFontOfSize:14];
     
     
-    _manager = [AFHTTPRequestOperationManager manager];
+    _manager = [AFHTTPSessionManager manager];
 //    [_manager.requestSerializer setValue:[Utils generateUserAgent] forHTTPHeaderField:@"User-Agent"];
 //    _manager.responseSerializer = [AFOnoResponseSerializer XMLResponseSerializer];
     
@@ -138,11 +138,9 @@
 
 #pragma mark - 上拉加载更多
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
-    if(scrollView.contentOffset.y > ((scrollView.contentSize.height - scrollView.frame.size.height)))
-    {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height - 150)) {
         [self fetchMore];
     }
 }
@@ -150,7 +148,7 @@
 - (void)fetchMore
 {
     
-    _moreCell.status = LastCellStatusLoading;
+    _moreCell.status = FetchMoreCellStatusLoading;
     
     _manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     [self fetchObjectsOnPage:++_page refresh:NO];
@@ -166,13 +164,11 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^{
        
-        _moreCell.status = LastCellStatusMore;
+        _moreCell.status = FetchMoreCellStatusMore;
         
         if (self.refreshControl.refreshing) {
             [self.refreshControl endRefreshing];
         }
-        
-        NSLog(@"TEST SUCCESS~");
         
 //        self.generateURL(page);
     });

@@ -23,7 +23,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //设置 状态栏_网络指示器
@@ -41,45 +40,7 @@
     [self.window makeKeyAndVisible];
     
     
-    /************ 控件外观设置 **************/
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    //这个就是bar的颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blueTintColor]];
-    //这个是title的颜色
-    NSDictionary *navbarTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
-    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
-    //这个是左右按钮的颜色
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    
-    [[UITabBar appearance] setTintColor:[UIColor blueTintColor]];  //按钮
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithHex:0xE1E1E1]]; //bar
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blueTintColor]} forState:UIControlStateSelected];
-    
-    /*
-    [UISearchBar appearance].tintColor = [UIColor colorWithHex:0x15A230];
-    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setCornerRadius:14.0];
-    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setAlpha:0.6];
-    
-    
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor colorWithHex:0xDCDCDC];
-    pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
-    
-    [[UITextField appearance] setTintColor:[UIColor nameColor]];
-    [[UITextView appearance]  setTintColor:[UIColor nameColor]];
-    
-    
-    UIMenuController *menuController = [UIMenuController sharedMenuController];
-    
-    [menuController setMenuVisible:YES animated:YES];
-    [menuController setMenuItems:@[
-                                   [[UIMenuItem alloc] initWithTitle:@"复制" action:NSSelectorFromString(@"copyText:")],
-                                   [[UIMenuItem alloc] initWithTitle:@"删除" action:NSSelectorFromString(@"deleteObject:")]
-                                   ]];
-    
-    */
+    [self _customizeAppearance];
     
     //短信
 
@@ -110,4 +71,60 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark - Private methods
+
+- (void)_customizeAppearance {
+    
+    /************ 控件外观设置 **************/
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //这个就是bar的颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blueTintColor]];
+    //这个是title的颜色
+    NSDictionary *navbarTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    //这个是左右按钮的颜色
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
+    [[UITabBar appearance] setTintColor:[UIColor blueTintColor]];  //按钮
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithHex:0xE1E1E1]]; //bar
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blueTintColor]} forState:UIControlStateSelected];
+    
+    /*
+     [UISearchBar appearance].tintColor = [UIColor colorWithHex:0x15A230];
+     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setCornerRadius:14.0];
+     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setAlpha:0.6];
+     
+     
+     UIPageControl *pageControl = [UIPageControl appearance];
+     pageControl.pageIndicatorTintColor = [UIColor colorWithHex:0xDCDCDC];
+     pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
+     
+     [[UITextField appearance] setTintColor:[UIColor nameColor]];
+     [[UITextView appearance]  setTintColor:[UIColor nameColor]];
+     
+     
+     UIMenuController *menuController = [UIMenuController sharedMenuController];
+     
+     [menuController setMenuVisible:YES animated:YES];
+     [menuController setMenuItems:@[
+     [[UIMenuItem alloc] initWithTitle:@"复制" action:NSSelectorFromString(@"copyText:")],
+     [[UIMenuItem alloc] initWithTitle:@"删除" action:NSSelectorFromString(@"deleteObject:")]
+     ]];
+     
+     */
+}
+
+
 @end
+
+
+
+
+
+
+
+
+

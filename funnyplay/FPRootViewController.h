@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import <AFNetworking.h>
 //#import <AFOnoResponseSerializer.h>
 //#import <Ono.h>
 
 #import "FPAPI.h"
-#import "FetchMoreCell.h"
+
+@class FetchMoreCell;
 
 @interface FPRootViewController : UITableViewController
 

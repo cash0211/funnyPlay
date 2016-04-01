@@ -8,13 +8,11 @@
 
 #import "LocationDetail.h"
 #import "Tool.h"
-#import "AFFPClient.h"
+#import "UIView+ActivityIndicator.h"
 
 #import <MBProgressHUD.h>
 
 @interface LocationDetail ()
-
-@property (nonatomic, strong) MBProgressHUD *HUD;
 
 @end
 
@@ -27,9 +25,8 @@
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"收藏" style:UIBarButtonItemStyleDone target:self action:@selector(clickCollection:)];
     self.parentViewController.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:barButton, nil];
     
-    _HUD = [Tool createHUD:@"请稍等..."];
-    _HUD.userInteractionEnabled = NO;
-    _HUD.dimBackground = YES;
+    [self.view showHUDIndicatorViewAtCenterWithTitle:@"请稍等..."];
+    
 
     //网络请求细节内容
     [self getLocationDetail];
@@ -37,7 +34,13 @@
 
 - (void)getLocationDetail {
     
-    [_HUD hide:YES afterDelay:1];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 临时延迟，看网络加载情况
+            [self.view hideDelayHUDViewAtCenter];
+        });
+    });
     
     /*
     [[AFFPClient sharedClient] GET:@"" parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject) {

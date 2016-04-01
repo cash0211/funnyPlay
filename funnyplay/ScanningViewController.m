@@ -123,11 +123,6 @@
         } else if ([Tool isURL:message]) {
 //            [Utils analysis:message andNavController:self.navigationController];
         } else {
-            MBProgressHUD *HUD = [Tool createHUD:message];
-            HUD.mode = MBProgressHUDModeText;
-            
-            [HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-            [HUD hide:YES afterDelay:2];
             
             [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         }

@@ -11,9 +11,9 @@
 #import "NearbyDetail.h"
 #import "AreaPlayViewController.h"
 #import "LoginViewController.h"
-#import "RegViewController.h"
-#import "ForgetPwdViewController.h"
-#import "ResetPwdViewController.h"
+#import "RegisterViewController.h"
+#import "ForgetPasswordViewController.h"
+#import "ResetPasswordViewController.h"
 
 #import <MBProgressHUD.h>
 
@@ -65,31 +65,28 @@
     loginCon.hidesBottomBarWhenPushed = YES;
     
     [navController pushViewController:loginCon animated:YES];
-    
 }
 
 + (void)pushRegUser:(id)sender andNavController:(UINavigationController *)navController {
     
-    RegViewController *regCon = [[RegViewController alloc] init];
+    RegisterViewController *regCon = [[RegisterViewController alloc] init];
     
     [navController pushViewController:regCon animated:YES];
-    
 }
 
 +(void)pushforgetPwd:(id)sender andNavController:(UINavigationController *)navController {
     
-    ForgetPwdViewController *forgetCon = [[ForgetPwdViewController alloc] init];
+    ForgetPasswordViewController *forgetCon = [[ForgetPasswordViewController alloc] init];
     
     [navController pushViewController:forgetCon animated:YES];
 }
 
 +(void)pushResetPwd:(id)sender andNavController:(UINavigationController *)navController {
     
-    ResetPwdViewController *resetCon = [[ResetPwdViewController alloc] init];
+    ResetPasswordViewController *resetCon = [[ResetPasswordViewController alloc] init];
     
     [navController pushViewController:resetCon animated:YES];
 }
-
 
 + (BOOL)isURL:(NSString *)string
 {
@@ -100,21 +97,6 @@
     return [urlPredicate evaluateWithObject:string];
 }
 
-
-//HUD
-+ (MBProgressHUD *)createHUD:(NSString *)text 
-{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
-    HUD.detailsLabelText = text;
-    [window addSubview:HUD];
-    [HUD show:YES];
-    
-    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-    
-    return HUD;
-}
 
 #pragma mark - 流动墙功能
 #pragma mark time_1

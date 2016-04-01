@@ -59,7 +59,6 @@
 		C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97195B21ADD116100C3E410 /* LoginViewController.m */; };
 		C979E31A1CA7F87700D1B8DD /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3131CA7F87700D1B8DD /* Tool.m */; };
 		C979E31B1CA7F87700D1B8DD /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3151CA7F87700D1B8DD /* Config.m */; };
-		C979E31C1CA7F87700D1B8DD /* AFFPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3171CA7F87700D1B8DD /* AFFPClient.m */; };
 		C979E31D1CA7F87700D1B8DD /* FetchMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3191CA7F87700D1B8DD /* FetchMoreCell.m */; };
 		C979E3271CA7F88E00D1B8DD /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3201CA7F88E00D1B8DD /* UIImageView+Util.m */; };
 		C979E3281CA7F88E00D1B8DD /* NSTextAttachment+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3221CA7F88E00D1B8DD /* NSTextAttachment+Util.m */; };
@@ -74,6 +73,16 @@
 		C979E34A1CA809D900D1B8DD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E3491CA809D900D1B8DD /* libz.tbd */; };
 		C979E34C1CA80A2200D1B8DD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E34B1CA80A2200D1B8DD /* AudioToolbox.framework */; };
 		C979E34F1CA811B800D1B8DD /* AMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E34E1CA811B800D1B8DD /* AMapViewController.m */; };
+		C979E3551CA8E79F00D1B8DD /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3541CA8E79F00D1B8DD /* UIView+Additions.m */; };
+		C979E3591CA8E8E800D1B8DD /* UIView+ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E3581CA8E8E800D1B8DD /* UIView+ActivityIndicator.m */; };
+		C979E4E61CAAABBD00D1B8DD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E4E51CAAABBD00D1B8DD /* CFNetwork.framework */; };
+		C979E4E81CAAABED00D1B8DD /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E4E71CAAABED00D1B8DD /* libxml2.tbd */; };
+		C979E4EA1CAAABFF00D1B8DD /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E4E91CAAABFF00D1B8DD /* libresolv.tbd */; };
+		C979E4EC1CAAACD900D1B8DD /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C979E4EB1CAAACD900D1B8DD /* libicucore.tbd */; };
+		C979E5101CAB6DAF00D1B8DD /* FPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E50F1CAB6DAF00D1B8DD /* FPMessagesViewController.m */; };
+		C979E5131CAB6F6000D1B8DD /* FPMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E5121CAB6F6000D1B8DD /* FPMessages.m */; };
+		C979E5171CAC144600D1B8DD /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E5161CAC144500D1B8DD /* FlatButton.m */; };
+		C979E51A1CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C979E5191CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.m */; };
 		C9A064D11B89B86D00992BA8 /* FPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A064D01B89B86D00992BA8 /* FPTabBarController.m */; };
 		C9AA5E961B95D9550095DFDE /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E951B95D9550095DFDE /* emoji.plist */; };
 		C9AA5F131B95D9830095DFDE /* +1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E981B95D9830095DFDE /* +1@2x.png */; };
@@ -209,7 +218,6 @@
 		C9AA7E3E1AC8DF4100190F54 /* PlayCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E3D1AC8DF4100190F54 /* PlayCardCell.m */; };
 		C9AA7E401AC8DF5700190F54 /* PlayCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AA7E3F1AC8DF5700190F54 /* PlayCard.xib */; };
 		C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA7E421AC8F8A300190F54 /* PlayCardData.m */; };
-		C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4B1ACA344500190F54 /* libicucore.dylib */; };
 		C9AA7E501ACA345700190F54 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E4F1ACA345700190F54 /* MessageUI.framework */; };
 		C9AA7E521ACA346500190F54 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E511ACA346500190F54 /* AddressBook.framework */; };
 		C9AA7E541ACA346E00190F54 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */; };
@@ -220,8 +228,6 @@
 		C9AA82FE1BA6B7860044DEE3 /* FlowgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AA82F71BA6B7860044DEE3 /* FlowgroundView.xib */; };
 		C9AA82FF1BA6B7860044DEE3 /* FlowgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA82F91BA6B7860044DEE3 /* FlowgroundViewController.m */; };
 		C9AA83021BA6B7BB0044DEE3 /* FPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA83011BA6B7BB0044DEE3 /* FPRootViewController.m */; };
-		C9AA83071BA6B8290044DEE3 /* FlowgroundFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA83041BA6B8290044DEE3 /* FlowgroundFrame.m */; };
-		C9AA83081BA6B8290044DEE3 /* FlowgroundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA83061BA6B8290044DEE3 /* FlowgroundTableViewCell.m */; };
 		C9AA830B1BA6B8810044DEE3 /* Flowground.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AA830A1BA6B8810044DEE3 /* Flowground.m */; };
 		C9AA830D1BA6C9F90044DEE3 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9AA830C1BA6C9F90044DEE3 /* mapapi.bundle */; };
 		C9ADD6101B0DA97B00977B41 /* flowzone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ADD6021B0DA97B00977B41 /* flowzone.png */; };
@@ -289,13 +295,11 @@
 		C9B538121ABFFEBA00005E16 /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B538111ABFFEBA00005E16 /* PersonCell.m */; };
 		C9B538141ABFFED200005E16 /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B538131ABFFED200005E16 /* PersonCell.xib */; };
 		C9B538161AC00BEF00005E16 /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B538151AC00BEF00005E16 /* person.plist */; };
-		C9B538191AC00D7A00005E16 /* MyOperationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B538181AC00D7A00005E16 /* MyOperationCell.m */; };
-		C9B5381B1AC00D9500005E16 /* MyOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B5381A1AC00D9500005E16 /* MyOperationCell.xib */; };
 		C9B5381E1AC03E4D00005E16 /* MyOperationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B5381D1AC03E4D00005E16 /* MyOperationModel.m */; };
 		C9B538231AC0F77700005E16 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B538221AC0F77700005E16 /* QuartzCore.framework */; };
-		C9D3E0D21AE4EEAE00F01E32 /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0D11AE4EEAE00F01E32 /* RegViewController.m */; };
-		C9D3E0D81AE4FD2000F01E32 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0D61AE4FD2000F01E32 /* ForgetPwdViewController.m */; };
-		C9D3E0DD1AE5045E00F01E32 /* ResetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0DB1AE5045E00F01E32 /* ResetPwdViewController.m */; };
+		C9D3E0D21AE4EEAE00F01E32 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0D11AE4EEAE00F01E32 /* RegisterViewController.m */; };
+		C9D3E0D81AE4FD2000F01E32 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0D61AE4FD2000F01E32 /* ForgetPasswordViewController.m */; };
+		C9D3E0DD1AE5045E00F01E32 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3E0DB1AE5045E00F01E32 /* ResetPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,8 +382,6 @@
 		C979E3131CA7F87700D1B8DD /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		C979E3141CA7F87700D1B8DD /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		C979E3151CA7F87700D1B8DD /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
-		C979E3161CA7F87700D1B8DD /* AFFPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFPClient.h; sourceTree = "<group>"; };
-		C979E3171CA7F87700D1B8DD /* AFFPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFPClient.m; sourceTree = "<group>"; };
 		C979E3181CA7F87700D1B8DD /* FetchMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchMoreCell.h; sourceTree = "<group>"; };
 		C979E3191CA7F87700D1B8DD /* FetchMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchMoreCell.m; sourceTree = "<group>"; };
 		C979E31F1CA7F88E00D1B8DD /* UIImageView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Util.h"; sourceTree = "<group>"; };
@@ -400,6 +402,22 @@
 		C979E34B1CA80A2200D1B8DD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C979E34D1CA811B800D1B8DD /* AMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMapViewController.h; sourceTree = "<group>"; };
 		C979E34E1CA811B800D1B8DD /* AMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMapViewController.m; sourceTree = "<group>"; };
+		C979E3531CA8E79F00D1B8DD /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		C979E3541CA8E79F00D1B8DD /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		C979E3571CA8E8E800D1B8DD /* UIView+ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ActivityIndicator.h"; sourceTree = "<group>"; };
+		C979E3581CA8E8E800D1B8DD /* UIView+ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ActivityIndicator.m"; sourceTree = "<group>"; };
+		C979E4E51CAAABBD00D1B8DD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C979E4E71CAAABED00D1B8DD /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		C979E4E91CAAABFF00D1B8DD /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		C979E4EB1CAAACD900D1B8DD /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		C979E50E1CAB6DAF00D1B8DD /* FPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMessagesViewController.h; sourceTree = "<group>"; };
+		C979E50F1CAB6DAF00D1B8DD /* FPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPMessagesViewController.m; sourceTree = "<group>"; };
+		C979E5111CAB6F6000D1B8DD /* FPMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMessages.h; sourceTree = "<group>"; };
+		C979E5121CAB6F6000D1B8DD /* FPMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPMessages.m; sourceTree = "<group>"; };
+		C979E5151CAC144500D1B8DD /* FlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatButton.h; sourceTree = "<group>"; };
+		C979E5161CAC144500D1B8DD /* FlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatButton.m; sourceTree = "<group>"; };
+		C979E5181CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordStrengthIndicatorView.h; sourceTree = "<group>"; };
+		C979E5191CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordStrengthIndicatorView.m; sourceTree = "<group>"; };
 		C9A064CF1B89B86D00992BA8 /* FPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTabBarController.h; sourceTree = "<group>"; };
 		C9A064D01B89B86D00992BA8 /* FPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTabBarController.m; sourceTree = "<group>"; };
 		C9AA5E951B95D9550095DFDE /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
@@ -541,8 +559,6 @@
 		C9AA7E3F1AC8DF5700190F54 /* PlayCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayCard.xib; sourceTree = "<group>"; };
 		C9AA7E411AC8F8A300190F54 /* PlayCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayCardData.h; sourceTree = "<group>"; };
 		C9AA7E421AC8F8A300190F54 /* PlayCardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayCardData.m; sourceTree = "<group>"; };
-		C9AA7E4B1ACA344500190F54 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		C9AA7E4D1ACA344F00190F54 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C9AA7E4F1ACA345700190F54 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9AA7E511ACA346500190F54 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		C9AA7E531ACA346E00190F54 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -557,10 +573,6 @@
 		C9AA82F91BA6B7860044DEE3 /* FlowgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlowgroundViewController.m; path = funnyplay/FlowgroundViewController.m; sourceTree = "<group>"; };
 		C9AA83001BA6B7BB0044DEE3 /* FPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPRootViewController.h; sourceTree = "<group>"; };
 		C9AA83011BA6B7BB0044DEE3 /* FPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPRootViewController.m; sourceTree = "<group>"; };
-		C9AA83031BA6B8290044DEE3 /* FlowgroundFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowgroundFrame.h; sourceTree = "<group>"; };
-		C9AA83041BA6B8290044DEE3 /* FlowgroundFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowgroundFrame.m; sourceTree = "<group>"; };
-		C9AA83051BA6B8290044DEE3 /* FlowgroundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowgroundTableViewCell.h; sourceTree = "<group>"; };
-		C9AA83061BA6B8290044DEE3 /* FlowgroundTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowgroundTableViewCell.m; sourceTree = "<group>"; };
 		C9AA83091BA6B8810044DEE3 /* Flowground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flowground.h; sourceTree = "<group>"; };
 		C9AA830A1BA6B8810044DEE3 /* Flowground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flowground.m; sourceTree = "<group>"; };
 		C9AA830C1BA6C9F90044DEE3 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
@@ -644,18 +656,15 @@
 		C9B538111ABFFEBA00005E16 /* PersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCell.m; sourceTree = "<group>"; };
 		C9B538131ABFFED200005E16 /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
 		C9B538151AC00BEF00005E16 /* person.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
-		C9B538171AC00D7A00005E16 /* MyOperationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperationCell.h; sourceTree = "<group>"; };
-		C9B538181AC00D7A00005E16 /* MyOperationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperationCell.m; sourceTree = "<group>"; };
-		C9B5381A1AC00D9500005E16 /* MyOperationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOperationCell.xib; sourceTree = "<group>"; };
 		C9B5381C1AC03E4D00005E16 /* MyOperationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperationModel.h; sourceTree = "<group>"; };
 		C9B5381D1AC03E4D00005E16 /* MyOperationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperationModel.m; sourceTree = "<group>"; };
 		C9B538221AC0F77700005E16 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C9D3E0D01AE4EEAE00F01E32 /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
-		C9D3E0D11AE4EEAE00F01E32 /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
-		C9D3E0D51AE4FD2000F01E32 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
-		C9D3E0D61AE4FD2000F01E32 /* ForgetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
-		C9D3E0DA1AE5045E00F01E32 /* ResetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPwdViewController.h; sourceTree = "<group>"; };
-		C9D3E0DB1AE5045E00F01E32 /* ResetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPwdViewController.m; sourceTree = "<group>"; };
+		C9D3E0D01AE4EEAE00F01E32 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C9D3E0D11AE4EEAE00F01E32 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C9D3E0D51AE4FD2000F01E32 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		C9D3E0D61AE4FD2000F01E32 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		C9D3E0DA1AE5045E00F01E32 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		C9D3E0DB1AE5045E00F01E32 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		C9FD84131BAD21F900507EF1 /* funnyplay-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "funnyplay-Prefix.pch"; sourceTree = "<group>"; };
 		CAA6D55DB8205B52C8E8D380 /* Pods-funnyplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-funnyplay.release.xcconfig"; path = "Pods/Target Support Files/Pods-funnyplay/Pods-funnyplay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -665,8 +674,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C979E34C1CA80A2200D1B8DD /* AudioToolbox.framework in Frameworks */,
 				C979E34A1CA809D900D1B8DD /* libz.tbd in Frameworks */,
+				C979E4EC1CAAACD900D1B8DD /* libicucore.tbd in Frameworks */,
+				C979E4EA1CAAABFF00D1B8DD /* libresolv.tbd in Frameworks */,
+				C979E4E81CAAABED00D1B8DD /* libxml2.tbd in Frameworks */,
+				C979E4E61CAAABBD00D1B8DD /* CFNetwork.framework in Frameworks */,
+				C979E34C1CA80A2200D1B8DD /* AudioToolbox.framework in Frameworks */,
 				C979E3481CA8098600D1B8DD /* libc++.tbd in Frameworks */,
 				C979E3461CA8096800D1B8DD /* libstdc++.6.0.9.tbd in Frameworks */,
 				C979E3441CA8091E00D1B8DD /* CoreTelephony.framework in Frameworks */,
@@ -682,7 +695,6 @@
 				C9AA7E521ACA346500190F54 /* AddressBook.framework in Frameworks */,
 				C9AA7E501ACA345700190F54 /* MessageUI.framework in Frameworks */,
 				C979E33E1CA8078E00D1B8DD /* AMapSearchKit.framework in Frameworks */,
-				C9AA7E4C1ACA344500190F54 /* libicucore.dylib in Frameworks */,
 				C9B538231AC0F77700005E16 /* QuartzCore.framework in Frameworks */,
 				C5669098E540C70F68816A82 /* libPods-funnyplay.a in Frameworks */,
 			);
@@ -710,10 +722,8 @@
 		833509999555F751769DB835 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C979E4E51CAAABBD00D1B8DD /* CFNetwork.framework */,
 				C979E34B1CA80A2200D1B8DD /* AudioToolbox.framework */,
-				C979E3491CA809D900D1B8DD /* libz.tbd */,
-				C979E3471CA8098600D1B8DD /* libc++.tbd */,
-				C979E3451CA8096700D1B8DD /* libstdc++.6.0.9.tbd */,
 				C979E3431CA8091E00D1B8DD /* CoreTelephony.framework */,
 				C93B50C71BBA25D900B24FBD /* CoreMotion.framework */,
 				C93B508D1BB1387B00B24FBD /* AVFoundation.framework */,
@@ -721,8 +731,12 @@
 				C9AA7E511ACA346500190F54 /* AddressBook.framework */,
 				C9AA7E4F1ACA345700190F54 /* MessageUI.framework */,
 				C9B538221AC0F77700005E16 /* QuartzCore.framework */,
-				C9AA7E4B1ACA344500190F54 /* libicucore.dylib */,
-				C9AA7E4D1ACA344F00190F54 /* libz.dylib */,
+				C979E3491CA809D900D1B8DD /* libz.tbd */,
+				C979E3471CA8098600D1B8DD /* libc++.tbd */,
+				C979E3451CA8096700D1B8DD /* libstdc++.6.0.9.tbd */,
+				C979E4EB1CAAACD900D1B8DD /* libicucore.tbd */,
+				C979E4E91CAAABFF00D1B8DD /* libresolv.tbd */,
+				C979E4E71CAAABED00D1B8DD /* libxml2.tbd */,
 				0546D8D6C0BA0D4F384820DE /* libPods-funnyplay.a */,
 			);
 			name = Frameworks;
@@ -752,7 +766,7 @@
 		C913D96C1AB662020090DE41 /* funnyplay */ = {
 			isa = PBXGroup;
 			children = (
-				C979E3391CA8059000D1B8DD /* ThirdPart */,
+				C979E3391CA8059000D1B8DD /* Vendors */,
 				C979E3101CA7F86000D1B8DD /* Helper */,
 				C913D9AA1AB669940090DE41 /* Image */,
 				C913D9711AB662020090DE41 /* AppDelegate.h */,
@@ -771,7 +785,7 @@
 				C9B537E31ABF96B700005E16 /* PlayCard */,
 				C9B537E71ABF97AF00005E16 /* PersonInfo */,
 				C97195B01ADD111900C3E410 /* Login */,
-				C9B538211AC0EF3800005E16 /* keep */,
+				C979E50C1CAB6D2900D1B8DD /* Playmate */,
 				C913D9931AB662630090DE41 /* Model */,
 				C913D96D1AB662020090DE41 /* Supporting Files */,
 			);
@@ -957,14 +971,15 @@
 		C97195B01ADD111900C3E410 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C979E5141CAC142200D1B8DD /* popping */,
 				C97195B11ADD116100C3E410 /* LoginViewController.h */,
 				C97195B21ADD116100C3E410 /* LoginViewController.m */,
-				C9D3E0D01AE4EEAE00F01E32 /* RegViewController.h */,
-				C9D3E0D11AE4EEAE00F01E32 /* RegViewController.m */,
-				C9D3E0D51AE4FD2000F01E32 /* ForgetPwdViewController.h */,
-				C9D3E0D61AE4FD2000F01E32 /* ForgetPwdViewController.m */,
-				C9D3E0DA1AE5045E00F01E32 /* ResetPwdViewController.h */,
-				C9D3E0DB1AE5045E00F01E32 /* ResetPwdViewController.m */,
+				C9D3E0D01AE4EEAE00F01E32 /* RegisterViewController.h */,
+				C9D3E0D11AE4EEAE00F01E32 /* RegisterViewController.m */,
+				C9D3E0D51AE4FD2000F01E32 /* ForgetPasswordViewController.h */,
+				C9D3E0D61AE4FD2000F01E32 /* ForgetPasswordViewController.m */,
+				C9D3E0DA1AE5045E00F01E32 /* ResetPasswordViewController.h */,
+				C9D3E0DB1AE5045E00F01E32 /* ResetPasswordViewController.m */,
 				C93B50881BB1375200B24FBD /* Scanning&&Scanning */,
 				C93B50891BB1379E00B24FBD /* Shaking&&Shaking */,
 			);
@@ -979,8 +994,6 @@
 				C979E3131CA7F87700D1B8DD /* Tool.m */,
 				C979E3141CA7F87700D1B8DD /* Config.h */,
 				C979E3151CA7F87700D1B8DD /* Config.m */,
-				C979E3161CA7F87700D1B8DD /* AFFPClient.h */,
-				C979E3171CA7F87700D1B8DD /* AFFPClient.m */,
 				C979E3181CA7F87700D1B8DD /* FetchMoreCell.h */,
 				C979E3191CA7F87700D1B8DD /* FetchMoreCell.m */,
 				C979E31E1CA7F87A00D1B8DD /* Category */,
@@ -991,6 +1004,7 @@
 		C979E31E1CA7F87A00D1B8DD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C979E3561CA8E7A800D1B8DD /* UIView */,
 				C979E31F1CA7F88E00D1B8DD /* UIImageView+Util.h */,
 				C979E3201CA7F88E00D1B8DD /* UIImageView+Util.m */,
 				C979E3211CA7F88E00D1B8DD /* NSTextAttachment+Util.h */,
@@ -1003,12 +1017,12 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
-		C979E3391CA8059000D1B8DD /* ThirdPart */ = {
+		C979E3391CA8059000D1B8DD /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
 				C979E33A1CA8074900D1B8DD /* AMap */,
 			);
-			name = ThirdPart;
+			name = Vendors;
 			sourceTree = "<group>";
 		};
 		C979E33A1CA8074900D1B8DD /* AMap */ = {
@@ -1019,6 +1033,39 @@
 				C979E33D1CA8078E00D1B8DD /* AMapSearchKit.framework */,
 			);
 			name = AMap;
+			sourceTree = "<group>";
+		};
+		C979E3561CA8E7A800D1B8DD /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C979E3531CA8E79F00D1B8DD /* UIView+Additions.h */,
+				C979E3541CA8E79F00D1B8DD /* UIView+Additions.m */,
+				C979E3571CA8E8E800D1B8DD /* UIView+ActivityIndicator.h */,
+				C979E3581CA8E8E800D1B8DD /* UIView+ActivityIndicator.m */,
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		C979E50C1CAB6D2900D1B8DD /* Playmate */ = {
+			isa = PBXGroup;
+			children = (
+				C979E50E1CAB6DAF00D1B8DD /* FPMessagesViewController.h */,
+				C979E50F1CAB6DAF00D1B8DD /* FPMessagesViewController.m */,
+				C979E5111CAB6F6000D1B8DD /* FPMessages.h */,
+				C979E5121CAB6F6000D1B8DD /* FPMessages.m */,
+			);
+			name = Playmate;
+			sourceTree = "<group>";
+		};
+		C979E5141CAC142200D1B8DD /* popping */ = {
+			isa = PBXGroup;
+			children = (
+				C979E5151CAC144500D1B8DD /* FlatButton.h */,
+				C979E5161CAC144500D1B8DD /* FlatButton.m */,
+				C979E5181CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.h */,
+				C979E5191CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.m */,
+			);
+			name = popping;
 			sourceTree = "<group>";
 		};
 		C9AA5E971B95D95F0095DFDE /* emoji */ = {
@@ -1265,20 +1312,6 @@
 			name = PersonInfo;
 			sourceTree = "<group>";
 		};
-		C9B538211AC0EF3800005E16 /* keep */ = {
-			isa = PBXGroup;
-			children = (
-				C9AA83031BA6B8290044DEE3 /* FlowgroundFrame.h */,
-				C9AA83041BA6B8290044DEE3 /* FlowgroundFrame.m */,
-				C9AA83051BA6B8290044DEE3 /* FlowgroundTableViewCell.h */,
-				C9AA83061BA6B8290044DEE3 /* FlowgroundTableViewCell.m */,
-				C9B538171AC00D7A00005E16 /* MyOperationCell.h */,
-				C9B538181AC00D7A00005E16 /* MyOperationCell.m */,
-				C9B5381A1AC00D9500005E16 /* MyOperationCell.xib */,
-			);
-			name = keep;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1291,6 +1324,7 @@
 				C913D9671AB662020090DE41 /* Frameworks */,
 				C913D9681AB662020090DE41 /* Resources */,
 				DC5B9B2AD53ED59A6AC9C24B /* Copy Pods Resources */,
+				0E51910951F486AD19DAABCF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1503,7 +1537,6 @@
 				C9ADD6271B0DB4C400977B41 /* playcard2.png in Resources */,
 				C9AA5F6C1B95D9830095DFDE /* 072@2x.png in Resources */,
 				C9ADD6401B0F0F3100977B41 /* RecommendBase.xib in Resources */,
-				C9B5381B1AC00D9500005E16 /* MyOperationCell.xib in Resources */,
 				C9AA5F541B95D9830095DFDE /* 048@2x.png in Resources */,
 				C9ADD6511B0F15C000977B41 /* Reco2@2x.png in Resources */,
 				C9AA830D1BA6C9F90044DEE3 /* mapapi.bundle in Resources */,
@@ -1593,6 +1626,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E51910951F486AD19DAABCF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-funnyplay/Pods-funnyplay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B372982AE73746E38B79D731 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1631,11 +1679,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C913D9D91AB7B7580090DE41 /* LocationCell.m in Sources */,
-				C9D3E0DD1AE5045E00F01E32 /* ResetPwdViewController.m in Sources */,
-				C9AA83081BA6B8290044DEE3 /* FlowgroundTableViewCell.m in Sources */,
+				C9D3E0DD1AE5045E00F01E32 /* ResetPasswordViewController.m in Sources */,
 				C9AA7E3E1AC8DF4100190F54 /* PlayCardCell.m in Sources */,
 				C913D9DE1AB7C0AF0090DE41 /* Location.m in Sources */,
 				C9B537E61ABF96E200005E16 /* PlayCardBaseViewController.m in Sources */,
+				C979E51A1CACEEDB00D1B8DD /* PasswordStrengthIndicatorView.m in Sources */,
 				C97195B41ADD116100C3E410 /* LoginViewController.m in Sources */,
 				C979E34F1CA811B800D1B8DD /* AMapViewController.m in Sources */,
 				C9AA82FC1BA6B7860044DEE3 /* FlowgroundBaseViewController.m in Sources */,
@@ -1644,32 +1692,33 @@
 				C9A064D11B89B86D00992BA8 /* FPTabBarController.m in Sources */,
 				C9B538021ABFA86100005E16 /* Nearby.m in Sources */,
 				C9B537EF1ABF9B8000005E16 /* NearbyViewController.m in Sources */,
+				C979E3591CA8E8E800D1B8DD /* UIView+ActivityIndicator.m in Sources */,
 				C913D9731AB662020090DE41 /* AppDelegate.m in Sources */,
 				C979E3271CA7F88E00D1B8DD /* UIImageView+Util.m in Sources */,
 				C979E31D1CA7F87700D1B8DD /* FetchMoreCell.m in Sources */,
 				C979E31B1CA7F87700D1B8DD /* Config.m in Sources */,
 				C9AA7E431AC8F8A300190F54 /* PlayCardData.m in Sources */,
+				C979E5171CAC144600D1B8DD /* FlatButton.m in Sources */,
 				C9B5380A1ABFB25800005E16 /* NearbyDetail.m in Sources */,
-				C9D3E0D21AE4EEAE00F01E32 /* RegViewController.m in Sources */,
-				C9B538191AC00D7A00005E16 /* MyOperationCell.m in Sources */,
+				C9D3E0D21AE4EEAE00F01E32 /* RegisterViewController.m in Sources */,
 				C9AA7E3B1AC8DE1D00190F54 /* PlayCard.m in Sources */,
 				C9ADD6441B0F0F8800977B41 /* RecommendViewController.m in Sources */,
 				C9B537E21ABDB36400005E16 /* NearbyBaseViewController.m in Sources */,
 				C93B50C61BB53AE800B24FBD /* ShakingViewController.m in Sources */,
+				C979E5131CAB6F6000D1B8DD /* FPMessages.m in Sources */,
 				C979E3281CA7F88E00D1B8DD /* NSTextAttachment+Util.m in Sources */,
 				C9B537FD1ABFA2EB00005E16 /* PersonInfoViewController.m in Sources */,
 				C9B538121ABFFEBA00005E16 /* PersonCell.m in Sources */,
 				C9AA7E321AC7E22900190F54 /* AreaPlay.m in Sources */,
 				C9B537EA1ABF97C100005E16 /* PersonInfoBaseViewController.m in Sources */,
-				C979E31C1CA7F87700D1B8DD /* AFFPClient.m in Sources */,
 				C913D9A21AB666B50090DE41 /* LocationBaseViewController.m in Sources */,
 				C9AA830B1BA6B8810044DEE3 /* Flowground.m in Sources */,
 				C913D9701AB662020090DE41 /* main.m in Sources */,
-				C9D3E0D81AE4FD2000F01E32 /* ForgetPwdViewController.m in Sources */,
+				C9D3E0D81AE4FD2000F01E32 /* ForgetPasswordViewController.m in Sources */,
 				C9B537F61ABFA0B700005E16 /* PlayCardViewController.m in Sources */,
 				C9AA7E311AC7E22900190F54 /* AreaPlayViewController.m in Sources */,
 				C9AA82FD1BA6B7860044DEE3 /* FlowgroundCell.m in Sources */,
-				C9AA83071BA6B8290044DEE3 /* FlowgroundFrame.m in Sources */,
+				C979E3551CA8E79F00D1B8DD /* UIView+Additions.m in Sources */,
 				C9AA82FF1BA6B7860044DEE3 /* FlowgroundViewController.m in Sources */,
 				C9B5381E1AC03E4D00005E16 /* MyOperationModel.m in Sources */,
 				C9B538051ABFA9CD00005E16 /* NearbyCell.m in Sources */,
@@ -1679,6 +1728,7 @@
 				C979E32A1CA7F88E00D1B8DD /* UIColor+Util.m in Sources */,
 				C913D9D61AB6714D0090DE41 /* LocationViewController.m in Sources */,
 				C913D9EC1AB8353E0090DE41 /* LocationDetail.m in Sources */,
+				C979E5101CAB6DAF00D1B8DD /* FPMessagesViewController.m in Sources */,
 				C9ADD63F1B0F0F3100977B41 /* RecommendBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1820,8 +1870,52 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "funnyplay/funnyplay-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SSKeychain\"",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = funnyplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/funnyplay/Vendor/libidn",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FDFullscreenPopGesture\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"Masonry\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDWebImage\"",
+					"-l\"SSKeychain\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cash.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1839,8 +1933,52 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "funnyplay/funnyplay-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SSKeychain\"",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = funnyplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/funnyplay/Vendor/libidn",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FDFullscreenPopGesture\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"Masonry\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDWebImage\"",
+					"-l\"SSKeychain\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cash.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

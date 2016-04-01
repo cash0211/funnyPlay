@@ -13,36 +13,33 @@
 #import "Tool.h"
 #import "Location.h"
 
-
-@interface LocationViewController () {
-    
-}
+@interface LocationViewController ()
 
 @end
 
 @implementation LocationViewController
 
+
+#pragma mark - Lifecycle
+
 - (id)init {
     
     if (self = [super init]) {
-//        __weak LocationViewController *weakSelf = self;
+        //        __weak LocationViewController *weakSelf = self;
         self.generateURL = ^NSString * (NSUInteger page) {
-                
+            
             NSString *str1 = [NSString stringWithFormat:@"%@%@?pageIndex=%lu&%@", FPAPI_PREFIX, FPAPI_LOCATION_LIST, (unsigned long)page, FPAPI_SUFFIX];
             
             NSLog(@"%@", str1);
             
             return str1;
         };
-        
-//        self.objClass = [OSCNews class];
     }
     
     return self;
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     
     NSArray *arrayData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"location.plist" ofType:nil]];
@@ -52,27 +49,46 @@
         
         [self.objects addObject:loc];
     }
-    
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    // layout
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
 }
 
-#pragma mark - tableView DataSource
+
+#pragma mark - Event response
+
+
+
+#pragma mark - Public
+
+
+
+#pragma mark - Private
+
+
+
+#pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        
-        LocationCell *cell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:[LocationCell cellId]];
-        if (!cell) {
-            cell = [LocationCell locationCell];
-        }
-        
-        cell.location = self.objects[indexPath.row];
-        
-        return cell;
+    
+    LocationCell *cell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:[LocationCell cellId]];
+    if (!cell) {
+        cell = [LocationCell locationCell];
+    }
+    
+    cell.location = self.objects[indexPath.row];
+    
+    return cell;
 }
+
+
+#pragma mark - UITableViewDataDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -81,22 +97,24 @@
     Location *loc = self.objects[indexPath.row];
     if (loc) {
         //self.parentViewController.title = loc.itemName;
-//        self.parentViewController.tabBarItem.title = @"评论";
+        //        self.parentViewController.tabBarItem.title = @"评论";
         
         [Tool pushLocationDetail:loc andNavController:self.parentViewController.navigationController];
     }
     
     /* 两个一样
-    if (self.navigationController == self.parentViewController.navigationController) {
-        NSLog(@"yes");
-        NSLog(@"%@", self.navigationController);
-        NSLog(@"%@", self.parentViewController.navigationController);
-    }
-    */
+     if (self.navigationController == self.parentViewController.navigationController) {
+     NSLog(@"yes");
+     NSLog(@"%@", self.navigationController);
+     NSLog(@"%@", self.parentViewController.navigationController);
+     }
+     */
     
     
 }
 
+
+#pragma mark - CustomDelegate
 
 
 

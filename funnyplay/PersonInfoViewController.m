@@ -11,6 +11,7 @@
 #import "MyOperationModel.h"
 #import "PersonCellModel.h"
 #import "Tool.h"
+#import "FPMessagesViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -55,6 +56,7 @@
                                 [[MyOperationModel alloc] initWithString:@"收藏"],
                                 [[MyOperationModel alloc] initWithString:@"玩略"],
                                 [[MyOperationModel alloc] initWithString:@"足迹"],
+                                [[MyOperationModel alloc] initWithString:@"玩伴"],
                                 nil];
     
     NSArray *function = [[NSArray alloc] initWithObjects:
@@ -156,6 +158,14 @@
     if (0 == section) {
         
         [Tool pushLogin:opModel andNavController:self.navigationController];
+    }
+    else {
+        if ([opModel.btnName isEqualToString:@"玩伴"]) {
+            
+            FPMessagesViewController *fpMessageVC = [FPMessagesViewController messagesViewController];
+            fpMessageVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:fpMessageVC animated:YES];
+        }
     }
 }
 

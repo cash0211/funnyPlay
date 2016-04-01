@@ -43,8 +43,6 @@ static NSString * const kKeyMinutes = @"minutes";
 + (BOOL)isURL:(NSString *)string;
 
 
-+ (MBProgressHUD *)createHUD:(NSString *)text;
-
 + (NSString *)intervalSinceNow:(NSString *)dateStr;
 + (NSString *)pubTime:(NSString *)dateStr;
 + (NSDictionary *)timeIntervalArrayFromString:(NSString *)dateStr;

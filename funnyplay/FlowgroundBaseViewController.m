@@ -15,19 +15,15 @@
 
 @implementation FlowgroundBaseViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self myInit];
-    }
-    
-    return self;
-}
 
-- (void)myInit {
+#pragma mark - Lifecycle
+
+- (void)loadView {
+    UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    view.backgroundColor = [UIColor whiteColor];
+    self.view = view;
     
-    self.title = @"流动墙";
+    self.navigationItem.title = @"流动墙";
     
     //表格子视图
     self.flowgroundViewCon = [[FlowgroundViewController alloc] init];
@@ -37,8 +33,8 @@
     self.flowgroundViewCon.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     //"区域玩" --- 直接 BarButtonItem
-//    UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithTitle:@"区域玩" style:UIBarButtonItemStyleDone target:self action:@selector(clickAreaPlay:)];
-//    self.navigationItem.rightBarButtonItem = btnAreaPlay;
+    //    UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithTitle:@"区域玩" style:UIBarButtonItemStyleDone target:self action:@selector(clickAreaPlay:)];
+    //    self.navigationItem.rightBarButtonItem = btnAreaPlay;
 }
 
 - (void)viewDidLoad {
@@ -52,3 +48,9 @@
 }
 
 @end
+
+
+
+
+
+

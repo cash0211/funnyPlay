@@ -29,8 +29,8 @@
     
     self.amapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
     self.amapView.delegate = self;
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
-    {
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        
         self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager requestAlwaysAuthorization];
     }
@@ -47,104 +47,45 @@
 
 #pragma mark - AMapSearchDelegate
 
-- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error
-{
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
+    
     NSLog(@"%s: searchRequest = %@, errInfo= %@", __func__, [request class], error);
 }
 
 
 #pragma mark - Map Delegate
 
-- (void)mapView:(MAMapView *)mapView didSingleTappedAtCoordinate:(CLLocationCoordinate2D)coordinate
-{
+- (void)mapView:(MAMapView *)mapView didSingleTappedAtCoordinate:(CLLocationCoordinate2D)coordinate {
+    
     NSLog(@"tap: %f %f", coordinate.latitude, coordinate.longitude);
 }
 
-- (void)mapView:(MAMapView *)mapView didLongPressedAtCoordinate:(CLLocationCoordinate2D)coordinate
-{
+- (void)mapView:(MAMapView *)mapView didLongPressedAtCoordinate:(CLLocationCoordinate2D)coordinate {
+    
     NSLog(@"long: %f %f", coordinate.latitude, coordinate.longitude);
 }
 
-- (void)mapView:(MAMapView *)mapView mapWillMoveByUser:(BOOL)wasUserAction
-{
+- (void)mapView:(MAMapView *)mapView mapWillMoveByUser:(BOOL)wasUserAction {
+    
     NSLog(@"will move byUser:%d", wasUserAction);
 }
 
-- (void)mapView:(MAMapView *)mapView mapDidMoveByUser:(BOOL)wasUserAction
-{
+- (void)mapView:(MAMapView *)mapView mapDidMoveByUser:(BOOL)wasUserAction {
+    
     NSLog(@"did move byUser:%d", wasUserAction);
 }
 
-- (void)mapView:(MAMapView *)mapView mapWillZoomByUser:(BOOL)wasUserAction
-{
+- (void)mapView:(MAMapView *)mapView mapWillZoomByUser:(BOOL)wasUserAction {
+    
     NSLog(@"will zoom byUser:%d", wasUserAction);
 }
 
-- (void)mapView:(MAMapView *)mapView mapDidZoomByUser:(BOOL)wasUserAction
-{
+- (void)mapView:(MAMapView *)mapView mapDidZoomByUser:(BOOL)wasUserAction {
+    
     NSLog(@"did zoom byUser:%d", wasUserAction);
 }
 
-
-
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

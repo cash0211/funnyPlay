@@ -10,21 +10,19 @@
 
 @implementation PersonCellModel
 
-- (instancetype)defaultInit {
-    
-    _imageName = @"icon.png";
-    
-    return self;
-}
+#pragma mark - Lifecycle
 
 - (instancetype)initWithDict:(NSDictionary *)dict {
     
-    if (self = [super init]) {
-        _imageName = dict[@"imageName"];
-        _username = dict[@"userName"];
-        _isVip = [dict[@"isVip"] boolValue];
-        _descString = dict[@"descString"];
+    self = [super init];
+    if (!self) {
+        return nil;
     }
+    
+    _imageName = dict[@"imageName"];
+    _username = dict[@"userName"];
+    _isVip = [dict[@"isVip"] boolValue];
+    _descString = dict[@"descString"];
     
     return self;
 }
@@ -33,5 +31,26 @@
     
     return [[self alloc] initWithDict:dict];
 }
+
+
+#pragma mark - Event response
+
+
+
+#pragma mark - Public methods
+
+
+
+#pragma mark - Private methods
+
+
+
+#pragma mark - CustomDelegate
+
+
+
+#pragma mark - Getters & Setters
+
+
 
 @end

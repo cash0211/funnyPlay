@@ -10,6 +10,4 @@
 
 @interface AreaPlayViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *areaTable;
-
 @end

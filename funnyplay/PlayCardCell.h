@@ -12,13 +12,12 @@
 
 @interface PlayCardCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
-@property (weak, nonatomic) IBOutlet UILabel *itemName;
-@property (weak, nonatomic) IBOutlet UITextView *itemDesc;
+@property (nonatomic, strong) UIImageView *itemImageView;
+@property (nonatomic, strong) UILabel     *itemName;
+@property (nonatomic, strong) UITextView  *itemDesc;
 
-@property (nonatomic, strong) PlayCard *playCard;
+@property (nonatomic, strong) PlayCard    *playCard;
 
-+ (instancetype)playCardCell;
 + (NSString *)cellId;
 
 @end

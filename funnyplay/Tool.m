@@ -8,7 +8,6 @@
 
 #import "Tool.h"
 #import "LocationDetail.h"
-#import "NearbyDetail.h"
 #import "AreaPlayViewController.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
@@ -31,17 +30,8 @@
     
     UITabBarController *tabBarCon = [[UITabBarController alloc] init];
     LocationDetail *locDetail = [[LocationDetail alloc] init];
-    tabBarCon.viewControllers = [NSArray arrayWithObjects:locDetail, nil];
-    tabBarCon.hidesBottomBarWhenPushed = YES;
-    
-    [navController pushViewController:tabBarCon animated:YES];
-}
-
-+ (void)pushNearbyDetail:(Nearby *)nearby andNavController:(UINavigationController *)navController {
-    
-    UITabBarController *tabBarCon = [[UITabBarController alloc] init];
-    NearbyDetail *nearbyDetail = [[NearbyDetail alloc] init];
-    tabBarCon.viewControllers = [NSArray arrayWithObjects:nearbyDetail, nil];
+    UINavigationController *locationNav = [[UINavigationController alloc] initWithRootViewController:locDetail];
+    tabBarCon.viewControllers = [NSArray arrayWithObjects:locationNav, nil];
     tabBarCon.hidesBottomBarWhenPushed = YES;
     
     [navController pushViewController:tabBarCon animated:YES];
@@ -49,11 +39,8 @@
 
 + (void)pushAreaPlay:(id)sender andNavController:(UINavigationController *)navController {
     
-//    UITabBarController *tabBarCon = [[UITabBarController alloc] init];
     AreaPlayViewController *areaPlayCon = [[AreaPlayViewController alloc] init];
     areaPlayCon.hidesBottomBarWhenPushed = YES;
-//    tabBarCon.viewControllers = [NSArray arrayWithObjects:areaPlayCon, nil];
-//    tabBarCon.hidesBottomBarWhenPushed = YES;
     
     [navController pushViewController:areaPlayCon animated:YES];
     

@@ -96,27 +96,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return _objects.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == self.objects.count - 1) {
-        return 125;
-    } else {
-        return 120;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    
-    return 1;
-}
-
 #pragma mark - 刷新
 
 - (void)refresh
@@ -134,6 +113,13 @@
             _refreshInProgress = NO;
         });
     }
+}
+
+#pragma mark - tableView
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return 1;
 }
 
 #pragma mark - 上拉加载更多

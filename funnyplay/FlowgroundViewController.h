@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FPRootViewController.h"
 
-@interface FlowgroundViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *flowTable;
+@interface FlowgroundViewController : FPRootViewController
 
 @end

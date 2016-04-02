@@ -17,19 +17,14 @@
 @implementation LocationBaseViewController
 
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self myInit];
-    }
-    
-    return self;
-}
+#pragma mark - Lifecycle
 
-- (void)myInit {
+- (void)loadView {
+    UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    view.backgroundColor = [UIColor whiteColor];
+    self.view = view;
     
-    self.title = @"南京";
+    self.navigationItem.title = @"南京";
     
     //表格子视图
     self.locationViewCon = [[LocationViewController alloc] init];
@@ -39,12 +34,12 @@
     self.locationViewCon.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     //"区域玩"
-//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-//    [btn setTitle:@"区域玩" forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(clickAreaPlay:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithCustomView:btn];
-//    self.navigationItem.rightBarButtonItem = btnAreaPlay;
+    //    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    //    [btn setTitle:@"区域玩" forState:UIControlStateNormal];
+    //    [btn addTarget:self action:@selector(clickAreaPlay:) forControlEvents:UIControlEventTouchUpInside];
+    //
+    //    UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    //    self.navigationItem.rightBarButtonItem = btnAreaPlay;
     
     //"附近"
     UIBarButtonItem *btnNearbyTitle = [[UIBarButtonItem alloc] initWithTitle:@"附近" style:UIBarButtonItemStyleDone target:self action:@selector(clickNearby:)];
@@ -54,7 +49,7 @@
     if([[[UIDevice currentDevice] systemVersion]floatValue] >= 7.0)
     {
         [btn setImage:[UIImage imageNamed:@"nearby"] forState:UIControlStateNormal];
-//        btn.imageEdgeInsets = UIEdgeInsetsMake(0,10, 0, -10);
+        //        btn.imageEdgeInsets = UIEdgeInsetsMake(0,10, 0, -10);
     }
     
     else
@@ -62,7 +57,7 @@
     
     UIBarButtonItem *btnNearby = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:btnNearbyTitle, btnNearby, nil];
-
+    
     
     
     //"区域玩" --- 直接 BarButtonItem
@@ -79,6 +74,9 @@
     [super didReceiveMemoryWarning];
 }
 
+
+#pragma mark - Event response
+
 - (void)clickAreaPlay:(id)sender {
     
 //    [Tool pushAreaPlay:sender andNavController:self.parentViewController.navigationController];
@@ -93,3 +91,10 @@
 }
 
 @end
+
+
+
+
+
+
+

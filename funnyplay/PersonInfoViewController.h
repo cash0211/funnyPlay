@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonInfoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *personInfoTable;
+@interface PersonInfoViewController : UITableViewController
 
 @property (nonatomic, retain) NSArray *settings;
 @property (nonatomic, retain) NSMutableDictionary *settingInSections;

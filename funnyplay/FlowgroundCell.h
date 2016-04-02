@@ -12,20 +12,20 @@
 
 @interface FlowgroundCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *iconView;
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UIImageView *vipView;
-@property (nonatomic, strong) UILabel *timeLabel;
-@property (nonatomic, strong) UILabel *contentLabel;
-@property (nonatomic, strong) UIImageView *uploadimageView;
-@property (nonatomic, strong) UILabel *sourceLabel;
-@property (nonatomic, strong) UIButton *shareBtn;
-@property (nonatomic, strong) UIButton *commentBtn;
-@property (nonatomic, strong) UIButton *likeBtn;
-@property (nonatomic, strong) UILabel *likeListLabel;
+@property (nonatomic, strong) UIImageView *avatarImageView;
+@property (nonatomic, strong) UILabel     *nameLabel;
+@property (nonatomic, strong) UIImageView *isVipImageView;
+@property (nonatomic, strong) UILabel     *timeLabel;
+@property (nonatomic, strong) UILabel     *contentLabel;
+@property (nonatomic, strong) UIImageView *uploadImageView;
+@property (nonatomic, strong) UILabel     *sourceLabel;
+@property (nonatomic, strong) UIButton    *shareBtn;
+@property (nonatomic, strong) UIButton    *commentBtn;
+@property (nonatomic, strong) UIButton    *likeBtn;
+@property (nonatomic, strong) UILabel     *likeListLabel;
 
-@property (nonatomic, strong) Flowground *flowground;
+@property (nonatomic, strong) Flowground  *flowground;
 
-+ (NSString *)ID;
++ (NSString *)cellId;
 
 @end

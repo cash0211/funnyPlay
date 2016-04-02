@@ -11,8 +11,8 @@
 #import "LocationBaseViewController.h"
 #import "RecommendBaseViewController.h"
 #import "PlayCardBaseViewController.h"
-#import "PersonInfoBaseViewController.h"
 #import "FlowgroundBaseViewController.h"
+#import "PersonInfoViewController.h"
 
 @interface FPTabBarController ()
 
@@ -32,17 +32,16 @@
     //    UINavigationController *nearbyNav = [[UINavigationController alloc] initWithRootViewController:self.nearBase];
     
     //推荐
-    RecommendBaseViewController *recoBase = [[RecommendBaseViewController alloc] initWithNibName:@"RecommendBase" bundle:nil];
+    RecommendBaseViewController *recoBase = [[RecommendBaseViewController alloc] init];
     
     //流动墙
-    FlowgroundBaseViewController *flowgroundBase = [[FlowgroundBaseViewController alloc] initWithNibName:@"FlowgroundBase" bundle:nil];
+    FlowgroundBaseViewController *flowgroundBase = [[FlowgroundBaseViewController alloc] init];
     
     //玩略
-    PlayCardBaseViewController *playCardBase = [[PlayCardBaseViewController alloc] initWithNibName:@"PlayCardBase" bundle:nil];
+    PlayCardBaseViewController *playCardBase = [[PlayCardBaseViewController alloc] init];
     
     //个人信息
-    PersonInfoBaseViewController *personInfoBase = [[PersonInfoBaseViewController alloc] initWithNibName:@"PersonInfoBase" bundle:nil];
-    
+    PersonInfoViewController *personInfoBase = [[PersonInfoViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
     self.viewControllers = @[
                              [[UINavigationController alloc] initWithRootViewController:locBase],

@@ -10,19 +10,17 @@
 #import "Flowground.h"
 #import "FlowgroundCell.h"
 
-@interface FlowgroundViewController () {
-    
-    NSMutableArray *_dataArray;
-}
+@interface FlowgroundViewController ()
 
 @end
 
 @implementation FlowgroundViewController
 
+
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _dataArray = [NSMutableArray array];
     
     NSArray *dataArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];
     
@@ -30,32 +28,40 @@
         
         Flowground *f = [Flowground flowgroundWithDict:dict];
         
-        [_dataArray addObject:f];
+        [self.objects addObject:f];
     }
     
+    [self.tableView registerClass:[FlowgroundCell class] forCellReuseIdentifier:[FlowgroundCell cellId]];
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma mark - Event response
+
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _dataArray.count;
+    return self.objects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    FlowgroundCell *flowCell = [tableView dequeueReusableCellWithIdentifier:[FlowgroundCell ID]];
+    FlowgroundCell *flowCell = [tableView dequeueReusableCellWithIdentifier:[FlowgroundCell cellId] forIndexPath:indexPath];
     
-    if (!flowCell) {
-        flowCell = [[FlowgroundCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[FlowgroundCell ID]];
-    }
-    
-    flowCell.flowground = _dataArray[indexPath.row];
+    flowCell.flowground = self.objects[indexPath.row];
     
     return flowCell;
 }
 
+
+#pragma mark - UITableViewDataDelegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    return [_dataArray[indexPath.row] height];
     
     return 300;
 }
@@ -65,115 +71,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
+#pragma mark - CustomDelegate
+
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

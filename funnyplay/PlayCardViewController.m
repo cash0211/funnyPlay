@@ -9,45 +9,94 @@
 #import "PlayCardViewController.h"
 #import "PlayCard.h"
 #import "PlayCardData.h"
-#import "PlayCardCell.h"
 #import "LocationCell.h"
+#import "PlayCardCell.h"
 #import "Tool.h"
 
-@interface PlayCardViewController () {
-    
-    NSMutableArray *_allItems;
-}
+@interface PlayCardViewController ()
 
 @end
 
 @implementation PlayCardViewController
 
+
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _allItems = [[NSMutableArray alloc] init];
     NSArray *arrayData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"playCard.plist" ofType:nil]];
     
     for (NSDictionary *dict in arrayData) {
         
         PlayCardData *playCardData = [PlayCardData playCardDataWithDict:dict];
         
-        [_allItems addObject:playCardData];
+        [self.objects addObject:playCardData];
     }
     
+    // addSubViews
+    
+    [self.tableView registerClass:[LocationCell class] forCellReuseIdentifier:[LocationCell cellId]];
+    [self.tableView registerClass:[PlayCardCell class] forCellReuseIdentifier:[PlayCardCell cellId]];
 }
 
-#pragma mark -tableView DataSource
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma mark - Event response
+
+
+
+#pragma mark - Private methods
+
+
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return [_allItems count];
+    return [self.objects count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[_allItems[section] contents] count];
+    return [[self.objects[section] contents] count];
 }
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [self.objects[section] header];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+    
+    if ([[self.objects[section] header] isEqual:@"本地人玩"]) {
+        
+        LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:[LocationCell cellId] forIndexPath:indexPath];
+        
+        PlayCardData *playCardData = self.objects[section];
+        cell.location = playCardData.playCards[row];
+        
+        return cell;
+    } else {
+        
+        PlayCardCell *cell = (PlayCardCell *)[tableView dequeueReusableCellWithIdentifier:[PlayCardCell cellId] forIndexPath:indexPath];
+        
+        PlayCardData *playCardData = self.objects[section];
+        cell.playCard = playCardData.playCards[row];
+        
+        return cell;
+    }
+}
+
+
+#pragma mark - UITableViewDataDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -59,46 +108,11 @@
     return 50;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    return [_allItems[section] header];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSInteger section = [indexPath section];
-    NSInteger row = [indexPath row];
-    
-    if ([[_allItems[section] header] isEqual:@"本地人玩"]) {
-        
-        LocationCell *cell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:[LocationCell cellId]];
-        if (!cell) {
-            cell = [LocationCell locationCell];
-        }
-        
-        PlayCardData *playCardData = _allItems[section];
-        cell.location = playCardData.playCards[row];
-        
-        return cell;
-    } else {
-        
-        PlayCardCell *cell = (PlayCardCell *)[tableView dequeueReusableCellWithIdentifier:[PlayCardCell cellId]];
-        if (!cell) {
-            cell = [PlayCardCell playCardCell];
-        }
-        
-        PlayCardData *playCardData = _allItems[section];
-        cell.playCard = playCardData.playCards[row];
-        
-        return cell;
-    }
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    PlayCardData *play = _allItems[indexPath.section];
+    PlayCardData *play = self.objects[indexPath.section];
     Location *loc = play.playCards[indexPath.row];
     if (loc) {
         //self.parentViewController.title = loc.itemName;
@@ -108,9 +122,18 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+#pragma mark - CustomDelegate
+
+
+
+#pragma mark - Getters & Setters
+
+
 
 @end
+
+
+
+
+

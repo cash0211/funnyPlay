@@ -10,29 +10,77 @@
 #import "Tool.h"
 #import "UIView+ActivityIndicator.h"
 
-#import <MBProgressHUD.h>
-
 @interface LocationDetail ()
 
 @end
 
 @implementation LocationDetail
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+
+#pragma mark - Lifecycle
+
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (!self) {
+        return nil;
+    }
     
-    self.parentViewController.navigationItem.title = @"title";
+    [self commonInit];
+    
+    return self;
+}
+
+- (instancetype)init {
+    return [self initWithStyle:UITableViewStyleGrouped];
+}
+
+- (void)commonInit {
+    
+    self.navigationItem.title = @"title";
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"收藏" style:UIBarButtonItemStyleDone target:self action:@selector(clickCollection:)];
-    self.parentViewController.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:barButton, nil];
+    self.navigationItem.rightBarButtonItem = barButton;
     
     [self.view showHUDIndicatorViewAtCenterWithTitle:@"请稍等..."];
     
-
+    
     //网络请求细节内容
-    [self getLocationDetail];
+    [self _getLocationDetail];
 }
 
-- (void)getLocationDetail {
+- (void)viewDidLoad {
+    
+    // addSubViews
+    // registerClass
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma mark - Event response
+
+- (void)clickCollection:(id)sender {
+    
+    /*
+     if ([Config Instance].isCookie == NO) {
+     [Tool noticeLogin:self.view andDelegate:self andTitle:@"请先登录后发表评论"];
+     return;
+     }
+     */
+    if (YES) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@"请先登录再收藏"];
+    }
+}
+
+
+#pragma mark - Public methods
+
+
+
+#pragma mark - Private methods
+
+- (void)_getLocationDetail {
     
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
         
@@ -42,16 +90,11 @@
         });
     });
     
-    /*
-    [[AFFPClient sharedClient] GET:@"" parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-    }failure:^(NSURLSessionDataTask *task, NSError *error) {
-    
-    }];
-     */
+//    AFHTTPSessionManager
 }
 
-#pragma mark tableView DataSource
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -68,6 +111,9 @@
     return nil;
 }
 
+
+#pragma mark - UITableViewDataDelegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 120;
@@ -79,37 +125,14 @@
 }
 
 
-- (void)clickCollection:(id)sender {
-    
-    /*
-    if ([Config Instance].isCookie == NO) {
-        [Tool noticeLogin:self.view andDelegate:self andTitle:@"请先登录后发表评论"];
-        return;
-    }
-    */
-    if (YES) {
-        [Tool noticeLogin:self.view andDelegate:self andTitle:@"请先登录再收藏"];
-    }
-}
+#pragma mark - CustomDelegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
 
-/*
-#pragma mark - Navigation
+#pragma mark - Getters & Setters
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
 
 @end

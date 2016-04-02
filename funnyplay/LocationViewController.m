@@ -22,7 +22,7 @@
 
 #pragma mark - Lifecycle
 
-- (id)init {
+- (instancetype)init {
     
     if (self = [super init]) {
         //        __weak LocationViewController *weakSelf = self;
@@ -49,6 +49,8 @@
         
         [self.objects addObject:loc];
     }
+    
+    [self.tableView registerClass:[LocationCell class] forCellReuseIdentifier:[LocationCell cellId]];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -65,22 +67,24 @@
 
 
 
-#pragma mark - Public
+#pragma mark - Public methods
 
 
 
-#pragma mark - Private
+#pragma mark - Private methods
 
 
 
 #pragma mark - UITableViewDataSource
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.objects.count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    LocationCell *cell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:[LocationCell cellId]];
-    if (!cell) {
-        cell = [LocationCell locationCell];
-    }
+    LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:[LocationCell cellId] forIndexPath:indexPath];
     
     cell.location = self.objects[indexPath.row];
     
@@ -89,6 +93,15 @@
 
 
 #pragma mark - UITableViewDataDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == self.objects.count - 1) {
+        return 125;
+    } else {
+        return 120;
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -99,7 +112,7 @@
         //self.parentViewController.title = loc.itemName;
         //        self.parentViewController.tabBarItem.title = @"评论";
         
-        [Tool pushLocationDetail:loc andNavController:self.parentViewController.navigationController];
+        [Tool pushLocationDetail:loc andNavController:self.navigationController];
     }
     
     /* 两个一样

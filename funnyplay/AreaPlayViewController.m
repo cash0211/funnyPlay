@@ -11,30 +11,45 @@
 #import "LocationCell.h"
 #import "Location.h"
 #import "Tool.h"
-
 #import "AMapViewController.h"
 
-@interface AreaPlayViewController () {
-    
-    NSMutableArray *_allItems;
-}
+@interface AreaPlayViewController ()
+
+@property (nonatomic, strong) NSMutableArray *allItems;
 
 @end
 
 @implementation AreaPlayViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+
+#pragma mark - Lifecycle
+
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (!self) {
+        return nil;
+    }
+    
+    [self commonInit];
+    
+    return self;
+}
+
+- (instancetype)init {
+    return [self initWithStyle:UITableViewStylePlain];
+}
+
+- (void)commonInit {
     
     self.navigationItem.title = @"角落一个不落";
     
-    _allItems = [[NSMutableArray alloc] init];
+    self.allItems = [[NSMutableArray alloc] init];
     NSArray *arrayData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"areaPlay.plist" ofType:nil]];
     
     for (NSDictionary *dict in arrayData) {
         //areaPlay
         AreaPlay *areaPlay = [AreaPlay areaPlayWithDict:dict];
-        [_allItems addObject:areaPlay];
+        [self.allItems addObject:areaPlay];
     }
     
     //"都在这里"
@@ -42,23 +57,37 @@
     self.navigationItem.rightBarButtonItem = btnIsHere;
     
     /*
-    NSMutableArray *rightBarButtonArray = [[NSMutableArray alloc] initWithCapacity:2];
-    
-    UIBarButtonItem *btnPic = [[UIBarButtonItem alloc] initWithTitle:@"＋图片" style:UIBarButtonItemStyleBordered target:self action:@selector(clickImgs:)];
-    [rightBarButtonArray addObject:btnPic];
-    UIBarButtonItem *btnPub = [[UIBarButtonItem alloc] initWithTitle:@"动弹一下" style:UIBarButtonItemStyleBordered target:self action:@selector(click_PubTweet:)];
-    [rightBarButtonArray addObject:btnPub];
-    
-    if(IS_IOS7)
-        [customToolbar setFrame:CGRectMake(0, 0, 135,47)];
-    [customToolbar setItems:rightBarButtonArray animated:NO];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customToolbar];
-    
-    
-    // rightBarButtonItem = (UIBarButtonItem)initWithCustomView(toolbar setItem(rightArray(btnPic, btnPub)))
-    
+     NSMutableArray *rightBarButtonArray = [[NSMutableArray alloc] initWithCapacity:2];
+     
+     UIBarButtonItem *btnPic = [[UIBarButtonItem alloc] initWithTitle:@"＋图片" style:UIBarButtonItemStyleBordered target:self action:@selector(clickImgs:)];
+     [rightBarButtonArray addObject:btnPic];
+     UIBarButtonItem *btnPub = [[UIBarButtonItem alloc] initWithTitle:@"动弹一下" style:UIBarButtonItemStyleBordered target:self action:@selector(click_PubTweet:)];
+     [rightBarButtonArray addObject:btnPub];
+     
+     if(IS_IOS7)
+     [customToolbar setFrame:CGRectMake(0, 0, 135,47)];
+     [customToolbar setItems:rightBarButtonArray animated:NO];
+     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customToolbar];
+     
+     
+     // rightBarButtonItem = (UIBarButtonItem)initWithCustomView(toolbar setItem(rightArray(btnPic, btnPub)))
+     
      */
 }
+
+- (void)viewDidLoad {
+    
+    // addSubViews
+    
+    [self.tableView registerClass:[LocationCell class] forCellReuseIdentifier:[LocationCell cellId]];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma mark - Event response
 
 // 高德地图
 - (void) clickIsHere:(id)sender {
@@ -67,7 +96,12 @@
     [self.navigationController pushViewController:amapVC animated:YES];
 }
 
-#pragma mark tableView DataSource
+
+#pragma mark - Private methods
+
+
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -81,6 +115,24 @@
     return [areaPlays count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [_allItems[section] locArea];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:[LocationCell cellId] forIndexPath:indexPath];
+    
+    AreaPlay *areaPlay = _allItems[indexPath.section];
+    cell.location = areaPlay.locations[indexPath.row];
+    
+    return cell;
+}
+
+
+#pragma mark - UITableViewDataDelegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 120;
@@ -89,24 +141,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     return 50;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    return [_allItems[section] locArea];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    LocationCell *cell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:[LocationCell cellId]];
-    if (!cell) {
-        cell = [LocationCell locationCell];
-    }
-    
-    AreaPlay *areaPlay = _allItems[indexPath.section];
-    cell.location = areaPlay.locations[indexPath.row];
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,14 +163,24 @@
      NSLog(@"%@", self.parentViewController.navigationController);
      }
      */
-    
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+#pragma mark - CustomDelegate
+
+
+
+#pragma mark - Getters & Setters
+
+
 
 
 @end
+
+
+
+
+
+
+
+

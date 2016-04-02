@@ -15,19 +15,15 @@
 
 @implementation RecommendBaseViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self myInit];
-    }
-    
-    return self;
-}
 
-- (void)myInit {
-    
-    self.title = @"推荐";
+#pragma mark - Lifecycle
+
+- (void)loadView {
+    UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    view.backgroundColor = [UIColor whiteColor];
+    self.view = view;
+
+    self.navigationItem.title = @"推荐";
     
     //表格子视图
     self.recommendViewCon = [[RecommendViewController alloc] init];
@@ -35,7 +31,6 @@
     [self.view addSubview:self.recommendViewCon.view];
     self.recommendViewCon.view.frame = self.view.bounds;
     self.recommendViewCon.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
 }
 
 - (void)viewDidLoad {
@@ -48,4 +43,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 @end
+
+
+
+
+
+
+
+

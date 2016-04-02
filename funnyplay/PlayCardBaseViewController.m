@@ -15,19 +15,15 @@
 
 @implementation PlayCardBaseViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self myInit];
-    }
-    
-    return self;
-}
 
-- (void)myInit {
+#pragma mark - Lifecycle
+
+- (void)loadView {
+    UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    view.backgroundColor = [UIColor whiteColor];
+    self.view = view;
     
-    self.title = @"玩略";
+    self.navigationItem.title = @"玩略";
     
     //表格子视图
     self.playCardViewCon = [[PlayCardViewController alloc] init];
@@ -35,7 +31,6 @@
     [self.view addSubview:self.playCardViewCon.view];
     self.playCardViewCon.view.frame = self.view.bounds;
     self.playCardViewCon.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
 }
 
 - (void)viewDidLoad {

@@ -52,31 +52,36 @@
 
 - (void)_initSubviews {
     
-    self.itemImageView = [UIImageView new];
-    self.itemImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.itemImageView.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.itemImageView];
+    UIImageView *itemImageView = [UIImageView new];
+    itemImageView.contentMode = UIViewContentModeScaleAspectFit;
+    itemImageView.userInteractionEnabled = YES;
+    [self.contentView addSubview:itemImageView];
+    self.itemImageView = itemImageView;
     
-    self.itemName = [UILabel new];
-    self.itemName.font = [UIFont systemFontOfSize:15];
-    self.itemName.numberOfLines = 0;
-    self.itemName.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.itemName];
+    UILabel *itemName = [UILabel new];
+    itemName.font = [UIFont systemFontOfSize:15];
+    itemName.numberOfLines = 0;
+    itemName.userInteractionEnabled = YES;
+    [self.contentView addSubview:itemName];
+    self.itemName = itemName;
     
-    self.itemDesc = [UITextView new];
-    self.itemDesc.font = [UIFont systemFontOfSize:12];
-    self.itemDesc.userInteractionEnabled = NO;
-    [self.contentView addSubview:self.itemDesc];
+    UITextView *itemDesc = [UITextView new];
+    itemDesc.font = [UIFont systemFontOfSize:12];
+    itemDesc.userInteractionEnabled = NO;
+    [self.contentView addSubview:itemDesc];
+    self.itemDesc = itemDesc;
     
-    self.itemLoc = [UILabel new];
-    self.itemLoc.font = [UIFont systemFontOfSize:10];
-    self.itemLoc.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.itemLoc];
+    UILabel *itemLoc = [UILabel new];
+    itemLoc.font = [UIFont systemFontOfSize:10];
+    itemLoc.userInteractionEnabled = YES;
+    [self.contentView addSubview:itemLoc];
+    self.itemLoc = itemLoc;
     
-    self.itemDistance = [UILabel new];
-    self.itemDistance.font = [UIFont systemFontOfSize:10];
-    self.itemDistance.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.itemDistance];
+    UILabel *itemDistance = [UILabel new];
+    itemDistance.font = [UIFont systemFontOfSize:10];
+    itemDistance.userInteractionEnabled = YES;
+    [self.contentView addSubview:itemDistance];
+    self.itemDistance = itemDistance;
 }
 
 - (void)_setLayout {
@@ -126,11 +131,11 @@
     
     _location = location;
     
-    self.itemImageView.image = [UIImage imageNamed:location.imageName];
-    self.itemName.text = location.itemName;
-    self.itemDesc.text = location.desc;
-    self.itemLoc.text = location.loc;
-    self.itemDistance.text = [NSString stringWithFormat:@"%.1f", location.distance];
+    _itemImageView.image = [UIImage imageNamed:location.imageName];
+    _itemName.text = location.itemName;
+    _itemDesc.text = location.desc;
+    _itemLoc.text = location.loc;
+    _itemDistance.text = [NSString stringWithFormat:@"%.1f", location.distance];
 }
 
 

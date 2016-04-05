@@ -151,73 +151,82 @@
 - (void)_initSubviews {
     
     //手机号码
-    self.phoneNumTextField = [UITextField new];
-    self.phoneNumTextField.placeholder = @"～手机号～";
-    self.phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
-    self.phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
-    self.phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:self.phoneNumTextField];
+    UITextField *phoneNumTextField = [UITextField new];
+    phoneNumTextField.placeholder = @"～手机号～";
+    phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
+    phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
+    phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:phoneNumTextField];
+    self.phoneNumTextField = phoneNumTextField;
     
     //密码
     UIView *leftPaddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 0)];
-    self.passwordTextField = [UITextField new];
-    self.passwordTextField.leftView = leftPaddingView;
-    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
-    self.passwordTextField.backgroundColor = [UIColor colorWithWhite:0 alpha:0.05];
-    self.passwordTextField.placeholder = @"～密码～";
-    self.passwordTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.passwordTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.passwordTextField.secureTextEntry = YES;
-    self.passwordTextField.returnKeyType = UIReturnKeyDone;
-    self.passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.passwordTextField.enablesReturnKeyAutomatically = YES;
-    self.passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:self.passwordTextField];
-    [self.passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    [self.passwordTextField addTarget:self
+    UITextField *passwordTextField = [UITextField new];
+    passwordTextField.leftView = leftPaddingView;
+    passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    passwordTextField.backgroundColor = [UIColor colorWithWhite:0 alpha:0.05];
+    passwordTextField.placeholder = @"～密码～";
+    passwordTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    passwordTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    passwordTextField.secureTextEntry = YES;
+    passwordTextField.returnKeyType = UIReturnKeyDone;
+    passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordTextField.enablesReturnKeyAutomatically = YES;
+    passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:passwordTextField];
+    [passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [passwordTextField addTarget:self
                                action:@selector(textFieldDidChange:)
                      forControlEvents:UIControlEventEditingChanged];
+    self.passwordTextField = passwordTextField;
+    
     // 进度条
-    self.passwordStrengthIndicatorView = [PasswordStrengthIndicatorView new];
-    [self.view addSubview:self.passwordStrengthIndicatorView];
+    PasswordStrengthIndicatorView *passwordStrengthIndicatorView = [PasswordStrengthIndicatorView new];
+    [self.view addSubview:passwordStrengthIndicatorView];
+    self.passwordStrengthIndicatorView = passwordStrengthIndicatorView;
     
     //登录按钮
-    self.loginBtn = [FlatButton button];
-    self.loginBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.loginBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
-    [self.loginBtn setTitle:@"登录" forState:UIControlStateNormal];
-    [self.loginBtn setCornerRadius:20];
-    [self.loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.loginBtn];
+    FlatButton *loginBtn = [FlatButton button];
+    loginBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    loginBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+    [loginBtn setCornerRadius:20];
+    [loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:loginBtn];
+    self.loginBtn = loginBtn;
     
     // 错误Label
-    self.errorLabel = [UILabel new];
-    self.errorLabel.font = [UIFont fontWithName:@"Avenir-Light" size:18];
-    self.errorLabel.textColor = [UIColor redColor];
-    self.errorLabel.text = @"登陆失败";
-    self.errorLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view insertSubview:self.errorLabel belowSubview:self.loginBtn];
+    UILabel *errorLabel = [UILabel new];
+    errorLabel.font = [UIFont fontWithName:@"Avenir-Light" size:18];
+    errorLabel.textColor = [UIColor redColor];
+    errorLabel.text = @"登陆失败";
+    errorLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view insertSubview:errorLabel belowSubview:loginBtn];
+    self.errorLabel = errorLabel;
     
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicatorView];
+    UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatorView];
     self.navigationItem.rightBarButtonItem = item;
+    self.activityIndicatorView = activityIndicatorView;
     
     //手机注册
-    self.phoneNumRegBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.phoneNumRegBtn setTitle:@"手机注册" forState:UIControlStateNormal];
-    [self.phoneNumRegBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [self.phoneNumRegBtn addTarget:self action:@selector(registerUser:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.phoneNumRegBtn];
+    UIButton *phoneNumRegBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [phoneNumRegBtn setTitle:@"手机注册" forState:UIControlStateNormal];
+    [phoneNumRegBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [phoneNumRegBtn addTarget:self action:@selector(registerUser:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:phoneNumRegBtn];
+    self.phoneNumRegBtn = phoneNumRegBtn;
     
     //忘记密码
-    self.forgetPasswordBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.forgetPasswordBtn setTitle:@"忘记密码?" forState:UIControlStateNormal];
-    [self.forgetPasswordBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [self.forgetPasswordBtn addTarget:self action:@selector(forgetPassword:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.forgetPasswordBtn];
+    UIButton *forgetPasswordBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [forgetPasswordBtn setTitle:@"忘记密码?" forState:UIControlStateNormal];
+    [forgetPasswordBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [forgetPasswordBtn addTarget:self action:@selector(forgetPassword:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:forgetPasswordBtn];
+    self.forgetPasswordBtn = forgetPasswordBtn;
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];

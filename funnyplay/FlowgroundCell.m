@@ -11,7 +11,7 @@
 #import "Tool.h"
 
 #define kSubviewsPadding       10
-#define kSolidButtonWidth      (self.contentView.bounds.size.width - 4 * kSubviewsPadding) / 3
+#define kSolidButtonWidth      ([[UIScreen mainScreen] bounds].size.width - 4 * kSubviewsPadding) / 3
 
 @implementation FlowgroundCell
 
@@ -71,104 +71,75 @@
 - (void)_initSubviews
 {
     // 1.头像
-    self.avatarImageView = [UIImageView new];
-    self.avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.avatarImageView.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.avatarImageView];
+    UIImageView *avatarImageView = [UIImageView new];
+    avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
+    avatarImageView.userInteractionEnabled = YES;
+    [self.contentView addSubview:avatarImageView];
+    self.avatarImageView = avatarImageView;
     
     // 2.名字
-    self.nameLabel = [UILabel new];
-    self.nameLabel.font = [UIFont boldSystemFontOfSize:15];
-    self.nameLabel.userInteractionEnabled = YES;
-    self.nameLabel.textColor = [UIColor nameColor];
-    [self.contentView addSubview:self.nameLabel];
+    UILabel *nameLabel = [UILabel new];
+    nameLabel.font = [UIFont boldSystemFontOfSize:15];
+    nameLabel.userInteractionEnabled = YES;
+    nameLabel.textColor = [UIColor nameColor];
+    [self.contentView addSubview:nameLabel];
+    self.nameLabel = nameLabel;
     
     //vipView
     
     // 3.时间
-    self.timeLabel = [UILabel new];
-    self.timeLabel.font = [UIFont systemFontOfSize:12];
-    self.timeLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
-    [self.contentView addSubview:self.timeLabel];
-    
+    UILabel *timeLabel = [UILabel new];
+    timeLabel.font = [UIFont systemFontOfSize:12];
+    timeLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
+    [self.contentView addSubview:timeLabel];
+    self.timeLabel = timeLabel;
     
     // 4.内容
-    self.contentLabel = [UILabel new];
-    self.contentLabel.numberOfLines = 0;
-    self.contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.contentLabel.font = [UIFont systemFontOfSize:14];
-    [self.contentView addSubview:self.contentLabel];
-    
+    UILabel *contentLabel = [UILabel new];
+    contentLabel.numberOfLines = 0;
+    contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    contentLabel.font = [UIFont systemFontOfSize:14];
+    [self.contentView addSubview:contentLabel];
+    self.contentLabel = contentLabel;
     
     // 5.图片
-    self.uploadImageView = [UIImageView new];
-    self.uploadImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.uploadImageView.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.uploadImageView];
+    UIImageView *uploadImageView = [UIImageView new];
+    uploadImageView.contentMode = UIViewContentModeScaleAspectFit;
+    uploadImageView.userInteractionEnabled = YES;
+    [self.contentView addSubview:uploadImageView];
+    self.uploadImageView = uploadImageView;
     
     // 6.来源
-    self.sourceLabel = [UILabel new];
-    self.sourceLabel.font = [UIFont systemFontOfSize:12];
-    self.sourceLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
-    [self.contentView addSubview:self.sourceLabel];
+    UILabel *sourceLabel = [UILabel new];
+    sourceLabel.font = [UIFont systemFontOfSize:12];
+    sourceLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
+    [self.contentView addSubview:sourceLabel];
+    self.sourceLabel = sourceLabel;
     
     // 7.分享
-    self.shareBtn = [UIButton new];
-    [self.contentView addSubview:self.shareBtn];
+    UIButton *shareBtn = [UIButton new];
+    [self.contentView addSubview:shareBtn];
+    self.shareBtn = shareBtn;
     
     // 8.评论
-    self.commentBtn = [UIButton new];
-    [self.contentView addSubview:self.commentBtn];
+    UIButton *commentBtn = [UIButton new];
+    [self.contentView addSubview:commentBtn];
+    self.commentBtn = commentBtn;
     
     // 9.赞
-    self.likeBtn = [UIButton new];
-    [self.contentView addSubview:self.likeBtn];
+    UIButton *likeBtn = [UIButton new];
+    [self.contentView addSubview:likeBtn];
+    self.likeBtn = likeBtn;
     
     // 10.赞列表
-    _likeListLabel = [UILabel new];
-    _likeListLabel.numberOfLines = 0;
-    _likeListLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    _likeListLabel.font = [UIFont systemFontOfSize:12];
-    _likeListLabel.userInteractionEnabled = YES;
-    _likeListLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
-    [self.contentView addSubview:_likeListLabel];
-}
-
-- (void)_setLayout2
-{
-    for (UIView *view in [self.contentView subviews]) {
-        view.translatesAutoresizingMaskIntoConstraints = NO;
-    }
-    
-    NSDictionary *viewsDict = NSDictionaryOfVariableBindings(_avatarImageView, _nameLabel, _timeLabel, _contentLabel, _uploadImageView, _sourceLabel, _likeListLabel, _shareBtn, _commentBtn, _likeBtn);
-    
-    // V  NSLayoutFormatAlignAllLeft -- 使得下面所有元素与icon对齐
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[_avatarImageView(60)]-10-[_contentLabel]-<=10-[_uploadImageView(100)]-<=10-[_sourceLabel]-<=10-[_likeListLabel]-10-[_shareBtn]-10-|"
-                                      
-                                                                             options:NSLayoutFormatAlignAllLeft
-                                                                             metrics:nil views:viewsDict]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_uploadImageView(100)]"
-                                      
-                                                                             options:0
-                                                                             metrics:nil views:viewsDict]];
-    
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_avatarImageView(60)]-10-[_nameLabel]-10-|"
-                                                                             options:0
-                                                                             metrics:nil views:viewsDict]];
-    
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentLabel  attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual
-                                                                    toItem:self.nameLabel attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[_nameLabel]-10-[_timeLabel]"
-                                      
-                                                                             options:NSLayoutFormatAlignAllLeft                                                                             metrics:nil views:viewsDict]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_shareBtn]-10-[_commentBtn]-10-[_likeBtn]-10-|"
-                                      
-                                                                             options:0
-                                                                             metrics:nil views:viewsDict]];
+    UILabel *likeListLabel = [UILabel new];
+    likeListLabel.numberOfLines = 0;
+    likeListLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    likeListLabel.font = [UIFont systemFontOfSize:12];
+    likeListLabel.userInteractionEnabled = YES;
+    likeListLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
+    [self.contentView addSubview:likeListLabel];
+    self.likeListLabel = likeListLabel;
 }
 
 - (void)_setLayout {
@@ -248,7 +219,6 @@
     //     _vipView.hidden = !weibo.vip;
     
     
-    //计算时间
     //    self.timeLabel.text = [Tool intervalSinceNow:self.flowground.pubDate];
     self.timeLabel.text = [Tool pubTime:self.flowground.pubDate];
     

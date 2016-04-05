@@ -141,58 +141,63 @@
 - (void)_initSubviews {
     
     //手机号
-    self.phoneNumTextField = [UITextField new];
-    self.phoneNumTextField.placeholder = @"～手机号～";
-    self.phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
-    self.phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
-    self.phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:self.phoneNumTextField];
+    UITextField *phoneNumTextField = [UITextField new];
+    phoneNumTextField.placeholder = @"～手机号～";
+    phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
+    phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
+    phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:phoneNumTextField];
+    self.phoneNumTextField = phoneNumTextField;
     
     //获取验证码
-    self.getVerCodeBtn =[UIButton buttonWithType:UIButtonTypeCustom];
-    self.getVerCodeBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.getVerCodeBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
-    [self.getVerCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [self.getVerCodeBtn setCornerRadius:10];
-    [self.getVerCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.getVerCodeBtn addTarget:self action:@selector(getVerCode) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.getVerCodeBtn];
+    UIButton *getVerCodeBtn =[UIButton buttonWithType:UIButtonTypeCustom];
+    getVerCodeBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    getVerCodeBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [getVerCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [getVerCodeBtn setCornerRadius:10];
+    [getVerCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [getVerCodeBtn addTarget:self action:@selector(getVerCode) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:getVerCodeBtn];
+    self.getVerCodeBtn = getVerCodeBtn;
     
     //验证码
-    self.verCodeTextField = [UITextField new];
-    self.verCodeTextField.placeholder = @"～验证码～";
-    self.verCodeTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.verCodeTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.verCodeTextField.keyboardType = UIKeyboardTypePhonePad;
-    self.verCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
-    self.verCodeTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:self.verCodeTextField];
+    UITextField *verCodeTextField = [UITextField new];
+    verCodeTextField.placeholder = @"～验证码～";
+    verCodeTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    verCodeTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    verCodeTextField.keyboardType = UIKeyboardTypePhonePad;
+    verCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    verCodeTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:verCodeTextField];
+    self.verCodeTextField = verCodeTextField;
     
     //密码
-    self.passwordTextField = [UITextField new];
-    self.passwordTextField.placeholder = @"～登录密码～";
-    self.passwordTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.passwordTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.passwordTextField.secureTextEntry = YES;
-    self.passwordTextField.returnKeyType = UIReturnKeyDone;
-    self.passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.passwordTextField.enablesReturnKeyAutomatically = YES;
-    self.passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:self.passwordTextField];
+    UITextField *passwordTextField = [UITextField new];
+    passwordTextField.placeholder = @"～登录密码～";
+    passwordTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    passwordTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    passwordTextField.secureTextEntry = YES;
+    passwordTextField.returnKeyType = UIReturnKeyDone;
+    passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordTextField.enablesReturnKeyAutomatically = YES;
+    passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:passwordTextField];
+    [passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    self.passwordTextField = passwordTextField;
     
     //注册按钮
-    self.registerBtn =[UIButton buttonWithType:UIButtonTypeSystem];
-    self.registerBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.registerBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
-    [self.registerBtn setTitle:@"注册" forState:UIControlStateNormal];
-    [self.registerBtn setCornerRadius:20];
-    [self.registerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.registerBtn addTarget:self action:@selector(registerUser) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.registerBtn];
+    UIButton *registerBtn =[UIButton buttonWithType:UIButtonTypeSystem];
+    registerBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    registerBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+    [registerBtn setCornerRadius:20];
+    [registerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [registerBtn addTarget:self action:@selector(registerUser) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:registerBtn];
+    self.registerBtn = registerBtn;
     
-    [self.passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];

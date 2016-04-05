@@ -22,14 +22,16 @@
 @implementation FPRootViewController
 
 //初始化
-- (instancetype)init
-{
-    if (self = [super init]) {
-        _objects = [NSMutableArray new];
-        _page = 0;
-        _needRefreshAnimation = YES;
-        _shouldFetchDataAfterLoaded = YES;
+- (id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (!self) {
+        return nil;
     }
+    
+    _objects = [NSMutableArray new];
+    _page = 0;
+    _needRefreshAnimation = YES;
+    _shouldFetchDataAfterLoaded = YES;
     
     return self;
 }
@@ -78,10 +80,9 @@
     
     if (!_shouldFetchDataAfterLoaded) {return;}
     if (_needRefreshAnimation) {
-        //不懂啊，不加也能显示啊
+
         [self.refreshControl beginRefreshing];
-        [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height)
-                                animated:YES];
+        [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
     }
     
     if (_needCache) {

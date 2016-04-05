@@ -55,24 +55,6 @@
     //"都在这里"
     UIBarButtonItem *btnIsHere = [[UIBarButtonItem alloc] initWithTitle:@"都在这里" style:UIBarButtonItemStyleDone target:self action:@selector(clickIsHere:)];
     self.navigationItem.rightBarButtonItem = btnIsHere;
-    
-    /*
-     NSMutableArray *rightBarButtonArray = [[NSMutableArray alloc] initWithCapacity:2];
-     
-     UIBarButtonItem *btnPic = [[UIBarButtonItem alloc] initWithTitle:@"＋图片" style:UIBarButtonItemStyleBordered target:self action:@selector(clickImgs:)];
-     [rightBarButtonArray addObject:btnPic];
-     UIBarButtonItem *btnPub = [[UIBarButtonItem alloc] initWithTitle:@"动弹一下" style:UIBarButtonItemStyleBordered target:self action:@selector(click_PubTweet:)];
-     [rightBarButtonArray addObject:btnPub];
-     
-     if(IS_IOS7)
-     [customToolbar setFrame:CGRectMake(0, 0, 135,47)];
-     [customToolbar setItems:rightBarButtonArray animated:NO];
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customToolbar];
-     
-     
-     // rightBarButtonItem = (UIBarButtonItem)initWithCustomView(toolbar setItem(rightArray(btnPic, btnPub)))
-     
-     */
 }
 
 - (void)viewDidLoad {
@@ -155,14 +137,6 @@
         
         [Tool pushLocationDetail:loc andNavController:self.navigationController];
     }
-    
-    /* 两个一样
-     if (self.navigationController == self.parentViewController.navigationController) {
-     NSLog(@"yes");
-     NSLog(@"%@", self.navigationController);
-     NSLog(@"%@", self.parentViewController.navigationController);
-     }
-     */
 }
 
 

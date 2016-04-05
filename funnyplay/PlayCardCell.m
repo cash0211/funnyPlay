@@ -23,6 +23,9 @@
     self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.backgroundColor = [UIColor whiteColor];
     
+    [self _initSubviews];
+    [self _setLayout];
+    
     return self;
 }
 
@@ -50,6 +53,13 @@
 
 #pragma mark - Private methods
 
+- (void)_initSubviews {
+    
+}
+
+- (void)_setLayout {
+    
+}
 
 
 #pragma mark - CustomDelegate

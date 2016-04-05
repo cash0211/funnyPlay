@@ -25,7 +25,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //设置 状态栏_网络指示器
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     // 高德地图

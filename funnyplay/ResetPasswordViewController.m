@@ -93,47 +93,48 @@
 - (void)_initSubviews {
     
     //密码
-    self.passwordTextField = [UITextField new];
-    self.passwordTextField.placeholder = @"～密码～";
-    self.passwordTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.passwordTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.passwordTextField.secureTextEntry = YES;
-    self.passwordTextField.returnKeyType = UIReturnKeyNext;
-    self.passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.passwordTextField.enablesReturnKeyAutomatically = YES;
-    self.passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:self.passwordTextField];
+    UITextField *passwordTextField = [UITextField new];
+    passwordTextField.placeholder = @"～密码～";
+    passwordTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    passwordTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    passwordTextField.secureTextEntry = YES;
+    passwordTextField.returnKeyType = UIReturnKeyNext;
+    passwordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordTextField.enablesReturnKeyAutomatically = YES;
+    passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [self.view addSubview:passwordTextField];
+    self.passwordTextField = passwordTextField;
     
     //密码_2
-    self.passwordConfirmTextField = [UITextField new];
-    self.passwordConfirmTextField.placeholder = @"～再次输入～";
-    self.passwordConfirmTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.passwordConfirmTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.passwordConfirmTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.passwordConfirmTextField.secureTextEntry = YES;
-    self.passwordConfirmTextField.returnKeyType = UIReturnKeyDone;
-    self.passwordConfirmTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.passwordConfirmTextField.enablesReturnKeyAutomatically = YES;
-    self.passwordConfirmTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:self.passwordConfirmTextField];
-    
-    [self.passwordTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    [self.passwordConfirmTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    UITextField *passwordConfirmTextField = [UITextField new];
+    passwordConfirmTextField.placeholder = @"～再次输入～";
+    passwordConfirmTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    passwordConfirmTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    passwordConfirmTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    passwordConfirmTextField.secureTextEntry = YES;
+    passwordConfirmTextField.returnKeyType = UIReturnKeyDone;
+    passwordConfirmTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    passwordConfirmTextField.enablesReturnKeyAutomatically = YES;
+    passwordConfirmTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:passwordConfirmTextField];
+    [passwordConfirmTextField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    self.passwordTextField = passwordConfirmTextField;
     
     //注册按钮
-    self.submitBtn =[UIButton buttonWithType:UIButtonTypeSystem];
-    self.submitBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.submitBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
-    [self.submitBtn setTitle:@"重置" forState:UIControlStateNormal];
-    [self.submitBtn setCornerRadius:20];
-    [self.submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.submitBtn addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.submitBtn];
+    UIButton *submitBtn =[UIButton buttonWithType:UIButtonTypeSystem];
+    submitBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    submitBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [submitBtn setTitle:@"重置" forState:UIControlStateNormal];
+    [submitBtn setCornerRadius:20];
+    [submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [submitBtn addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:submitBtn];
+    self.submitBtn = submitBtn;
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
-    gesture.numberOfTapsRequired = 1;
     gesture.delegate = self;
     [self.view addGestureRecognizer:gesture];
 }
@@ -163,9 +164,6 @@
     }
     return YES;
 }
-
-
-
 
 @end
 

@@ -49,23 +49,26 @@
 
 - (void)_initSubviews {
     
-    self.avatarImageView = [UIImageView new];
-    self.avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.contentView addSubview:self.avatarImageView];
+    UIImageView *avatarImageView = [UIImageView new];
+    avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.contentView addSubview:avatarImageView];
+    self.avatarImageView = avatarImageView;
     
-    self.nameLabel = [UILabel new];
-    self.nameLabel.font = [UIFont boldSystemFontOfSize:15];
-    self.nameLabel.userInteractionEnabled = YES;
-    self.nameLabel.textColor = [UIColor nameColor];
-    [self.contentView addSubview:self.nameLabel];
+    UILabel *nameLabel = [UILabel new];
+    nameLabel.font = [UIFont boldSystemFontOfSize:15];
+    nameLabel.userInteractionEnabled = YES;
+    nameLabel.textColor = [UIColor nameColor];
+    [self.contentView addSubview:nameLabel];
+    self.nameLabel = nameLabel;
     
     //vipView
     
-    self.descLabel = [UILabel new];
-    self.descLabel.font = [UIFont systemFontOfSize:12];
-    self.descLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
-    self.descLabel.numberOfLines = 0;
-    [self.contentView addSubview:self.descLabel];
+    UILabel *descLabel = [UILabel new];
+    descLabel.font = [UIFont systemFontOfSize:12];
+    descLabel.textColor = [UIColor colorWithHex:0xA0A3A7];
+    descLabel.numberOfLines = 0;
+    [self.contentView addSubview:descLabel];
+    self.descLabel = descLabel;
 }
 
 - (void)_setLayout {
@@ -99,10 +102,10 @@
     
     _personCellModel = personCellModel;
     
-    self.avatarImageView.image = [UIImage imageNamed:self.personCellModel.imageName];
-    self.nameLabel.text = self.personCellModel.username;
-    self.isVipImageView.hidden = self.personCellModel.isVip;
-    self.descLabel.text = self.personCellModel.descString;
+    _avatarImageView.image = [UIImage imageNamed:self.personCellModel.imageName];
+    _nameLabel.text = self.personCellModel.username;
+    _isVipImageView.hidden = self.personCellModel.isVip;
+    _descLabel.text = self.personCellModel.descString;
 }
 
 

@@ -24,17 +24,20 @@
 
 - (instancetype)init {
     
-    if (self = [super init]) {
-        //        __weak LocationViewController *weakSelf = self;
-        self.generateURL = ^NSString * (NSUInteger page) {
-            
-            NSString *str1 = [NSString stringWithFormat:@"%@%@?pageIndex=%lu&%@", FPAPI_PREFIX, FPAPI_LOCATION_LIST, (unsigned long)page, FPAPI_SUFFIX];
-            
-            NSLog(@"%@", str1);
-            
-            return str1;
-        };
+    self = [super init];
+    if (!self) {
+        return nil;
     }
+    
+    //        __weak LocationViewController *weakSelf = self;
+    self.generateURL = ^NSString * (NSUInteger page) {
+        
+        NSString *str1 = [NSString stringWithFormat:@"%@%@?pageIndex=%lu&%@", FPAPI_PREFIX, FPAPI_LOCATION_LIST, (unsigned long)page, FPAPI_SUFFIX];
+        
+        NSLog(@"%@", str1);
+        
+        return str1;
+    };
     
     return self;
 }
@@ -42,6 +45,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"南京";
+    
+    //"附近"
+    UIBarButtonItem *btnNearbyTitle = [[UIBarButtonItem alloc] initWithTitle:@"附近" style:UIBarButtonItemStyleDone target:self action:@selector(clickNearby:)];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [btn addTarget:self action:@selector(clickNearby:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:[UIImage imageNamed:@"nearby"] forState:UIControlStateNormal];
+    UIBarButtonItem *btnNearby = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:btnNearbyTitle, btnNearby, nil];
+    
+    //"区域玩" --- 直接 BarButtonItem
+    UIBarButtonItem *btnAreaPlay = [[UIBarButtonItem alloc] initWithTitle:@"区域玩" style:UIBarButtonItemStyleDone target:self action:@selector(clickAreaPlay:)];
+    self.navigationItem.rightBarButtonItem = btnAreaPlay;
+    
+    // data
     NSArray *arrayData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"location.plist" ofType:nil]];
     
     for (NSDictionary* dict in arrayData) {
@@ -65,6 +84,14 @@
 
 #pragma mark - Event response
 
+- (void)clickAreaPlay:(id)sender {
+    
+    [Tool pushAreaPlay:sender andNavController:self.navigationController];
+}
+
+- (void)clickNearby:(id)sender {
+    
+}
 
 
 #pragma mark - Public methods
@@ -114,16 +141,6 @@
         
         [Tool pushLocationDetail:loc andNavController:self.navigationController];
     }
-    
-    /* 两个一样
-     if (self.navigationController == self.parentViewController.navigationController) {
-     NSLog(@"yes");
-     NSLog(@"%@", self.navigationController);
-     NSLog(@"%@", self.parentViewController.navigationController);
-     }
-     */
-    
-    
 }
 
 

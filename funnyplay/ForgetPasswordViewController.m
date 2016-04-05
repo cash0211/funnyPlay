@@ -124,44 +124,48 @@
 - (void)_initSubviews {
     
     //手机号
-    self.phoneNumTextField = [UITextField new];
-    self.phoneNumTextField.placeholder = @"～手机号～";
-    self.phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
-    self.phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
-    self.phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:self.phoneNumTextField];
+    UITextField *phoneNumTextField = [UITextField new];
+    phoneNumTextField.placeholder = @"～手机号～";
+    phoneNumTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    phoneNumTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    phoneNumTextField.keyboardType = UIKeyboardTypePhonePad;
+    phoneNumTextField.borderStyle = UITextBorderStyleRoundedRect;
+    phoneNumTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:phoneNumTextField];
+    self.phoneNumTextField = phoneNumTextField;
     
     //获取验证码
-    self.getVerCodeBtn =[UIButton buttonWithType:UIButtonTypeCustom];
-    self.getVerCodeBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.getVerCodeBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
-    [self.getVerCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [self.getVerCodeBtn setCornerRadius:10];
-    [self.getVerCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.getVerCodeBtn addTarget:self action:@selector(getVerCode) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.getVerCodeBtn];
+    UIButton *getVerCodeBtn =[UIButton buttonWithType:UIButtonTypeCustom];
+    getVerCodeBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    getVerCodeBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [getVerCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [getVerCodeBtn setCornerRadius:10];
+    [getVerCodeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [getVerCodeBtn addTarget:self action:@selector(getVerCode) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:getVerCodeBtn];
+    self.getVerCodeBtn = getVerCodeBtn;
     
     //验证码
-    self.verCodeTextField = [UITextField new];
-    self.verCodeTextField.placeholder = @"～验证码～";
-    self.verCodeTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
-    self.verCodeTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
-    self.verCodeTextField.keyboardType = UIKeyboardTypePhonePad;
-    self.verCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
-    self.verCodeTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:self.verCodeTextField];
+    UITextField *verCodeTextField = [UITextField new];
+    verCodeTextField.placeholder = @"～验证码～";
+    verCodeTextField.font = [UIFont fontWithName:@"Helvetica" size:15];
+    verCodeTextField.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
+    verCodeTextField.keyboardType = UIKeyboardTypePhonePad;
+    verCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    verCodeTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.view addSubview:verCodeTextField];
+    self.verCodeTextField = verCodeTextField;
     
     //注册按钮
-    self.submitBtn =[UIButton buttonWithType:UIButtonTypeSystem];
-    self.submitBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    self.submitBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
-    [self.submitBtn setTitle:@"重置" forState:UIControlStateNormal];
-    [self.submitBtn setCornerRadius:20];
-    [self.submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.submitBtn addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.submitBtn];
+    UIButton *submitBtn =[UIButton buttonWithType:UIButtonTypeSystem];
+    submitBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+    submitBtn.backgroundColor = [UIColor colorWithHex:0x15A230];
+    [submitBtn setTitle:@"重置" forState:UIControlStateNormal];
+    [submitBtn setCornerRadius:20];
+    [submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [submitBtn addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:submitBtn];
+    self.submitBtn = submitBtn;
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];

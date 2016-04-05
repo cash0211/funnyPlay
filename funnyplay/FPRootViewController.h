@@ -18,9 +18,7 @@
 @interface FPRootViewController : UITableViewController
 
 @property (nonatomic, copy) NSString * (^generateURL)(NSUInteger page);  //生成网络请求URL
-//@property (nonatomic, copy) NSUInteger (^generateObjCount)();  
-
-//@property Class objClass;
+//@property (nonatomic, copy) NSUInteger (^generateObjCount)();
 
 @property (nonatomic, assign) BOOL shouldFetchDataAfterLoaded;
 @property (nonatomic, assign) BOOL needRefreshAnimation;

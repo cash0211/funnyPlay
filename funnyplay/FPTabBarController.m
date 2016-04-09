@@ -13,8 +13,11 @@
 #import "FlowgroundViewController.h"
 #import "PlayCardViewController.h"
 #import "PersonInfoViewController.h"
+#import "UIColor+Util.h"
 
 @interface FPTabBarController ()
+
+@property (nonatomic, strong) UIButton *centerButton;
 
 @end
 
@@ -42,12 +45,33 @@
                              ];
     
     NSArray *titles = @[@"南京", @"推荐", @"流动墙", @"玩略", @"我的"];
-    NSArray *images = @[@"location", @"reco2", @"flowzone", @"playcard", @"my"];
+    NSArray *images = @[@"location", @"Reco", @"", @"playcard", @"my"];
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
         [item setTitle:titles[idx]];
         [item setImage:[UIImage imageNamed:images[idx]]];
     }];
+    [self _addCenterButtonWithImage:[UIImage imageNamed:@"flowzone"]];
+}
+
+#pragma mark - private methods
+
+- (void)_addCenterButtonWithImage:(UIImage *)buttonImage
+{
+    _centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
+    // 转换为 tabbar 的坐标系
+    CGPoint origin = [self.view convertPoint:self.tabBar.center toView:self.tabBar];
+    CGSize buttonSize = CGSizeMake(self.tabBar.frame.size.width / 5 - 6, self.tabBar.frame.size.height - 4);
+    
+    _centerButton.frame = CGRectMake(origin.x - buttonSize.width / 2, origin.y - buttonSize.height / 2, buttonSize.width, buttonSize.height);
+    
+    _centerButton.layer.cornerRadius = 13.0;
+    _centerButton.layer.masksToBounds = YES;
+    _centerButton.userInteractionEnabled = NO;
+    [_centerButton setBackgroundColor:[UIColor customBlueColor]];
+    [_centerButton setImage:buttonImage forState:UIControlStateNormal];
+    
+    [self.tabBar addSubview:_centerButton];
 }
 
 #pragma mark - UITabBarDelegate

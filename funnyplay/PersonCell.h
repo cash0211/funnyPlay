@@ -12,15 +12,11 @@
 
 @interface PersonCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *personImageView;
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UIImageView *isVipImageView;
-@property (weak, nonatomic) IBOutlet UILabel *descString;
-@property (weak, nonatomic) IBOutlet UILabel *defaultString;
+@property (nonatomic, strong) UIImageView *avatarImageView;
+@property (nonatomic, strong) UILabel     *nameLabel;
+@property (nonatomic, strong) UIImageView *isVipImageView;
+@property (nonatomic, strong) UILabel     *descLabel;
 
-@property (strong, nonatomic) PersonCellModel *personCellModel;
-
-+ (instancetype)personCell;
-+ (NSString *)cellId;
+@property (nonatomic, strong) PersonCellModel *personCellModel;
 
 @end

@@ -11,9 +11,62 @@
 
 @implementation PlayCardCell
 
-+ (instancetype)playCardCell {
-    return [[NSBundle mainBundle] loadNibNamed:@"PlayCard" owner:nil options:nil][0];
+
+#pragma mark - Lifecycle
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (!self) {
+        return nil;
+    }
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.backgroundColor = [UIColor whiteColor];
+    
+    [self _initSubviews];
+    [self _setLayout];
+    
+    return self;
 }
+
+- (void)awakeFromNib {
+    
+}
+
+
+#pragma mark - Event response
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
+
+#pragma mark - Public methods
+
++ (NSString *)cellId {
+    
+    return @"PlayCardCell";
+}
+
+
+#pragma mark - Private methods
+
+- (void)_initSubviews {
+    
+}
+
+- (void)_setLayout {
+    
+}
+
+
+#pragma mark - CustomDelegate
+
+
+
+#pragma mark - Getters & Setters
 
 - (void)setPlayCard:(PlayCard *)playCard {
     
@@ -24,21 +77,5 @@
     _itemDesc.text = _playCard.desc;
 }
 
-
-+ (NSString *)cellId {
-    
-    return @"PlayCardCell";
-}
-
-
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

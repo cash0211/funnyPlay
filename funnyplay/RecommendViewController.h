@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FPRootViewController.h"
 
-@interface RecommendViewController : UIViewController
+@interface RecommendViewController : FPRootViewController
 
 @end

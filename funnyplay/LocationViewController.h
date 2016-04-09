@@ -11,6 +11,4 @@
 
 @interface LocationViewController : FPRootViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *locationTable;
-
 @end

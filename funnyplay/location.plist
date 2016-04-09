@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>imageName</key>
-		<string>ms.jpg</string>
+		<string>fp100.jpg</string>
 		<key>itemName</key>
 		<string>X先生密室</string>
 		<key>desc</key>
@@ -16,7 +16,7 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>nb.jpg</string>
+		<string>fp1000.jpg</string>
 		<key>itemName</key>
 		<string>南京博物院</string>
 		<key>desc</key>
@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>imageName</key>
-		<string>h8zq.jpg</string>
+		<string>fp10000.jpg</string>
 		<key>itemName</key>
 		<string>康泓黑八撞球</string>
 		<key>desc</key>

@@ -15,5 +15,12 @@
 
 + (UIColor *)themeColor;
 + (UIColor *)nameColor;
++ (UIColor *)blueTintColor;
+
++ (UIColor *)customGrayColor;
++ (UIColor *)customRedColor;
++ (UIColor *)customYellowColor;
++ (UIColor *)customGreenColor;
++ (UIColor *)customBlueColor;
 
 @end

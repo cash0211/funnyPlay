@@ -11,7 +11,7 @@
 @interface PlayCardData : NSObject
 
 @property (nonatomic, copy) NSString *header;
-@property (nonatomic, copy) NSArray *contents;
+@property (nonatomic, copy) NSArray  *contents;
 
 @property (nonatomic, strong) NSMutableArray *playCards;
 

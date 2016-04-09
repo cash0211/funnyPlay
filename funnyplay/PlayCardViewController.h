@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FPRootViewController.h"
 
-@interface PlayCardViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *playCardTable;
+@interface PlayCardViewController : FPRootViewController
 
 @end

@@ -32,18 +32,13 @@ static NSString * const kKeyMinutes = @"minutes";
 + (void)noticeLogin:(UIView *)view andDelegate:(id)delegate andTitle:(NSString *)title;
 
 + (void)pushLocationDetail:(Location *)loc andNavController:(UINavigationController *)navController;
-+ (void)pushNearbyDetail:(Nearby *)nearby andNavController:(UINavigationController *)navController;
 + (void)pushAreaPlay:(id)sender andNavController:(UINavigationController *)navController;
 + (void)pushLogin:(id)sender andNavController:(UINavigationController *)navController;
 + (void)pushRegUser:(id)sender andNavController:(UINavigationController *)navController;
 + (void)pushforgetPwd:(id)sender andNavController:(UINavigationController *)navController;
 + (void)pushResetPwd:(id)sender andNavController:(UINavigationController *)navController;
 
-
 + (BOOL)isURL:(NSString *)string;
-
-
-+ (MBProgressHUD *)createHUD:(NSString *)text;
 
 + (NSString *)intervalSinceNow:(NSString *)dateStr;
 + (NSString *)pubTime:(NSString *)dateStr;

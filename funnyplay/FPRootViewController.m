@@ -7,29 +7,31 @@
 //
 
 #import "FPRootViewController.h"
-//#import "OSCBaseObject.h"
 #import "Tool.h"
+#import "FetchMoreCell.h"
 
-#import <MBProgressHUD.h>
+#import <AFNetworking.h>
 
 @interface FPRootViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
-@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 @end
 
 @implementation FPRootViewController
 
 //初始化
-- (instancetype)init
-{
-    if (self = [super init]) {
-        _objects = [NSMutableArray new];
-        _page = 0;
-        _needRefreshAnimation = YES;
-        _shouldFetchDataAfterLoaded = YES;
+- (id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (!self) {
+        return nil;
     }
+    
+    _objects = [NSMutableArray new];
+    _page = 0;
+    _needRefreshAnimation = YES;
+    _shouldFetchDataAfterLoaded = YES;
     
     return self;
 }
@@ -72,16 +74,15 @@
     _label.font = [UIFont boldSystemFontOfSize:14];
     
     
-    _manager = [AFHTTPRequestOperationManager manager];
+    _manager = [AFHTTPSessionManager manager];
 //    [_manager.requestSerializer setValue:[Utils generateUserAgent] forHTTPHeaderField:@"User-Agent"];
 //    _manager.responseSerializer = [AFOnoResponseSerializer XMLResponseSerializer];
     
     if (!_shouldFetchDataAfterLoaded) {return;}
     if (_needRefreshAnimation) {
-        //不懂啊，不加也能显示啊
+
         [self.refreshControl beginRefreshing];
-        [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height)
-                                animated:YES];
+        [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
     }
     
     if (_needCache) {
@@ -94,27 +95,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return _objects.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == self.objects.count - 1) {
-        return 125;
-    } else {
-        return 120;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    
-    return 1;
 }
 
 #pragma mark - 刷新
@@ -136,13 +116,18 @@
     }
 }
 
+#pragma mark - tableView
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return 1;
+}
+
 #pragma mark - 上拉加载更多
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
-    if(scrollView.contentOffset.y > ((scrollView.contentSize.height - scrollView.frame.size.height)))
-    {
+    if (scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height - 150)) {
         [self fetchMore];
     }
 }
@@ -150,7 +135,7 @@
 - (void)fetchMore
 {
     
-    _moreCell.status = LastCellStatusLoading;
+    _moreCell.status = FetchMoreCellStatusLoading;
     
     _manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     [self fetchObjectsOnPage:++_page refresh:NO];
@@ -166,13 +151,11 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^{
        
-        _moreCell.status = LastCellStatusMore;
+        _moreCell.status = FetchMoreCellStatusMore;
         
         if (self.refreshControl.refreshing) {
             [self.refreshControl endRefreshing];
         }
-        
-        NSLog(@"TEST SUCCESS~");
         
 //        self.generateURL(page);
     });

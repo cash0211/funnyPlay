@@ -8,15 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, LastCellStatus)
-{
-    LastCellStatusNotVisible,
-    LastCellStatusMore,
-    LastCellStatusLoading,
+typedef NS_ENUM(NSUInteger, FetchMoreCellStatus) {
+    
+    FetchMoreCellStatusNotVisible,
+    FetchMoreCellStatusMore,
+    FetchMoreCellStatusLoading,
+    FetchMoreCellStatusError,
+    FetchMoreCellStatusFinished,
+    FetchMoreCellStatusEmpty,
 };
 
 @interface FetchMoreCell : UITableViewCell
 
-@property (nonatomic, assign) LastCellStatus status;
+@property (nonatomic, assign) FetchMoreCellStatus status;
 
 @end

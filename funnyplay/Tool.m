@@ -8,12 +8,11 @@
 
 #import "Tool.h"
 #import "LocationDetail.h"
-#import "NearbyDetail.h"
 #import "AreaPlayViewController.h"
 #import "LoginViewController.h"
-#import "RegViewController.h"
-#import "ForgetPwdViewController.h"
-#import "ResetPwdViewController.h"
+#import "RegisterViewController.h"
+#import "ForgetPasswordViewController.h"
+#import "ResetPasswordViewController.h"
 
 #import <MBProgressHUD.h>
 
@@ -31,17 +30,8 @@
     
     UITabBarController *tabBarCon = [[UITabBarController alloc] init];
     LocationDetail *locDetail = [[LocationDetail alloc] init];
-    tabBarCon.viewControllers = [NSArray arrayWithObjects:locDetail, nil];
-    tabBarCon.hidesBottomBarWhenPushed = YES;
-    
-    [navController pushViewController:tabBarCon animated:YES];
-}
-
-+ (void)pushNearbyDetail:(Nearby *)nearby andNavController:(UINavigationController *)navController {
-    
-    UITabBarController *tabBarCon = [[UITabBarController alloc] init];
-    NearbyDetail *nearbyDetail = [[NearbyDetail alloc] init];
-    tabBarCon.viewControllers = [NSArray arrayWithObjects:nearbyDetail, nil];
+    UINavigationController *locationNav = [[UINavigationController alloc] initWithRootViewController:locDetail];
+    tabBarCon.viewControllers = [NSArray arrayWithObjects:locationNav, nil];
     tabBarCon.hidesBottomBarWhenPushed = YES;
     
     [navController pushViewController:tabBarCon animated:YES];
@@ -49,11 +39,8 @@
 
 + (void)pushAreaPlay:(id)sender andNavController:(UINavigationController *)navController {
     
-//    UITabBarController *tabBarCon = [[UITabBarController alloc] init];
     AreaPlayViewController *areaPlayCon = [[AreaPlayViewController alloc] init];
     areaPlayCon.hidesBottomBarWhenPushed = YES;
-//    tabBarCon.viewControllers = [NSArray arrayWithObjects:areaPlayCon, nil];
-//    tabBarCon.hidesBottomBarWhenPushed = YES;
     
     [navController pushViewController:areaPlayCon animated:YES];
     
@@ -65,31 +52,28 @@
     loginCon.hidesBottomBarWhenPushed = YES;
     
     [navController pushViewController:loginCon animated:YES];
-    
 }
 
 + (void)pushRegUser:(id)sender andNavController:(UINavigationController *)navController {
     
-    RegViewController *regCon = [[RegViewController alloc] init];
+    RegisterViewController *regCon = [[RegisterViewController alloc] init];
     
     [navController pushViewController:regCon animated:YES];
-    
 }
 
 +(void)pushforgetPwd:(id)sender andNavController:(UINavigationController *)navController {
     
-    ForgetPwdViewController *forgetCon = [[ForgetPwdViewController alloc] init];
+    ForgetPasswordViewController *forgetCon = [[ForgetPasswordViewController alloc] init];
     
     [navController pushViewController:forgetCon animated:YES];
 }
 
 +(void)pushResetPwd:(id)sender andNavController:(UINavigationController *)navController {
     
-    ResetPwdViewController *resetCon = [[ResetPwdViewController alloc] init];
+    ResetPasswordViewController *resetCon = [[ResetPasswordViewController alloc] init];
     
     [navController pushViewController:resetCon animated:YES];
 }
-
 
 + (BOOL)isURL:(NSString *)string
 {
@@ -100,21 +84,6 @@
     return [urlPredicate evaluateWithObject:string];
 }
 
-
-//HUD
-+ (MBProgressHUD *)createHUD:(NSString *)text 
-{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
-    HUD.detailsLabelText = text;
-    [window addSubview:HUD];
-    [HUD show:YES];
-    
-    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-    
-    return HUD;
-}
 
 #pragma mark - 流动墙功能
 #pragma mark time_1
@@ -200,38 +169,38 @@
             
             if ([compsNow day] == [compsPast day]) {
                 
-                return [NSString stringWithFormat:@"今天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+                return [NSString stringWithFormat:@"今天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
                 
             } else if (days == 1) {
                 
-                return [NSString stringWithFormat:@"昨天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+                return [NSString stringWithFormat:@"昨天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
                 
             } else if (days == 2) {
                 
-                return [NSString stringWithFormat:@"前天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+                return [NSString stringWithFormat:@"前天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
                 
             } else {
                 
-                return [NSString stringWithFormat:@"%.2d-%.2d", [compsPast month], [compsPast day]];
+                return [NSString stringWithFormat:@"%.2ld-%.2ld", (long)[compsPast month], (long)[compsPast day]];
             }
             
         } else if (days == 1) {
             
-            return [NSString stringWithFormat:@"昨天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+            return [NSString stringWithFormat:@"昨天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
             
             
         } else if (days == 2) {
             
-            return [NSString stringWithFormat:@"前天 %.2d:%.2d", [compsPast hour], [compsPast minute]];
+            return [NSString stringWithFormat:@"前天 %.2ld:%.2ld", (long)[compsPast hour], (long)[compsPast minute]];
             
         } else {
             
-            return [NSString stringWithFormat:@"%.2d-%.2d", [compsPast month], [compsPast day]];
+            return [NSString stringWithFormat:@"%.2ld-%.2ld", (long)[compsPast month], (long)[compsPast day]];
         }
         
     } else {
         
-        return [NSString stringWithFormat:@"%d-%.2d-%.2d", [compsPast year], [compsPast month], [compsPast day]];
+        return [NSString stringWithFormat:@"%ld-%.2ld-%.2ld", (long)[compsPast year], (long)[compsPast month], (long)[compsPast day]];
     }
     
     return nil;

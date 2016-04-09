@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationDetail : UIViewController<UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *detailTable;
+@interface LocationDetail : UITableViewController
 
 - (void)clickCollection:(id)sender;
 

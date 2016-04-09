@@ -12,15 +12,13 @@
 
 @interface LocationCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
-@property (weak, nonatomic) IBOutlet UILabel *itemName;
-@property (weak, nonatomic) IBOutlet UITextView *itemDesc;
-@property (weak, nonatomic) IBOutlet UILabel *itemLoc;
-@property (weak, nonatomic) IBOutlet UILabel *itemDistance;
+@property (nonatomic, strong) UIImageView *itemImageView;
+@property (nonatomic, strong) UILabel     *itemName;
+@property (nonatomic, strong) UITextView  *itemDesc;
+@property (nonatomic, strong) UILabel     *itemLoc;
+@property (nonatomic, strong) UILabel     *itemDistance;
+@property (nonatomic, strong) Location    *location;
 
-@property (strong, nonatomic) Location *location;
-
-+ (instancetype)locationCell;
 + (NSString *)cellId;
 
 @end

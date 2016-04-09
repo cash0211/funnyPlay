@@ -8,13 +8,16 @@
 
 #import "FPTabBarController.h"
 
-#import "LocationBaseViewController.h"
-#import "RecommendBaseViewController.h"
-#import "PlayCardBaseViewController.h"
-#import "PersonInfoBaseViewController.h"
-#import "FlowgroundBaseViewController.h"
+#import "LocationViewController.h"
+#import "RecommendViewController.h"
+#import "FlowgroundViewController.h"
+#import "PlayCardViewController.h"
+#import "PersonInfoViewController.h"
+#import "UIColor+Util.h"
 
 @interface FPTabBarController ()
+
+@property (nonatomic, strong) UIButton *centerButton;
 
 @end
 
@@ -23,49 +26,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //设置各种VC，添加进viewControllers
-    //本地
-    LocationBaseViewController *locBase = [[LocationBaseViewController alloc] initWithNibName:@"LocationBase" bundle:nil];
+    LocationViewController *locVC = [LocationViewController new];
     
-    //附近
-    //    self.nearBase = [[NearbyBaseViewController alloc] initWithNibName:@"NearbyBase" bundle:nil];
-    //    UINavigationController *nearbyNav = [[UINavigationController alloc] initWithRootViewController:self.nearBase];
+    RecommendViewController *recoVC = [[RecommendViewController alloc] init];
     
-    //推荐
-    RecommendBaseViewController *recoBase = [[RecommendBaseViewController alloc] initWithNibName:@"RecommendBase" bundle:nil];
+    FlowgroundViewController *flowgroundVC = [[FlowgroundViewController alloc] init];
     
-    //流动墙
-    FlowgroundBaseViewController *flowgroundBase = [[FlowgroundBaseViewController alloc] initWithNibName:@"FlowgroundBase" bundle:nil];
+    PlayCardViewController *playCardVC = [[PlayCardViewController alloc] init];
     
-    //玩略
-    PlayCardBaseViewController *playCardBase = [[PlayCardBaseViewController alloc] initWithNibName:@"PlayCardBase" bundle:nil];
-    
-    //个人信息
-    PersonInfoBaseViewController *personInfoBase = [[PersonInfoBaseViewController alloc] initWithNibName:@"PersonInfoBase" bundle:nil];
-    
+    PersonInfoViewController *personInfoVC = [[PersonInfoViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
     self.viewControllers = @[
-                             [[UINavigationController alloc] initWithRootViewController:locBase],
-                             [[UINavigationController alloc] initWithRootViewController:recoBase],
-                             [[UINavigationController alloc] initWithRootViewController:flowgroundBase],
-                             [[UINavigationController alloc] initWithRootViewController:playCardBase],
-                             [[UINavigationController alloc] initWithRootViewController:personInfoBase]
+                             [[UINavigationController alloc] initWithRootViewController:locVC],
+                             [[UINavigationController alloc] initWithRootViewController:recoVC],
+                             [[UINavigationController alloc] initWithRootViewController:flowgroundVC],
+                             [[UINavigationController alloc] initWithRootViewController:playCardVC],
+                             [[UINavigationController alloc] initWithRootViewController:personInfoVC]
                              ];
     
-    //设置tabbar的item的图片,文字
     NSArray *titles = @[@"南京", @"推荐", @"流动墙", @"玩略", @"我的"];
-    NSArray *images = @[@"location", @"reco2", @"flowzone", @"playcard", @"my"];
+    NSArray *images = @[@"location", @"Reco", @"", @"playcard", @"my"];
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
         [item setTitle:titles[idx]];
         [item setImage:[UIImage imageNamed:images[idx]]];
-//        [item setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@""]]];
     }];
+    [self _addCenterButtonWithImage:[UIImage imageNamed:@"flowzone"]];
+}
+
+#pragma mark - private methods
+
+- (void)_addCenterButtonWithImage:(UIImage *)buttonImage
+{
+    _centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
+    // 转换为 tabbar 的坐标系
+    CGPoint origin = [self.view convertPoint:self.tabBar.center toView:self.tabBar];
+    CGSize buttonSize = CGSizeMake(self.tabBar.frame.size.width / 5 - 6, self.tabBar.frame.size.height - 4);
+    
+    _centerButton.frame = CGRectMake(origin.x - buttonSize.width / 2, origin.y - buttonSize.height / 2, buttonSize.width, buttonSize.height);
+    
+    _centerButton.layer.cornerRadius = 13.0;
+    _centerButton.layer.masksToBounds = YES;
+    _centerButton.userInteractionEnabled = NO;
+    [_centerButton setBackgroundColor:[UIColor customBlueColor]];
+    [_centerButton setImage:buttonImage forState:UIControlStateNormal];
+    
+    [self.tabBar addSubview:_centerButton];
 }
 
 #pragma mark - UITabBarDelegate
 
-/******保留，没看懂********
+/***
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
     if (self.selectedIndex <= 1 && self.selectedIndex == [tabBar.items indexOfObject:item]) {
@@ -91,15 +102,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

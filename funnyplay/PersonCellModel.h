@@ -12,10 +12,9 @@
 
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *username;
-@property (nonatomic, assign) BOOL isVip;
+@property (nonatomic, assign) BOOL    isVip;
 @property (nonatomic, copy) NSString *descString;
 
-- (instancetype)defaultInit;
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)personCellWithDict:(NSDictionary *)dict;
 
